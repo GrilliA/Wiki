@@ -2,10 +2,10 @@
 
 ## Client
 
-- [ ] Create the client folder
-- [ ] Add nextjs
-- [ ] use the page router
-- [ ] use the mantine ui
+- [x] Create the client folder
+- [x] Add nextjs
+- [x] use the page router
+- [x] use the mantine ui
 
 ## Server
 
