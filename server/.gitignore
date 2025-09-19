@@ -1,0 +1,10 @@
+
+node_modules
+# Keep environment variables out of version control
+.env
+dist
+out
+src/data/google.json
+log
+dump.rdb
+upload/
