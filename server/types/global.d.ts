@@ -1,7 +1,5 @@
 declare global {
-  var gemmaState: {
-    isAppInit?: boolean;
-  };
+  var gemmaState: {};
 }
 
 export {}; // This is required to make this a module

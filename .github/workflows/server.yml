@@ -1,0 +1,44 @@
+name: Server
+
+on:
+  push:
+    paths:
+      - "server/**"
+      - ".github/workflows/server.yml"
+    branches: [deploy]
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v5
+      - name: Use Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run build
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.IP_HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.KEY }}
+          port: 22
+          source: "./server/dist,./server/data,./server/prisma,./server/node_modules,./server/package.json,./server/ecosystem.config.cjs"
+          target: "/home/ubuntu/server"
+          rm: true
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.IP_HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.KEY }}
+          # port: 22
+          script: |
+            cd /home/ubuntu/server/server
+            npm run db:deploy
+            pm2 restart ecosystem.config.cjs

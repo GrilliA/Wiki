@@ -1,16 +1,39 @@
-# Wiki Todo
+# Wiki Todo - 8hr min
 
-## Client
+- [ ] Add docker for development ==WIP==
+  - [x] Create a readme:
+    - [x] Create a structure of the project
+- [ ] Add an email project
+- [ ] public the website,
+      already on eventus domain i already purchased --> Event Diction
+- [ ] Readd logger
+- [ ] Create the Navbar
+- [ ] Create the Footer
+- [ ] Create a Underconstruction page, with only the login and signup button
 
-- [x] Create the client folder
-- [x] Add nextjs
-- [x] use the page router
-- [x] use the mantine ui
+## Authentication pages
 
-## Server
+- [ ] Create the login modal
+- [ ] Create the signup modal
+- [ ] Contact us modal
 
-- [ ] create the server folder
-- [ ] Add expressjs and all the packages in the Gemma project
-- [ ] Add the db postgresql
-- [ ] Add redis (for the auth)
-- [ ] use the folder structure of the Gemma project
+### Onboarding pages
+
+- [ ] Create the verification page
+- [ ] Create the onboarding page
+
+### Forgotten password pages
+
+- [ ] Create the forgot password page
+- [ ] Create the reset password page
+
+### Profile pages
+
+- [ ] Create the profile page
+- [ ] Create the profile form page
+- [ ] Create the change password page
+- [ ] Create the settings page
+
+### Conclusions
+
+- [ ] Add all the needed logic
