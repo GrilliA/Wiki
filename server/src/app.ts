@@ -10,8 +10,6 @@ app.use(
     limit: "50mb",
   }),
 );
-
-app.use();
 app.use(
   cors({
     origin: ["http://localhost:3000"],
