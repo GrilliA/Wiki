@@ -10,7 +10,7 @@ export const SERVER_URL = isProduction ? remoteBackendServerUrl : localBackendSe
 export const CLIENT_URL = isProduction ? remoteFrontendServerUrl : localFrontendServerUrl;
 export const PASSWORD_SALT = 10;
 export const TOKEN_NAME = "wiki-admin-token";
-export const APP_NAME = "Gemma";
+export const APP_NAME = "Event Diction";
 export const MAX_AGE = 1000 * 60 * 60 * 24 * 7; // 7 days
 export enum USER_ROLE {
   SUPER_ADMIN,

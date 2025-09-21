@@ -5,14 +5,6 @@ services:
     command: npm run dev
     volumes:
       - ./client:/web
-    # develop:
-    #   watch:
-    #     - action: sync
-    #       path: ./client
-    #       target: /web
-    #       ignore:
-    #         - node_modules/
-    #
     ports:
       - "3000:3000"
     environment:
@@ -26,20 +18,12 @@ services:
     volumes:
       - ./server:/app
       - ./server/prisma/migrations:/app/prisma/migrations
-    # develop:
-    #   watch:
-    #     - action: sync
-    #       path: ./server
-    #       target: /app
-    #       ignore:
-    #         - node_modules/
     ports:
       - "5000:5000"
     environment:
       - NODE_ENV=${NODE_ENV}
     depends_on:
       - db
-      - redis
 
   db:
     image: postgres:17
@@ -67,12 +51,6 @@ services:
       - db
     volumes:
       - pgadmin-data:/var/lib/pgadmin
-
-  redis:
-    image: redis:7.4
-    env_file: ./.env
-    ports:
-      - "6379:6379"
 
   nginx:
     image: nginx:1.27
