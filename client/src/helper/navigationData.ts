@@ -21,7 +21,9 @@ export const navigationData: TNavigationData = [
   },
   {
     id: "add",
-    icon: "add",
+    icon: "add_circle",
+    href: "/new",
+    size: 32,
   },
   {
     id: "notifications",
@@ -31,6 +33,6 @@ export const navigationData: TNavigationData = [
   {
     id: "profile",
     href: "/profile",
-    icon: "verified_user",
+    icon: "person",
   },
 ];

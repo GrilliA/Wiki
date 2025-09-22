@@ -2,7 +2,7 @@ import { forwardRef, Ref } from "react";
 import { TIconProps } from "./Icon.model";
 
 const Icon = forwardRef((props: TIconProps, ref: Ref<HTMLSpanElement>) => {
-  const { name, isOutlined, className, ...rest } = props;
+  const { name, isOutlined = true, className, ...rest } = props;
   const fill = isOutlined ? "0" : "1";
   return (
     <span

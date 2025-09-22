@@ -1,6 +1,9 @@
 .nav {
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
   border-top: 1px solid var(--mantine-color-default-border);
 }
 
@@ -16,17 +19,13 @@
   flex: 100 0 auto;
   text-decoration: none;
   background-color: transparent;
-  color: #fff;
-  background: var(--mantine-primary-color-6);
-}
-
-.link:not(:last-child) {
-  border-right: 1px solid var(--mantine-primary-color-5);
+  color: var(--mantine-color-default-foreground);
 }
 
 .link:hover,
 .link.active {
-  background: var(--mantine-primary-color-9);
+  color: var(--mantine-primary-color-6);
+  background-color: var(--mantine-color-default-hover);
 }
 
 @media (min-width: 768px) {

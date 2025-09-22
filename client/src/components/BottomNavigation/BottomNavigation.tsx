@@ -16,13 +16,13 @@ const BottomNavigation = () => {
           if (d.href) {
             return (
               <WikiLink key={d.href} href={d.href} className={className}>
-                <WikiIcon name={d.icon} />
+                <WikiIcon isOutlined={!isActive} size={d.size} name={d.icon} />
               </WikiLink>
             );
           }
           return (
             <Box className={className} key={d.id}>
-              <WikiIcon name={d.icon} />;
+              <WikiIcon size={d.size} name={d.icon} />
             </Box>
           );
         })}

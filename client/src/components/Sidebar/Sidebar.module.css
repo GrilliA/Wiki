@@ -2,7 +2,10 @@
   display: none;
   position: fixed;
   left: 0;
-  top: 49px;
+  top: 50px;
+  border: 1px solid var(--mantine-color-default-border);
+  border-radius: 0 0 32px 32px;
+  overflow: hidden;
 }
 
 .items {
@@ -11,31 +14,25 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 }
 
 .item {
-  background: var(--mantine-primary-color-6);
   cursor: pointer;
-}
-
-.item:last-child {
-  border-radius: 0 0 32px 32px;
-}
-
-.item:not(:last-child) {
-  border-bottom: 1px solid var(--mantine-primary-color-5);
+  display: grid;
+  place-items: center;
 }
 
 .item.active,
 .item:hover {
-  background: var(--mantine-primary-color-9);
+  color: var(--mantine-primary-color-6);
+  background-color: var(--mantine-color-default-hover);
 }
 
 .link {
   display: flex;
   padding: var(--mantine-spacing-md) var(--mantine-spacing-sm);
-  color: #fff;
+  color: inherit;
 }
 
 @media (min-width: 768px) {

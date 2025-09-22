@@ -4,6 +4,7 @@ import { TSidebarItemProps } from "./Sidebar.model";
 import Icon from "../Icon/Icon";
 import { useRouter } from "next/router";
 import { WikiLink } from "../Link";
+import { WikiIcon } from "../Icon";
 
 const SidebarItem = (props: TSidebarItemProps) => {
   const { href, handleClick } = props;
@@ -18,7 +19,11 @@ const SidebarItem = (props: TSidebarItemProps) => {
       {href ? (
         <WikiLink href={href || "#"} className={`${styles.link}`}>
           <Box className={styles.icon}>
-            <Icon name={props.icon} size={props.size} />
+            <WikiIcon
+              isOutlined={!isActive}
+              name={props.icon}
+              size={props.size}
+            />
           </Box>
         </WikiLink>
       ) : (
