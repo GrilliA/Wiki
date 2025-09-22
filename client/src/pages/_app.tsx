@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import "material-symbols/outlined.css";
+import "material-symbols";
 import type { AppProps } from "next/app";
 import "@mantine/core/styles.css";
 import { createTheme, MantineProvider } from "@mantine/core";
