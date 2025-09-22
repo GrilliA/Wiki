@@ -5,6 +5,10 @@ import { Button } from "@mantine/core";
 import BottomNavigation from "@/components/BottomNavigation/BottomNavigation";
 import SideBar from "@/components/Sidebar/Sidebar";
 import { WikiNavigation } from "@/components/Navigation";
+import { LoginModal } from "@/templates/Login/LoginModal";
+import useGlobalState from "@/hooks/useGlobalState";
+import { MODAL_OPEN } from "@/store/ui/ui.events";
+import { AppModals } from "@/helper/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +21,15 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
+  const { dispatch } = useGlobalState();
+  const handleLogin = () => {
+    dispatch({
+      type: MODAL_OPEN,
+      payload: {
+        id: AppModals.Login,
+      },
+    });
+  };
   return (
     <>
       <Head>
@@ -32,6 +45,8 @@ export default function Home() {
           <WikiNavigation />
           <BottomNavigation />
           <SideBar />
+          <Button onClick={handleLogin}>Test Login</Button>
+          <LoginModal />
         </main>
       </div>
     </>
