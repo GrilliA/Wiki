@@ -1,4 +1,4 @@
-import { Button, Text } from "@mantine/core";
+import { Button, Group, Text } from "@mantine/core";
 import { TDirection, TFull } from "./Full.model";
 import styles from "./Full.module.css";
 import { forwardRef, isValidElement, RefObject, useState } from "react";
@@ -7,6 +7,8 @@ import { WikiModal } from "../Modal";
 import Icon from "../Icon/Icon";
 import useGlobalState from "@/hooks/useGlobalState";
 import { useRouter } from "next/router";
+import { WikiLogo } from "../Logo";
+import { CopyRight } from "../CopyRight/CopyRight";
 
 const Full = forwardRef((props: TFull, ref: RefObject<HTMLDivElement>) => {
   const { push, back } = useRouter();

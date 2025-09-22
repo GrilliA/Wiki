@@ -7,7 +7,6 @@ const Link = (props: TLinkProps) => {
   const { href: to, children, onClick, className, ...rest } = props;
   return (
     <Anchor
-      unstyled
       component={RouterLink}
       href={to}
       className={`${styles.link} ${className}`}
