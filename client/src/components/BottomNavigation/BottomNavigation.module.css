@@ -1,0 +1,40 @@
+.nav {
+  position: sticky;
+  bottom: 0;
+  border-top: 1px solid var(--mantine-color-default-border);
+}
+
+.wrapper {
+  display: flex;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  flex: 100 0 auto;
+  text-decoration: none;
+  background-color: transparent;
+  color: #fff;
+  background: var(--mantine-primary-color-6);
+}
+
+.link:not(:last-child) {
+  border-right: 1px solid var(--mantine-primary-color-5);
+}
+
+.link:hover,
+.link.active {
+  background: var(--mantine-primary-color-9);
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
+.logo {
+  border: 3px solid var(--mantine-primary-color-4);
+}

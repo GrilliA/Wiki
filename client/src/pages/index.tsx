@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Button } from "@mantine/core";
+import BottomNavigation from "@/components/BottomNavigation/BottomNavigation";
+import SideBar from "@/components/Sidebar/Sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +31,8 @@ export default function Home() {
         <main className={styles.main}>
           text
           <Button>Test Button</Button>
+          <BottomNavigation />
+          <SideBar />
         </main>
       </div>
     </>
