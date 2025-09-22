@@ -2,16 +2,16 @@
 
 ## Initialize app --> 1hr
 
-- [ ] Add docker for development ==WIP==
+- [x] Add docker for development ==WIP==
   - [x] Create a readme:
     - [x] Create a structure of the project
-- [ ] Add an email project
-- [ ] public the website,
-      already on eventus domain i already purchased --> Event Diction
+- [x] Add an email project
 - [ ] Readd logger
 - [ ] Create the Navbar --> Reserved area
 - [ ] Create the Footer --> Reserved area
 - [ ] Create a Underconstruction page, with only the login and signup button
+- [ ] public the website,
+      already on eventus domain i already purchased --> Event Diction
 
 ## Authentication pages --> 1hr
 

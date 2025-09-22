@@ -1,6 +1,6 @@
 services:
   client:
-    env_file: ./.env
+    env_file: ./client/.env
     build: ./client/
     command: npm run dev
     volumes:
@@ -13,7 +13,7 @@ services:
       - server
   server:
     build: ./server
-    env_file: ./.env
+    env_file: ./server/.env
     command: sh -c "npm run db:migrate && npm run dev"
     volumes:
       - ./server:/app
@@ -27,7 +27,7 @@ services:
 
   db:
     image: postgres:17
-    env_file: ./.env
+    env_file: ./server/.env
     environment:
       POSTGRES_USER: ${DATABASE_USER}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
@@ -39,7 +39,7 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
-    env_file: ./.env
+    env_file: ./server/.env
     ports:
       - "5002:5002"
     environment:
