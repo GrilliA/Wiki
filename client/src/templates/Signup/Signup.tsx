@@ -5,6 +5,7 @@ import { AUTH_LOGIN } from "@/store/auth/auth.event";
 import {
   Box,
   Button,
+  Checkbox,
   Flex,
   PasswordInput,
   Stack,
@@ -13,20 +14,20 @@ import {
   Title,
 } from "@mantine/core";
 import { useWikiFetch } from "@/hooks/useFetch";
-import { loginInitialValues, loginValidationSchema } from "./Login.helper";
+import { signupInitialValues, signupValidationSchema } from "./Signup.helper";
 import { useForm } from "@mantine/form";
 import { useRouter } from "next/router";
 import { GoogleButton } from "@/components/GoogleButton.tsx/GoogleButton";
 
-export const Login = (_) => {
+export const Signup = (_) => {
   const { push } = useRouter();
   const { dispatch } = useGlobalState();
   const { getInputProps, onSubmit, errors, values } = useForm({
-    initialValues: loginInitialValues,
-    validate: yupResolver(loginValidationSchema),
+    initialValues: signupInitialValues,
+    validate: yupResolver(signupValidationSchema),
   });
 
-  const { fetch } = useWikiFetch("/auth/login", {
+  const { fetch } = useWikiFetch("/auth/signup", {
     atCommand: true,
     method: "POST",
     body: values,
@@ -44,8 +45,10 @@ export const Login = (_) => {
   return (
     <Stack>
       <Box>
-        <Title order={2}>Welcome Back</Title>
-        <Text c={"dimmed"}>Welcome back, please enter your credentials</Text>
+        <Title order={2}>Hi, register here</Title>
+        <Text c={"dimmed"}>
+          Enter the requested details and be part of the community
+        </Text>
       </Box>
       <form onSubmit={onSubmit(fetch)}>
         <Stack>
@@ -57,36 +60,32 @@ export const Login = (_) => {
             autoComplete="email"
             error={errors.email}
           />
-          <Flex
-            justify="space-between"
-            mt={"xs"}
-            gap={"xs"}
-            direction={"column"}
-          >
-            <PasswordInput
-              {...getInputProps("password")}
-              autoComplete="current-password"
-              error={errors.password}
-              label={"Password"}
-              size="md"
-            />
-            <WikiLink
-              c="dimmed"
-              size="xs"
-              fw={"bold"}
-              href="/auth/forgotten_password"
-            >
-              {"Forgotten password?"}
-            </WikiLink>
-          </Flex>
+          <PasswordInput
+            {...getInputProps("password")}
+            autoComplete="current-password"
+            error={errors.password}
+            label={"Password"}
+            size="md"
+          />
+          <PasswordInput
+            {...getInputProps("confirmPassword")}
+            error={errors.password}
+            label={"Confirm password"}
+            size="md"
+          />
+          <Checkbox
+            {...getInputProps("terms", { type: "checkbox" })}
+            label="I agree to the terms and conditions"
+            size="md"
+          />
         </Stack>
       </form>
       <Stack>
-        <Button>Login</Button>
-        <GoogleButton>Login with google</GoogleButton>
+        <Button>Signup</Button>
+        <GoogleButton>Signup with google</GoogleButton>
       </Stack>
-      <WikiLink c="dimmed" size="xs" fw={"bold"} href="/auth/signup">
-        Are you new? Create an account
+      <WikiLink c="dimmed" size="xs" fw={"bold"} href="/auth/login">
+        You already have an account? Login
       </WikiLink>
     </Stack>
   );

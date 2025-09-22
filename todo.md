@@ -6,8 +6,10 @@
   - [x] Create a readme:
     - [x] Create a structure of the project
 - [x] Add an email project
-- [ ] Readd logger
-- [ ] Create the Navbar --> Reserved area
+- [x] Readd logger
+- [x] Create the Navbar --> Reserved area
+  - [ ] Create the upper nav
+  - [x] Create the sidebar
 - [ ] Create the Footer --> Reserved area
 - [ ] Create a Underconstruction page, with only the login and signup button
 - [ ] public the website,

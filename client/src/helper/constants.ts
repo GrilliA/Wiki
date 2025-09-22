@@ -4,4 +4,6 @@ export const baseUrl =
     : "http://localhost/api";
 export enum AppModals {
   Login,
+  Signup,
+  Contact,
 }

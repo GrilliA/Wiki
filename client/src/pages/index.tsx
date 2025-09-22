@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Button } from "@mantine/core";
 import BottomNavigation from "@/components/BottomNavigation/BottomNavigation";
@@ -9,15 +9,13 @@ import { LoginModal } from "@/templates/Login/LoginModal";
 import useGlobalState from "@/hooks/useGlobalState";
 import { MODAL_OPEN } from "@/store/ui/ui.events";
 import { AppModals } from "@/helper/constants";
+import { SignupModal } from "@/templates/Signup/SignupModal";
+import { ContactModal } from "@/templates/Contact/ContactModal";
 
-const geistSans = Geist({
+const geistSans = Poppins({
+  weight: ["400", "700"],
+  subsets: ["latin"],
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
 });
 
 export default function Home() {
@@ -30,6 +28,22 @@ export default function Home() {
       },
     });
   };
+  const handleSignup = () => {
+    dispatch({
+      type: MODAL_OPEN,
+      payload: {
+        id: AppModals.Signup,
+      },
+    });
+  };
+  const handleContact = () => {
+    dispatch({
+      type: MODAL_OPEN,
+      payload: {
+        id: AppModals.Contact,
+      },
+    });
+  };
   return (
     <>
       <Head>
@@ -38,15 +52,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div
-        className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
-      >
+      <div className={`${styles.page} ${geistSans.variable} `}>
         <main className={styles.main}>
           <WikiNavigation />
           <BottomNavigation />
           <SideBar />
           <Button onClick={handleLogin}>Test Login</Button>
+          <Button onClick={handleSignup}>Test Sign up</Button>
+          <Button onClick={handleContact}>Test Contact</Button>
           <LoginModal />
+          <SignupModal />
+          <ContactModal />
         </main>
       </div>
     </>
