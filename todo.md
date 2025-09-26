@@ -24,18 +24,18 @@
 ### Onboarding pages --> 1hr
 
 - [x] Create the verification page
-- [ ] Create the onboarding page
+- [x] Create the onboarding page
 
 ### Forgotten password pages --> 1hr
 
-- [ ] Create the forgot password page
-- [ ] Create the reset password page
+- [x] Create the forgot password page
+- [x] Create the reset password page
 
 ### Profile pages --> 1hr
 
-- [ ] Create the profile page
+- [x] Create the profile page
 - [ ] Create the profile form page
-- [ ] Create the change password page
+- [x] Create the change password page
 - [ ] Create the settings page
 
 ### Refactor one --> 1hr
