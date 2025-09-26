@@ -60,6 +60,7 @@ export default function Home() {
           </WikiLink>
           <WikiLink href="/auth/reset_password">reset password</WikiLink>
           <WikiLink href="/auth/onboarding">on boarding</WikiLink>
+          <WikiLink href="/profile">Profile page</WikiLink>
         </Stack>
         <LoginModal />
         <SignupModal />
