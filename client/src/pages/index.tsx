@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { Button } from "@mantine/core";
+import { Button, Group, Stack } from "@mantine/core";
 import BottomNavigation from "@/components/BottomNavigation/BottomNavigation";
 import SideBar from "@/components/Sidebar/Sidebar";
 import { WikiNavigation } from "@/components/Navigation";
@@ -11,6 +11,7 @@ import { MODAL_OPEN } from "@/store/ui/ui.events";
 import { AppModals } from "@/helper/constants";
 import { SignupModal } from "@/templates/Signup/SignupModal";
 import { ContactModal } from "@/templates/Contact/ContactModal";
+import { WikiLink } from "@/components/Link";
 
 const geistSans = Poppins({
   weight: ["400", "700"],
@@ -57,9 +58,23 @@ export default function Home() {
           <WikiNavigation />
           <BottomNavigation />
           <SideBar />
-          <Button onClick={handleLogin}>Test Login</Button>
-          <Button onClick={handleSignup}>Test Sign up</Button>
-          <Button onClick={handleContact}>Test Contact</Button>
+          <Stack>
+            <Group>
+              <Button onClick={handleLogin}>Test Login</Button>
+              <Button onClick={handleSignup}>Test Sign up</Button>
+              <Button onClick={handleContact}>Test Contact</Button>
+            </Group>
+            <WikiLink href="/auth/login">Login</WikiLink>
+            <WikiLink href="/auth/signup">Sign up</WikiLink>
+            <WikiLink href="/auth/email_verification">
+              email verification
+            </WikiLink>
+            <WikiLink href="/auth/forgotten_password">
+              forgotten password
+            </WikiLink>
+            <WikiLink href="/auth/reset_password">reset password</WikiLink>
+            <WikiLink href="/auth/onboarding">on boarding</WikiLink>
+          </Stack>
           <LoginModal />
           <SignupModal />
           <ContactModal />
