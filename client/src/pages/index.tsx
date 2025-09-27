@@ -8,6 +8,7 @@ import { SignupModal } from "@/templates/Signup/SignupModal";
 import { ContactModal } from "@/templates/Contact/ContactModal";
 import { WikiLink } from "@/components/Link";
 import { PageTemplate } from "@/components/PageTemplate/PageTemplate";
+import { ChangePasswordModal } from "@/templates/ChangePassword/ChangePasswordModal";
 
 export default function Home() {
   const { dispatch } = useGlobalState();
@@ -35,6 +36,14 @@ export default function Home() {
       },
     });
   };
+  const handleChangePassword = () => {
+    dispatch({
+      type: MODAL_OPEN,
+      payload: {
+        id: AppModals.ChangePassword,
+      },
+    });
+  };
   return (
     <>
       <Head>
@@ -49,6 +58,7 @@ export default function Home() {
             <Button onClick={handleLogin}>Test Login</Button>
             <Button onClick={handleSignup}>Test Sign up</Button>
             <Button onClick={handleContact}>Test Contact</Button>
+            <Button onClick={handleChangePassword}>Test change password</Button>
           </Group>
           <WikiLink href="/auth/login">Login</WikiLink>
           <WikiLink href="/auth/signup">Sign up</WikiLink>
@@ -61,10 +71,12 @@ export default function Home() {
           <WikiLink href="/auth/reset_password">reset password</WikiLink>
           <WikiLink href="/auth/onboarding">on boarding</WikiLink>
           <WikiLink href="/profile">Profile page</WikiLink>
+          <WikiLink href="/settings">Settings page</WikiLink>
         </Stack>
         <LoginModal />
         <SignupModal />
         <ContactModal />
+        <ChangePasswordModal />
       </PageTemplate>
     </>
   );

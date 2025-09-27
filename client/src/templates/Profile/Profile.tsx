@@ -20,11 +20,12 @@ export const Profile = () => {
           <Text size="sm">I am the creator of this page ahahah</Text>
         </Box>
         <Group>
-          <Button variant="outline" leftSection={<Icon name="edit" />}>
+          <Button
+            size="sm"
+            variant="subtle"
+            leftSection={<Icon size={18} name="edit" />}
+          >
             Edit
-          </Button>
-          <Button variant="outline" leftSection={<Icon name="settings" />}>
-            Settings
           </Button>
         </Group>
         <Divider label="Contributions" />
