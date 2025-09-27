@@ -20,7 +20,7 @@ import getImage from "@/helper/getImage";
 
 const avatarKey = null;
 
-export const UserFormForm = (_) => {
+export const UserForm = (_) => {
   const [logo, setLogo] = useState("");
   const { getInputProps, onSubmit, errors, values } = useForm({
     initialValues: userFormInitialValues,

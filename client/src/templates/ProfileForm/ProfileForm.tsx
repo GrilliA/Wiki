@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import getImage from "@/helper/getImage";
 import { WikiFull } from "@/components/Full";
 import { PageTemplate } from "@/components/PageTemplate/PageTemplate";
+import { UserForm } from "@/components/UserForm/UserForm";
 
 const formId = "onboarding-form";
 const avatarKey = null;
@@ -46,8 +47,8 @@ export const ProfileForm = (_) => {
   const logoSrc = logo || getImage(avatarKey);
   return (
     <PageTemplate>
-      <WikiFull title="ProfileForm" right={confirmProps}>
-        this is bad
+      <WikiFull title="Edit Profile" right={confirmProps}>
+        <UserForm />
       </WikiFull>
     </PageTemplate>
   );
