@@ -18,3 +18,10 @@
   height: 100%;
   width: 100%;
 }
+.card {
+  overflow: hidden;
+  height: calc(100vh - calc(var(--mantine-spacing-md) * 4) - 55px - 56px);
+  @media (min-width: $mantine-breakpoint-md) {
+    height: calc(100vh - calc(var(--mantine-spacing-md) * 3) - 55px);
+  }
+}

@@ -11,7 +11,7 @@ export const PageTemplate = (props: TPageTemplateProps) => {
       <section className={styles.container}>
         <WikiSidebar />
         <div className={styles.wrapper}>
-          <Card shadow="xs" h={"100%"}>
+          <Card shadow="xs" className={styles.card}>
             {props.children}
           </Card>
         </div>
