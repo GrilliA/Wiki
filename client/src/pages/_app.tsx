@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import "material-symbols";
 import type { AppProps } from "next/app";
 import "@mantine/core/styles.css";
-import { Container, createTheme, MantineProvider } from "@mantine/core";
+import { Button, Container, createTheme, MantineProvider } from "@mantine/core";
 import { ModalsProvider } from "@mantine/modals";
 import { Provider } from "@/store";
 import { Poppins } from "next/font/google";
@@ -11,12 +11,24 @@ import { ContactModal } from "@/templates/Contact/ContactModal";
 import { LoginModal } from "@/templates/Login/LoginModal";
 import { SignupModal } from "@/templates/Signup/SignupModal";
 
-const theme = createTheme({});
+const theme = createTheme({
+  fontFamily: '"--font-poppins", sans-serif',
+  primaryColor: "violet",
+  defaultRadius: "md",
+  components: {
+    Button: Button.extend({
+      defaultProps: {
+        size: "md",
+        radius: "xl",
+      },
+    }),
+  },
+});
 
 const geistSans = Poppins({
   weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-poppins",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
