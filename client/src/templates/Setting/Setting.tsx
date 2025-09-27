@@ -1,0 +1,62 @@
+import { WikiFull } from "@/components/Full";
+import Icon from "@/components/Icon/Icon";
+import { WikiList, WikiListItem } from "@/components/List";
+import { PageTemplate } from "@/components/PageTemplate/PageTemplate";
+import { AppModals } from "@/helper/constants";
+import useGlobalState from "@/hooks/useGlobalState";
+import { MODAL_OPEN } from "@/store/ui/ui.events";
+import { Button, Group, Stack, Switch, Text } from "@mantine/core";
+
+export const Setting = () => {
+  const { dispatch } = useGlobalState();
+  const handleDeleteAccount = () => {
+    throw new Error("Not implemented yet");
+  };
+  const handleChangePassword = () => {
+    dispatch({
+      type: MODAL_OPEN,
+      payload: {
+        id: AppModals.ChangePassword,
+      },
+    });
+  };
+  return (
+    <PageTemplate>
+      <WikiFull title="Settings">
+        <Stack>
+          <Text c={"dimmed"}>Manage your account settings</Text>
+          <WikiList>
+            <WikiListItem>
+              <Group justify="space-between">
+                <Text fw={"bold"}>Change Password</Text>
+
+                <Button variant="subtle" onClick={handleChangePassword}>
+                  Change password
+                </Button>
+              </Group>
+            </WikiListItem>
+            <WikiListItem>
+              <Group justify="space-between">
+                <Text fw={"bold"}>Toggle dark theme</Text>
+                <Switch />
+              </Group>
+            </WikiListItem>
+            <WikiListItem>
+              <Group justify="space-between">
+                <Text fw={"bold"}>Delete account</Text>
+
+                <Button
+                  variant="subtle"
+                  c={"red"}
+                  onClick={handleDeleteAccount}
+                >
+                  Delete account
+                </Button>
+              </Group>
+            </WikiListItem>
+          </WikiList>
+        </Stack>
+      </WikiFull>
+    </PageTemplate>
+  );
+};

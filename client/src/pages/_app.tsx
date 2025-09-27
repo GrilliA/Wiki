@@ -6,6 +6,10 @@ import { Container, createTheme, MantineProvider } from "@mantine/core";
 import { ModalsProvider } from "@mantine/modals";
 import { Provider } from "@/store";
 import { Poppins } from "next/font/google";
+import { ChangePasswordModal } from "@/templates/ChangePassword/ChangePasswordModal";
+import { ContactModal } from "@/templates/Contact/ContactModal";
+import { LoginModal } from "@/templates/Login/LoginModal";
+import { SignupModal } from "@/templates/Signup/SignupModal";
 
 const theme = createTheme({});
 
@@ -23,6 +27,10 @@ export default function App({ Component, pageProps }: AppProps) {
           <Container h={"100%"} className={`${geistSans.variable}`}>
             <Component {...pageProps} />
           </Container>
+          <LoginModal />
+          <SignupModal />
+          <ContactModal />
+          <ChangePasswordModal />
         </Provider>
       </ModalsProvider>
     </MantineProvider>

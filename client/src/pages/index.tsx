@@ -1,14 +1,10 @@
 import Head from "next/head";
 import { Button, Group, Stack } from "@mantine/core";
-import { LoginModal } from "@/templates/Login/LoginModal";
 import useGlobalState from "@/hooks/useGlobalState";
 import { MODAL_OPEN } from "@/store/ui/ui.events";
 import { AppModals } from "@/helper/constants";
-import { SignupModal } from "@/templates/Signup/SignupModal";
-import { ContactModal } from "@/templates/Contact/ContactModal";
 import { WikiLink } from "@/components/Link";
 import { PageTemplate } from "@/components/PageTemplate/PageTemplate";
-import { ChangePasswordModal } from "@/templates/ChangePassword/ChangePasswordModal";
 
 export default function Home() {
   const { dispatch } = useGlobalState();
@@ -71,12 +67,9 @@ export default function Home() {
           <WikiLink href="/auth/reset_password">reset password</WikiLink>
           <WikiLink href="/auth/onboarding">on boarding</WikiLink>
           <WikiLink href="/profile">Profile page</WikiLink>
-          <WikiLink href="/settings">Settings page</WikiLink>
+          <WikiLink href="/profile/edit">Profile edit page</WikiLink>
+          <WikiLink href="/profile/settings">Settings page</WikiLink>
         </Stack>
-        <LoginModal />
-        <SignupModal />
-        <ContactModal />
-        <ChangePasswordModal />
       </PageTemplate>
     </>
   );
