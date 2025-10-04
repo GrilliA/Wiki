@@ -1,11 +1,9 @@
 .nav {
   display: none;
-  position: absolute;
-  left: 0;
-  top: 50px;
-  border: 1px solid var(--mantine-color-default-border);
-  border-radius: 0 0 32px 32px;
+  box-shadow: var(--mantine-shadow-xs);
+  border-radius: var(--mantine-radius-md);
   overflow: hidden;
+  background-color: var(--mantine-color-dark-6);
 }
 
 .items {

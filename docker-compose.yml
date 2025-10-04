@@ -1,16 +1,16 @@
 services:
-  client:
-    env_file: ./client/.env
-    build: ./client/
-    command: npm run dev
-    volumes:
-      - ./client:/web
-    ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=${NODE_ENV}
-    depends_on:
-      - server
+  # client:
+  #   env_file: ./client/.env
+  #   build: ./client/
+  #   command: npm run dev
+  #   volumes:
+  #     - ./client:/web
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - NODE_ENV=${NODE_ENV}
+  #   depends_on:
+  #     - server
   server:
     build: ./server
     env_file: ./server/.env
@@ -60,7 +60,7 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - server
-      - client
+      # - client
 
 volumes:
   pgdata:

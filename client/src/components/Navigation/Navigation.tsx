@@ -7,15 +7,8 @@ const Navigation = () => {
   return (
     <>
       <nav className={`${styles.nav}`}>
-        <Container>
-          <div className={`${styles.wrapper}`}>
-            <div className={styles["nav-start"]}>
-              <WikiLogo className={styles.logo} />
-              <Divider className={styles.divider} orientation="vertical" />
-            </div>
-            <NavigationMenu />
-          </div>
-        </Container>
+        <WikiLogo className={styles.logo} />
+        <NavigationMenu />
       </nav>
     </>
   );

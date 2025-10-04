@@ -7,4 +7,5 @@ export enum AppModals {
   Login,
   Signup,
   Contact,
+  ChangePassword,
 }
