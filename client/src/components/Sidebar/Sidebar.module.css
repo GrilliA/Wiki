@@ -1,6 +1,6 @@
 .nav {
   display: none;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 50px;
   border: 1px solid var(--mantine-color-default-border);

@@ -6,12 +6,10 @@ import style from "./AuthPageTemplate.module.css";
 import { ReactNode } from "react";
 
 export const AuthPageTemplate = ({ children }: { children: ReactNode }) => {
-  // const { push } = useRouter();
   useWikiFetch<string, any>("/auth/current", {
     noError: true,
     onSuccess: () => {
       //TODO: remove comments
-      // push("/");
     },
   });
   return (
