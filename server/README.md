@@ -1,38 +1,61 @@
-# Wiki Dance - Event Diction
+# 🚀 Getting started with Strapi
 
-## Structure
+Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
-### Helper Folder
+### `develop`
 
-- Error Messages --> errors.ts
-  It contains predefined error messages that can be used for consistent error handling across the application.
-- Event Types --> events.ts
-  It defines various event types that the application may handle or process.
-- Constants --> constants.ts
-  It contains constant values used throughout the application,
-  such as configuration settings, error messages, or other static data.
+Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
-### App Folder
+```
+npm run develop
+# or
+yarn develop
+```
 
-- Routes --> \*\*.route.ts
-  It contains the routes of the application,
-  defining the endpoints and associating them with the corresponding controllers.
-- Validators --> \*\*.validator.ts
-  It contains the validation logic for incoming requests,
-  ensuring that the data meets the required criteria before being processed.
-- Mappers--> \*\*.mapper.ts
-  It contains the mapping logic to transform data between different layers of the application,
-  such as converting database entities to DTOs (Data Transfer Objects) and vice versa.
-- Controllers --> \*\*.controller.ts
-  It contains the controller logic that handles incoming requests,
-  interacts with services, and returns appropriate responses.
-- Models --> \*\*.model.ts
-  It contains the data models or schemas that define the structure of the data used in the application,
-  often corresponding to database tables or collections.
-- Services --> \*\*.service.ts
-  It contains the business logic of the application,
-  encapsulating operations and interactions with data sources.
+### `start`
 
-### Email Folder --> \*\*.mail.ts
+Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
 
-- Contains a function that returns a string of the email content
+```
+npm run start
+# or
+yarn start
+```
+
+### `build`
+
+Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+
+```
+npm run build
+# or
+yarn build
+```
+
+## ⚙️ Deployment
+
+Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+
+```
+yarn strapi deploy
+```
+
+## 📚 Learn more
+
+- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
+- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
+- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
+- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
+- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+
+Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+
+## ✨ Community
+
+- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
+- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
+- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+
+---
+
+<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>

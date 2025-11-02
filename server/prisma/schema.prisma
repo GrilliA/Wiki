@@ -1,9 +1,0 @@
-generator client {
-  provider = "prisma-client"
-  output   = "../../dbModel"
-}
-
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}

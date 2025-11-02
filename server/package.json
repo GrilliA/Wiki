@@ -1,52 +1,44 @@
 {
-  "name": "gemma_server",
-  "version": "1.0.0",
-  "description": "",
+  "name": "serve",
+  "version": "0.1.0",
   "private": true,
+  "description": "A Strapi application",
   "scripts": {
-    "dev": "nodemon src/server.ts",
-    "email:dev": "email dev --dir=./src/emails --port=3005",
-    "db:migrate": "prisma migrate dev",
-    "db:deploy": "prisma migrate deploy",
-    "build": "npm ci && tsc -p ./tsconfig.json",
-    "serve": "node ./dist/server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/bcryptjs": "^2.4.6",
-    "@types/cookie-parser": "^1.4.3",
-    "@types/cors": "^2.8.13",
-    "@types/express-session": "^1.18.0",
-    "@types/morgan": "^1.9.9",
-    "@types/multer": "^1.4.11",
-    "@types/node": "^20.11.7",
-    "@types/nodemailer": "^6.4.14",
-    "dotenv": "^16.0.3",
-    "nodemon": "^3.0.2",
-    "prisma": "^6.0.0",
-    "ts-jest": "^29.1.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "seed:example": "node ./scripts/seed.js",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.481.0",
-    "@prisma/client": "^6.0.0",
-    "@usewaypoint/email-builder": "^0.0.8",
-    "bcryptjs": "^2.4.3",
-    "connect-redis": "^7.1.1",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "express": "^5.0.1",
-    "express-session": "^1.18.0",
-    "googleapis": "^144.0.0",
-    "morgan": "^1.10.0",
-    "multer": "^1.4.5-lts.1",
-    "nodemailer": "^6.9.7",
-    "pg": "^8.11.0",
-    "react-email": "^3.0.2",
-    "winston": "^3.11.0",
-    "yup": "^1.6.1"
+    "@strapi/plugin-cloud": "5.29.0",
+    "@strapi/plugin-users-permissions": "5.29.0",
+    "@strapi/strapi": "5.29.0",
+    "fs-extra": "^10.0.0",
+    "mime-types": "^2.1.27",
+    "pg": "8.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "f456dd4c-dcff-4a36-9f13-82a8c44fd02b",
+    "installId": "e148f10f8f511f677385ea56850574157aeed9df2da574cc72ea1933a7ae5a09"
   }
 }
