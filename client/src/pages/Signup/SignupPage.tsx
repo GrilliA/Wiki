@@ -1,6 +1,6 @@
-import { AuthPageTemplate } from "@/components/AuthPageTemplate/AuthPageTemplate";
-import { Signup } from "@/templates/Signup/Signup";
 import { Paper } from "@mantine/core";
+import { AuthPageTemplate } from "../../components/AuthPageTemplate/AuthPageTemplate";
+import { Signup } from "./Signup";
 
 const SignupPage = () => {
   return (

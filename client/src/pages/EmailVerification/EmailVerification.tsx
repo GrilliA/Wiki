@@ -1,5 +1,5 @@
-import { AuthPageTemplate } from "@/components/AuthPageTemplate/AuthPageTemplate";
-import { Box, Button, Group, Stack, Text, Title } from "@mantine/core";
+import { Button, Group, Stack, Text, Title } from "@mantine/core";
+import { AuthPageTemplate } from "../../components/AuthPageTemplate/AuthPageTemplate";
 
 const EmailVerification = () => {
   return (
