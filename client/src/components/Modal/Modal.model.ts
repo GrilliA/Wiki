@@ -1,5 +1,5 @@
-import { ModalRootProps } from "@mantine/core";
-import { ReactNode, MouseEventHandler } from "react";
+import type { ModalRootProps } from "@mantine/core";
+import type { ReactNode, MouseEventHandler } from "react";
 
 export interface TModalProps extends ModalRootProps {
   title?: ReactNode;

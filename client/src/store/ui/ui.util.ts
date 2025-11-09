@@ -1,4 +1,4 @@
-import { UiModel } from "./ui.model";
+import type { UiModel } from "./ui.model";
 
 export const uiDefaultValues: UiModel = {
   modals: {},

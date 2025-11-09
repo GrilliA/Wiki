@@ -1,4 +1,4 @@
-import { AuthModel } from "./auth.model";
+import type { AuthModel } from "./auth.model";
 
 export const authDefaultValues: AuthModel = {
   currentUser: undefined,

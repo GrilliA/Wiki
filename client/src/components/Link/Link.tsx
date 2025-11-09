@@ -1,16 +1,15 @@
-import RouterLink from "next/link";
-import { TLinkProps } from "./Link.model";
 import styles from "./Link.module.css";
 import { Anchor } from "@mantine/core";
+import { Link as Linke } from "react-router-dom";
+import type { TLinkProps } from "./Link.model";
 
 const Link = (props: TLinkProps) => {
-  const { href: to, children, onClick, className, ...rest } = props;
+  const { href: to, children, onClick, className } = props;
   return (
     <Anchor
-      component={RouterLink}
+      component={Linke}
       href={to}
       className={`${styles.link} ${className}`}
-      {...rest}
     >
       {children}
     </Anchor>

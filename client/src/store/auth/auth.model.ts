@@ -1,7 +1,5 @@
-import IUserData from "@/models/user.model";
-
 export type AuthModel = {
-  currentUser: IUserData;
+  currentUser: any;
   gemmaState: {
     isAppInit: boolean;
   };

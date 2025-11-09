@@ -1,5 +1,5 @@
+import type { TModalProps } from "./Modal.model";
 import styles from "./Modal.module.css";
-import { TModalProps } from "./Modal.model";
 import { Button, Divider, Modal, ScrollArea, Text } from "@mantine/core";
 
 const WikiModal = ({

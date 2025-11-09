@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { initialState } from "./initialState";
-import { Action } from "./stateModel";
+import type { Action } from "./stateModel";
 
 const GlobalContext = createContext({
   state: initialState,

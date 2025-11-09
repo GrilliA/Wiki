@@ -1,5 +1,5 @@
-import { MaterialSymbol } from "material-symbols";
-import { HtmlHTMLAttributes } from "react";
+import type { MaterialSymbol } from "material-symbols";
+import type { HtmlHTMLAttributes } from "react";
 
 export type TIconProps = {
   name: MaterialSymbol;

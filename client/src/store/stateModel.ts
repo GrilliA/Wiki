@@ -1,5 +1,5 @@
-import { AuthModel } from "./auth/auth.model";
-import { UiModel } from "./ui/ui.model";
+import type { AuthModel } from "./auth/auth.model";
+import type { UiModel } from "./ui/ui.model";
 
 export type RootState = {
   ui: UiModel;

@@ -1,10 +1,10 @@
-import useGlobalState from "@/hooks/useGlobalState";
-import { REMOVE_ERROR } from "@/store/ui/ui.events";
-import { ErrorModalProps } from "./Error.model";
 import { Group, Stack, Text } from "@mantine/core";
 import { WikiModal } from "../Modal";
-import getFormattedText from "@/helper/getFormattedText";
 import Icon from "../Icon/Icon";
+import useGlobalState from "../../hooks/useGlobalState";
+import { REMOVE_ERROR } from "../../store/ui/ui.events";
+import type { ErrorModalProps } from "./Error.model";
+import getFormattedText from "../../helper/getFormattedText";
 
 export const ErrorModal = (props: ErrorModalProps) => {
   const { state, dispatch } = useGlobalState();

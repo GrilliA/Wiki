@@ -1,8 +1,8 @@
 import styles from "./Logo.module.css";
 import { WikiLink } from "../Link";
-import { TLogoProps as TLogoProps } from "./Logo.model";
 import { sizes } from "./Logo.utils";
 import { Image } from "@mantine/core";
+import type { TLogoProps } from "./Logo.model";
 
 const Logo = (props: TLogoProps) => {
   const { className, size = "md" } = props;

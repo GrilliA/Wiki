@@ -1,5 +1,5 @@
-import { forwardRef, Ref } from "react";
-import { TIconProps } from "./Icon.model";
+import { forwardRef, type Ref } from "react";
+import type { TIconProps } from "./Icon.model";
 
 const Icon = forwardRef((props: TIconProps, ref: Ref<HTMLSpanElement>) => {
   const { name, isOutlined = true, className, ...rest } = props;
