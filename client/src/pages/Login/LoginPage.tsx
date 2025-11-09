@@ -1,6 +1,6 @@
-import { AuthPageTemplate } from "@/components/AuthPageTemplate/AuthPageTemplate";
-import { Login } from "@/templates/Login/Login";
 import { Paper } from "@mantine/core";
+import { AuthPageTemplate } from "../../components/AuthPageTemplate/AuthPageTemplate";
+import { Login } from "./Login";
 
 const LoginPage = () => {
   return (

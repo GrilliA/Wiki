@@ -1,7 +1,7 @@
-import { baseUrl } from "@/helper/constants";
-import { ADD_ERROR, SET_LOADER, UNSET_LOADER } from "@/store/ui/ui.events";
 import { useEffect, useId, useState } from "react";
 import useGlobalState from "./useGlobalState";
+import { API_TOKEN, baseUrl } from "../helper/constants";
+import { SET_LOADER, ADD_ERROR, UNSET_LOADER } from "../store/ui/ui.events";
 type TResponse<T> = {
   data: T;
   message: string;
@@ -69,7 +69,9 @@ export const useWikiFetch = <T, K>(
           credentials: "include",
           headers: header ?? {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${API_TOKEN}`,
           },
+
           ...fetchOptions,
         });
         const result = await res.json();

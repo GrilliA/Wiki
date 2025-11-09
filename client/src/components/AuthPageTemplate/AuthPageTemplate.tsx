@@ -1,9 +1,9 @@
 import { PageComponent } from "../PageComponent/PageComponent";
-import Navigation from "../Navigation/Navigation";
 import Footer from "../Footer/Footer";
-import { useWikiFetch } from "@/hooks/useFetch";
 import style from "./AuthPageTemplate.module.css";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
+import { useWikiFetch } from "../../hooks/useFetch";
+import { WikiNavigation } from "../Navigation";
 
 export const AuthPageTemplate = ({ children }: { children: ReactNode }) => {
   useWikiFetch<string, any>("/auth/current", {
@@ -14,7 +14,7 @@ export const AuthPageTemplate = ({ children }: { children: ReactNode }) => {
   });
   return (
     <>
-      <Navigation />
+      <WikiNavigation />
       <PageComponent withPadding>
         <section className={style.wrapper}>{children}</section>
       </PageComponent>

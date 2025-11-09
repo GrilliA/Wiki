@@ -1,10 +1,10 @@
 import styles from "./Sidebar.module.css";
 import { Box } from "@mantine/core";
-import { TSidebarItemProps } from "./Sidebar.model";
 import Icon from "../Icon/Icon";
-import { useRouter } from "next/router";
 import { WikiLink } from "../Link";
 import { WikiIcon } from "../Icon";
+import { useRouter } from "../../hooks/useRouter";
+import type { TSidebarItemProps } from "./Sidebar.model";
 
 const SidebarItem = (props: TSidebarItemProps) => {
   const { href, handleClick } = props;

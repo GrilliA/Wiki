@@ -1,8 +1,8 @@
-import { WikiModal } from "@/components/Modal";
+import { WikiModal } from "../../components/Modal";
+import { AppModals } from "../../helper/constants";
+import useGlobalState from "../../hooks/useGlobalState";
+import { MODAL_CLOSE } from "../../store/ui/ui.events";
 import { Signup } from "./Signup";
-import useGlobalState from "@/hooks/useGlobalState";
-import { MODAL_CLOSE } from "@/store/ui/ui.events";
-import { AppModals } from "@/helper/constants";
 
 export const SignupModal = () => {
   const { state, dispatch } = useGlobalState();

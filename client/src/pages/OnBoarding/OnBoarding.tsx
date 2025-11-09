@@ -1,33 +1,12 @@
-import { yupResolver } from "mantine-form-yup-resolver";
-import { useWikiFetch } from "@/hooks/useFetch";
 import styles from "./OnBoarding.module.css";
-import { useForm } from "@mantine/form";
-import { IMAGE_MIME_TYPE } from "@mantine/dropzone";
-import { TDirection } from "@/components/Full/Full.model";
-import {
-  onBoardingInitialValues,
-  onBoardingValidationSchema,
-} from "./OnBoarding.helper";
-import useGlobalState from "@/hooks/useGlobalState";
-import {
-  Avatar,
-  Button,
-  Divider,
-  FileButton,
-  Group,
-  Stack,
-  Text,
-  Textarea,
-  TextInput,
-} from "@mantine/core";
-import { useEffect, useState } from "react";
-import getImage from "@/helper/getImage";
-import { PageComponent } from "@/components/PageComponent/PageComponent";
-import { WikiFull } from "@/components/Full";
-import { CopyRight } from "@/components/CopyRight/CopyRight";
-import { WikiLogo } from "@/components/Logo";
-import { WikiLink } from "@/components/Link";
-import { UserForm } from "@/components/UserForm/UserForm";
+import type { TDirection } from "../../components/Full/Full.model";
+import { Stack, Divider, Group } from "@mantine/core";
+import { CopyRight } from "../../components/CopyRight/CopyRight";
+import { WikiFull } from "../../components/Full";
+import { WikiLink } from "../../components/Link";
+import { WikiLogo } from "../../components/Logo";
+import { PageComponent } from "../../components/PageComponent/PageComponent";
+import { UserForm } from "../../components/UserForm/UserForm";
 
 const formId = "onboarding-form";
 const avatarKey = null;

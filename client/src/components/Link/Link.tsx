@@ -6,11 +6,7 @@ import type { TLinkProps } from "./Link.model";
 const Link = (props: TLinkProps) => {
   const { href: to, children, onClick, className } = props;
   return (
-    <Anchor
-      component={Linke}
-      href={to}
-      className={`${styles.link} ${className}`}
-    >
+    <Anchor component={Linke} to={to} className={`${styles.link} ${className}`}>
       {children}
     </Anchor>
   );

@@ -21,15 +21,20 @@ import { AUTH_LOGIN } from "../../store/auth/auth.event";
 export const Signup = (_) => {
   const { push } = useRouter();
   const { dispatch } = useGlobalState();
-  const { getInputProps, onSubmit, errors, values } = useForm({
+  const {
+    getInputProps,
+    onSubmit,
+    errors,
+    values: { terms, confirmPassword, ...formData },
+  } = useForm({
     initialValues: signupInitialValues,
     validate: yupResolver(signupValidationSchema),
   });
 
-  const { fetch } = useWikiFetch("/auth/signup", {
+  const { fetch } = useWikiFetch("/auth/local/register", {
     atCommand: true,
     method: "POST",
-    body: values,
+    body: formData,
     hasLoader: true,
     onSuccess(response) {
       const user = response.data;
@@ -49,7 +54,7 @@ export const Signup = (_) => {
           Enter the requested details and be part of the community
         </Text>
       </Box>
-      <form onSubmit={onSubmit(fetch)}>
+      <form onSubmit={onSubmit(fetch)} id="signup">
         <Stack>
           <TextInput
             {...getInputProps("email")}
@@ -57,18 +62,20 @@ export const Signup = (_) => {
             type="email"
             size="md"
             autoComplete="email"
-            error={errors.email}
+          />
+          <TextInput
+            {...getInputProps("username")}
+            label={"Username"}
+            size="md"
           />
           <PasswordInput
             {...getInputProps("password")}
             autoComplete="current-password"
-            error={errors.password}
             label={"Password"}
             size="md"
           />
           <PasswordInput
             {...getInputProps("confirmPassword")}
-            error={errors.password}
             label={"Confirm password"}
             size="md"
           />
@@ -80,7 +87,9 @@ export const Signup = (_) => {
         </Stack>
       </form>
       <Stack>
-        <Button>Signup</Button>
+        <Button form="signup" type="submit">
+          Signup
+        </Button>
         <GoogleButton>Signup with google</GoogleButton>
       </Stack>
       <WikiLink c="dimmed" size="xs" fw={"bold"} href="/auth/login">

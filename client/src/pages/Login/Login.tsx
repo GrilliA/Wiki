@@ -1,7 +1,4 @@
-import { WikiLink } from "@/components/Link";
 import { yupResolver } from "mantine-form-yup-resolver";
-import useGlobalState from "@/hooks/useGlobalState";
-import { AUTH_LOGIN } from "@/store/auth/auth.event";
 import {
   Box,
   Button,
@@ -12,11 +9,14 @@ import {
   TextInput,
   Title,
 } from "@mantine/core";
-import { useWikiFetch } from "@/hooks/useFetch";
 import { loginInitialValues, loginValidationSchema } from "./Login.helper";
 import { useForm } from "@mantine/form";
-import { useRouter } from "next/router";
-import { GoogleButton } from "@/components/GoogleButton.tsx/GoogleButton";
+import { WikiLink } from "../../components/Link";
+import { useWikiFetch } from "../../hooks/useFetch";
+import useGlobalState from "../../hooks/useGlobalState";
+import { useRouter } from "../../hooks/useRouter";
+import { AUTH_LOGIN } from "../../store/auth/auth.event";
+import { GoogleButton } from "../../components/GoogleButton.tsx/GoogleButton";
 
 export const Login = (_) => {
   const { push } = useRouter();

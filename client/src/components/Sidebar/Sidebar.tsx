@@ -1,7 +1,7 @@
 import SidebarItem from "./SidebarItem";
 import styles from "./Sidebar.module.css";
-import { TSidebarProps } from "./Sidebar.model";
-import { navigationData } from "@/helper/navigationData";
+import { navigationData } from "../../helper/navigationData";
+import type { TSidebarProps } from "./Sidebar.model";
 
 const SideBar = (_: TSidebarProps) => {
   return (

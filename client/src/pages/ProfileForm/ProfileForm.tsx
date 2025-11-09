@@ -1,16 +1,16 @@
 import { yupResolver } from "mantine-form-yup-resolver";
-import { useWikiFetch } from "@/hooks/useFetch";
 import { useForm } from "@mantine/form";
-import { TDirection } from "@/components/Full/Full.model";
 import {
   profileFormInitialValues,
   profileFormValidationSchema,
 } from "./ProfileForm.helper";
 import { useEffect, useState } from "react";
-import getImage from "@/helper/getImage";
-import { WikiFull } from "@/components/Full";
-import { PageTemplate } from "@/components/PageTemplate/PageTemplate";
-import { UserForm } from "@/components/UserForm/UserForm";
+import { WikiFull } from "../../components/Full";
+import type { TDirection } from "../../components/Full/Full.model";
+import { PageTemplate } from "../../components/PageTemplate/PageTemplate";
+import { UserForm } from "../../components/UserForm/UserForm";
+import getImage from "../../helper/getImage";
+import { useWikiFetch } from "../../hooks/useFetch";
 
 const formId = "onboarding-form";
 const avatarKey = null;

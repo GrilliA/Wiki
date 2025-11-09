@@ -1,6 +1,5 @@
 import { WikiLogo } from "../Logo";
 import styles from "./Navigation.module.css";
-import { Container, Divider } from "@mantine/core";
 import NavigationMenu from "./NavigationMenu";
 
 const Navigation = () => {

@@ -1,9 +1,9 @@
 import styles from "./BottomNavigation.module.css";
 import { WikiLink } from "../Link";
-import { navigationData } from "@/helper/navigationData";
 import { WikiIcon } from "../Icon";
-import { useRouter } from "next/router";
 import { Box } from "@mantine/core";
+import { navigationData } from "../../helper/navigationData";
+import { useRouter } from "../../hooks/useRouter";
 
 const BottomNavigation = () => {
   const pathname = useRouter().pathname;

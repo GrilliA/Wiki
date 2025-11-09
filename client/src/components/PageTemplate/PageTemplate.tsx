@@ -2,8 +2,8 @@ import { Card } from "@mantine/core";
 import { WikiBottomNavigation } from "../BottomNavigation";
 import { WikiNavigation } from "../Navigation";
 import { WikiSidebar } from "../Sidebar";
-import { TPageTemplateProps } from "./PageTemplate.model";
 import styles from "./PageTemplate.module.css";
+import type { TPageTemplateProps } from "./PageTemplate.model";
 export const PageTemplate = (props: TPageTemplateProps) => {
   return (
     <div className={styles.template}>

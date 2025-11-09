@@ -1,4 +1,4 @@
-import { MaterialSymbol } from "material-symbols";
+import type { MaterialSymbol } from "material-symbols";
 
 type TNavigationData = {
   id: string;
