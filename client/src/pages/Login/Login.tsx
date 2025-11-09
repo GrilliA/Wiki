@@ -26,7 +26,7 @@ export const Login = (_) => {
     validate: yupResolver(loginValidationSchema),
   });
 
-  const { fetch } = useWikiFetch("/auth/login", {
+  const { fetch } = useWikiFetch("/auth/local", {
     atCommand: true,
     method: "POST",
     body: values,
@@ -47,15 +47,12 @@ export const Login = (_) => {
         <Title order={2}>Welcome Back</Title>
         <Text c={"dimmed"}>Welcome back, please enter your credentials</Text>
       </Box>
-      <form onSubmit={onSubmit(fetch)}>
+      <form onSubmit={onSubmit(fetch)} id="login">
         <Stack>
           <TextInput
-            {...getInputProps("email")}
-            label={"Email"}
-            type="email"
+            {...getInputProps("identifier")}
+            label={"Email or Username"}
             size="md"
-            autoComplete="email"
-            error={errors.email}
           />
           <Flex
             justify="space-between"
@@ -82,7 +79,9 @@ export const Login = (_) => {
         </Stack>
       </form>
       <Stack>
-        <Button>Login</Button>
+        <Button form="login" type="submit">
+          Login
+        </Button>
         <GoogleButton>Login with google</GoogleButton>
       </Stack>
       <WikiLink c="dimmed" size="xs" fw={"bold"} href="/auth/signup">

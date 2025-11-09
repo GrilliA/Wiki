@@ -1,11 +1,11 @@
 import * as Yup from "yup";
 
 export const loginInitialValues = {
-  email: "",
+  identifier: "",
   password: "",
 };
 
 export const loginValidationSchema = Yup.object({
-  email: Yup.string().email().required(),
+  identifier: Yup.string(),
   password: Yup.string().required(),
 });
