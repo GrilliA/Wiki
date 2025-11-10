@@ -3,7 +3,7 @@
   box-shadow: var(--mantine-shadow-xs);
   border-radius: var(--mantine-radius-md);
   overflow: hidden;
-  background-color: var(--wiki-surface-color);
+  background-color: var(--mantine-color-dark-6);
 }
 
 .items {

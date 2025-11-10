@@ -15,7 +15,7 @@
   grid-template-columns: repeat(3, auto);
   justify-content: space-between;
   align-items: center;
-  padding-bottom: var(--mantine-spacing-xs);
+  padding: var(--mantine-spacing-xs) 0;
   border-bottom: 1px solid var(--mantine-color-default-border);
 }
 

@@ -1,5 +1,7 @@
 import { yupResolver } from "mantine-form-yup-resolver";
-import { useWikiFetch } from "@/hooks/useFetch";
+import { useEditor } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import { RichTextEditor } from "@mantine/tiptap";
 import styles from "./UserForm.module.css";
 import { useForm } from "@mantine/form";
 import { IMAGE_MIME_TYPE } from "@mantine/dropzone";
@@ -11,12 +13,15 @@ import {
   Avatar,
   Button,
   FileButton,
+  InputLabel,
+  MultiSelect,
   Stack,
-  Textarea,
   TextInput,
 } from "@mantine/core";
 import { useEffect, useState } from "react";
-import getImage from "@/helper/getImage";
+import getImage from "../../helper/getImage";
+import { useRouter } from "../../hooks/useRouter";
+import { useWikiFetch } from "../../hooks/useFetch";
 
 const avatarKey = null;
 
@@ -26,7 +31,7 @@ export const UserForm = (_) => {
     initialValues: userFormInitialValues,
     validate: yupResolver(userFormValidationSchema),
   });
-
+  const { push } = useRouter();
   const { fetch } = useWikiFetch("/profile", {
     method: "POST",
     atCommand: true,
@@ -46,8 +51,20 @@ export const UserForm = (_) => {
     );
   }, [(values.avatar as File)?.lastModified]);
   const logoSrc = logo || getImage(avatarKey);
+  const handleSubmit = () => {
+    //onSubmit(fetch)
+    push("/profile");
+  };
+  const [content, setContent] = useState("");
+  const editor = useEditor({
+    extensions: [StarterKit],
+    content,
+    onUpdate: ({ editor }) => {
+      setContent(editor.getHTML());
+    },
+  });
   return (
-    <form onSubmit={onSubmit(fetch)}>
+    <form onSubmit={handleSubmit} id="onboarding-form">
       <Stack>
         <FileButton
           {...getInputProps("avatar")}
@@ -77,25 +94,51 @@ export const UserForm = (_) => {
         </FileButton>
         <TextInput
           {...getInputProps("firstName")}
-          label={"First name"}
+          label={"What is your first name?"}
           size="md"
         />
         <TextInput
           {...getInputProps("lastName")}
-          label={"Last name"}
+          label={"What is your last name?"}
           size="md"
         />
         <TextInput
-          {...getInputProps("username")}
-          label={"Username"}
+          {...getInputProps("artistName")}
+          label={"What is your artist name?"}
           size="md"
         />
-        <Textarea
-          {...getInputProps("message")}
-          label={"Message"}
+        <MultiSelect
+          data={["dj", "dancer", "choreographer", "teacher"]}
+          label={"What is your profession on the dance community?"}
+          {...getInputProps("job")}
           size="md"
-          rows={5}
         />
+        <MultiSelect
+          data={["hip hop", "breaking", "popping", "locking", "house"]}
+          label={"What is your prefered genre?"}
+          {...getInputProps("genre")}
+          size="md"
+        />
+        <div>
+          <InputLabel size="md">Tell us about your self</InputLabel>
+          <RichTextEditor editor={editor} variant="subtle">
+            <RichTextEditor.Toolbar
+              sticky
+              stickyOffset="var(--docs-header-height)"
+            >
+              <RichTextEditor.ControlsGroup>
+                <RichTextEditor.Bold />
+                <RichTextEditor.Italic />
+                <RichTextEditor.Underline />
+                <RichTextEditor.Strikethrough />
+                <RichTextEditor.ClearFormatting />
+                <RichTextEditor.Code />
+              </RichTextEditor.ControlsGroup>
+            </RichTextEditor.Toolbar>
+
+            <RichTextEditor.Content />
+          </RichTextEditor>
+        </div>
       </Stack>
     </form>
   );

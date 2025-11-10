@@ -40,14 +40,17 @@ export const Login = (_) => {
       push("/");
     },
   });
-
+  const handleSubmit = () => {
+    //onSubmit(fetch)
+    push("/auth/onboarding");
+  };
   return (
     <Stack>
       <Box>
         <Title order={2}>Welcome Back</Title>
         <Text c={"dimmed"}>Welcome back, please enter your credentials</Text>
       </Box>
-      <form onSubmit={onSubmit(fetch)} id="login">
+      <form onSubmit={handleSubmit} id="login">
         <Stack>
           <TextInput
             {...getInputProps("identifier")}

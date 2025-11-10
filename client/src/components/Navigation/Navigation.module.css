@@ -1,6 +1,6 @@
 .nav {
   box-shadow: var(--mantine-shadow-xs);
-  background-color: var(--wiki-surface-color);
+  background-color: var(--mantine-color-dark-6);
   width: 100%;
   border-radius: var(--mantine-radius-md);
   padding: var(--mantine-spacing-sm);
