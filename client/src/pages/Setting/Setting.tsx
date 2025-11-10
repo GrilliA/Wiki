@@ -1,11 +1,10 @@
-import { WikiFull } from "@/components/Full";
-import Icon from "@/components/Icon/Icon";
-import { WikiList, WikiListItem } from "@/components/List";
-import { PageTemplate } from "@/components/PageTemplate/PageTemplate";
-import { AppModals } from "@/helper/constants";
-import useGlobalState from "@/hooks/useGlobalState";
-import { MODAL_OPEN } from "@/store/ui/ui.events";
 import { Button, Group, Stack, Switch, Text } from "@mantine/core";
+import { WikiFull } from "../../components/Full";
+import { WikiList, WikiListItem } from "../../components/List";
+import { PageTemplate } from "../../components/PageTemplate/PageTemplate";
+import { AppModals } from "../../helper/constants";
+import useGlobalState from "../../hooks/useGlobalState";
+import { MODAL_OPEN } from "../../store/ui/ui.events";
 
 export const Setting = () => {
   const { dispatch } = useGlobalState();

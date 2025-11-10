@@ -1,14 +1,5 @@
 import { AuthPageTemplate } from "@/components/AuthPageTemplate/AuthPageTemplate";
-import { useWikiFetch } from "@/hooks/useFetch";
-import {
-  Stack,
-  Title,
-  Group,
-  Button,
-  TextInput,
-  Text,
-  PasswordInput,
-} from "@mantine/core";
+import { Stack, Title, Button, Text, PasswordInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { yupResolver } from "mantine-form-yup-resolver";
 import {
@@ -17,20 +8,11 @@ import {
 } from "./ResetPassword.helper";
 
 export const ResetPassword = () => {
-  const { getInputProps, onSubmit, errors, values } = useForm({
+  const { getInputProps, onSubmit, errors } = useForm({
     initialValues: resetPasswordInitialValues,
     validate: yupResolver(resetPasswordValidationSchema),
   });
 
-  const { fetch } = useWikiFetch("/auth/signup", {
-    atCommand: true,
-    method: "POST",
-    body: values,
-    hasLoader: true,
-    onSuccess(response) {
-      //TODO: add a on success function
-    },
-  });
   return (
     <AuthPageTemplate>
       <Stack align="center">
@@ -42,7 +24,7 @@ export const ResetPassword = () => {
           the email, please check your spam folder or click the button below to
           resend the verification email.
         </Text>
-        <form style={{ width: "100%" }} onSubmit={onSubmit(fetch)}>
+        <form style={{ width: "100%" }} onSubmit={onSubmit(() => {})}>
           <Stack align="center">
             <PasswordInput
               {...getInputProps("password")}

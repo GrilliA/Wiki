@@ -3,19 +3,13 @@ import styles from "./Full.module.css";
 import { WikiModal } from "../Modal";
 import Icon from "../Icon/Icon";
 import { useRouter } from "../../hooks/useRouter";
-import useGlobalState from "../../hooks/useGlobalState";
 import { forwardRef, type RefObject, useState, isValidElement } from "react";
 import type { TFull, TDirection } from "./Full.model";
 
 const Full = forwardRef((props: TFull, ref: RefObject<HTMLDivElement>) => {
-  const { push, back } = useRouter();
+  const { back } = useRouter();
   const [isOpened, setIsOpened] = useState(false);
-  const { dispatch } = useGlobalState();
   const handleBackNavigation = () => {
-    if (props.clear) {
-      dispatch({ type: props.clear });
-    }
-    if (props.back) return push(props.back);
     back();
   };
   const handleDefaultLeftAction = () => {

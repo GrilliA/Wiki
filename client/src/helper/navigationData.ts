@@ -11,28 +11,28 @@ type TNavigationData = {
 export const navigationData: TNavigationData = [
   {
     id: "home",
-    href: "/",
+    href: "/dashboard/home",
     icon: "home",
   },
   {
     id: "search",
-    href: "/search",
+    href: "/dashboard/search",
     icon: "search",
   },
   {
     id: "add",
     icon: "add_circle",
-    href: "/new",
+    href: "/dashboard/new",
     size: 32,
   },
   {
     id: "notifications",
-    href: "/notifications",
+    href: "/dashboard/notifications",
     icon: "notifications",
   },
   {
     id: "profile",
-    href: "/profile",
+    href: "/dashboard/profile",
     icon: "person",
   },
 ];

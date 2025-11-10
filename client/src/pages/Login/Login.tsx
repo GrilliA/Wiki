@@ -12,37 +12,23 @@ import {
 import { loginInitialValues, loginValidationSchema } from "./Login.helper";
 import { useForm } from "@mantine/form";
 import { WikiLink } from "../../components/Link";
-import { useWikiFetch } from "../../hooks/useFetch";
-import useGlobalState from "../../hooks/useGlobalState";
 import { useRouter } from "../../hooks/useRouter";
-import { AUTH_LOGIN } from "../../store/auth/auth.event";
 import { GoogleButton } from "../../components/GoogleButton.tsx/GoogleButton";
+import { useLoginMutation } from "../../services/auth";
 
 export const Login = (_) => {
   const { push } = useRouter();
-  const { dispatch } = useGlobalState();
   const { getInputProps, onSubmit, errors, values } = useForm({
     initialValues: loginInitialValues,
     validate: yupResolver(loginValidationSchema),
   });
 
-  const { fetch } = useWikiFetch("/auth/local", {
-    atCommand: true,
-    method: "POST",
-    body: values,
-    hasLoader: true,
-    onSuccess(response) {
-      const user = response.data;
-      dispatch({
-        type: AUTH_LOGIN,
-        payload: user,
-      });
-      push("/");
-    },
-  });
-  const handleSubmit = () => {
-    //onSubmit(fetch)
-    push("/auth/onboarding");
+  const [login, { isSuccess }] = useLoginMutation();
+  const handleSubmit = async () => {
+    await login(values);
+    if (isSuccess) {
+      push("/auth/onboarding");
+    }
   };
   return (
     <Stack>
@@ -50,7 +36,7 @@ export const Login = (_) => {
         <Title order={2}>Welcome Back</Title>
         <Text c={"dimmed"}>Welcome back, please enter your credentials</Text>
       </Box>
-      <form onSubmit={handleSubmit} id="login">
+      <form onSubmit={onSubmit(handleSubmit)} id="login">
         <Stack>
           <TextInput
             {...getInputProps("identifier")}

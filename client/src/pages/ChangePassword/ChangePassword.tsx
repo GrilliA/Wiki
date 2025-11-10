@@ -1,6 +1,5 @@
 import { yupResolver } from "mantine-form-yup-resolver";
 import { Button, PasswordInput, Stack } from "@mantine/core";
-import { useWikiFetch } from "@/hooks/useFetch";
 import {
   changePasswordInitialValues,
   changePasswordValidationSchema,
@@ -13,19 +12,9 @@ export const ChangePassword = (_) => {
     validate: yupResolver(changePasswordValidationSchema),
   });
 
-  const { fetch } = useWikiFetch("/auth/changePassword", {
-    atCommand: true,
-    method: "POST",
-    body: values,
-    hasLoader: true,
-    onSuccess(response) {
-      //TODO: close the modal and send the user the login page
-    },
-  });
-
   return (
     <Stack>
-      <form onSubmit={onSubmit(fetch)}>
+      <form onSubmit={onSubmit(() => {})}>
         <Stack>
           <PasswordInput
             {...getInputProps("oldPassword")}

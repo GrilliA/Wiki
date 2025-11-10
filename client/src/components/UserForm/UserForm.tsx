@@ -19,11 +19,7 @@ import {
   TextInput,
 } from "@mantine/core";
 import { useEffect, useState } from "react";
-import getImage from "../../helper/getImage";
 import { useRouter } from "../../hooks/useRouter";
-import { useWikiFetch } from "../../hooks/useFetch";
-
-const avatarKey = null;
 
 export const UserForm = (_) => {
   const [logo, setLogo] = useState("");
@@ -32,15 +28,6 @@ export const UserForm = (_) => {
     validate: yupResolver(userFormValidationSchema),
   });
   const { push } = useRouter();
-  const { fetch } = useWikiFetch("/profile", {
-    method: "POST",
-    atCommand: true,
-    body: values,
-    hasLoader: true,
-    onSuccess(response) {
-      //TODO: add the logic for on Success
-    },
-  });
   useEffect(() => {
     if (!values.avatar) return;
     const logo = values.avatar as File;
@@ -50,7 +37,7 @@ export const UserForm = (_) => {
       setLogo(fileReader.result as string),
     );
   }, [(values.avatar as File)?.lastModified]);
-  const logoSrc = logo || getImage(avatarKey);
+  const logoSrc = logo;
   const handleSubmit = () => {
     //onSubmit(fetch)
     push("/profile");

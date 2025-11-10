@@ -1,16 +1,10 @@
 import { createTheme, Button, MantineProvider } from "@mantine/core";
 import { ErrorModal } from "./components/ErrorModal/ErrorModal";
-import useGlobalState from "./hooks/useGlobalState";
 import type { PropsWithChildren } from "react";
 
 const WikiProvider = (props: PropsWithChildren) => {
-  const { state } = useGlobalState();
   return (
-    <MantineProvider
-      theme={theme}
-      forceColorScheme={state.auth.currentUser?.settings?.theme as any}
-      defaultColorScheme="auto"
-    >
+    <MantineProvider theme={theme} defaultColorScheme="auto">
       {props.children}
       <ErrorModal />
     </MantineProvider>

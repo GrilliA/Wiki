@@ -13,37 +13,12 @@ import { signupInitialValues, signupValidationSchema } from "./Signup.helper";
 import { useForm } from "@mantine/form";
 import { useRouter } from "../../hooks/useRouter";
 import { GoogleButton } from "../../components/GoogleButton.tsx/GoogleButton";
-import { useWikiFetch } from "../../hooks/useFetch";
-import { WikiLink } from "../../components/Link";
-import useGlobalState from "../../hooks/useGlobalState";
-import { AUTH_LOGIN } from "../../store/auth/auth.event";
+import { WikiLink } from "@/components/Link";
 
 export const Signup = (_) => {
-  const { push } = useRouter();
-  const { dispatch } = useGlobalState();
-  const {
-    getInputProps,
-    onSubmit,
-    errors,
-    values: { terms, confirmPassword, ...formData },
-  } = useForm({
+  const { getInputProps, onSubmit } = useForm({
     initialValues: signupInitialValues,
     validate: yupResolver(signupValidationSchema),
-  });
-
-  const { fetch } = useWikiFetch("/auth/local/register", {
-    atCommand: true,
-    method: "POST",
-    body: formData,
-    hasLoader: true,
-    onSuccess(response) {
-      const user = response.data;
-      dispatch({
-        type: AUTH_LOGIN,
-        payload: user,
-      });
-      push("/");
-    },
   });
 
   return (
@@ -54,7 +29,7 @@ export const Signup = (_) => {
           Enter the requested details and be part of the community
         </Text>
       </Box>
-      <form onSubmit={onSubmit(fetch)} id="signup">
+      <form onSubmit={onSubmit(() => {})} id="signup">
         <Stack>
           <TextInput
             {...getInputProps("email")}

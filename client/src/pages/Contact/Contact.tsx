@@ -1,44 +1,26 @@
-import { WikiLink } from "@/components/Link";
 import { yupResolver } from "mantine-form-yup-resolver";
-import useGlobalState from "@/hooks/useGlobalState";
-import { AUTH_LOGIN } from "@/store/auth/auth.event";
 import {
   Box,
   Button,
-  PasswordInput,
   Select,
   Stack,
   Text,
   Textarea,
   TextInput,
-  Title,
 } from "@mantine/core";
-import { useWikiFetch } from "@/hooks/useFetch";
 import {
   contactInitialValues,
   contactValidationSchema,
 } from "./Contact.helper";
 import { useForm } from "@mantine/form";
-import { useRouter } from "next/router";
-import { GoogleButton } from "@/components/GoogleButton.tsx/GoogleButton";
 import { typeOptions } from "./Contact.constant";
+import { useRouter } from "@/hooks/useRouter";
 
 export const Contact = (_) => {
   const { push } = useRouter();
-  const { dispatch } = useGlobalState();
   const { getInputProps, onSubmit, errors, values } = useForm({
     initialValues: contactInitialValues,
     validate: yupResolver(contactValidationSchema),
-  });
-
-  const { fetch } = useWikiFetch("/auth/contact", {
-    atCommand: true,
-    method: "POST",
-    body: values,
-    hasLoader: true,
-    onSuccess(response) {
-      //TODO: close the modal and add a success notification
-    },
   });
 
   return (
@@ -48,7 +30,7 @@ export const Contact = (_) => {
           Having trouble? No worries just complete the form and we will help you
         </Text>
       </Box>
-      <form onSubmit={onSubmit(fetch)}>
+      <form onSubmit={onSubmit(() => {})}>
         <Stack>
           <Select
             data={typeOptions}

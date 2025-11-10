@@ -9,7 +9,6 @@ import { PageComponent } from "../../components/PageComponent/PageComponent";
 import { UserForm } from "../../components/UserForm/UserForm";
 
 const formId = "onboarding-form";
-const avatarKey = null;
 
 export const OnBoardingForm = (_) => {
   const confirmProps: TDirection = {

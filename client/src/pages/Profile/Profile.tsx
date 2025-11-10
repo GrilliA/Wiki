@@ -9,10 +9,10 @@ import {
   Text,
 } from "@mantine/core";
 import { PageTemplate } from "../../components/PageTemplate/PageTemplate";
-import getFormattedText from "../../helper/getFormattedText";
 import { WikiIcon } from "../../components/Icon";
 import styles from "./Profile.module.css";
 import { useRouter } from "../../hooks/useRouter";
+
 export const Profile = () => {
   const jobs = ["dancer"];
   const name = "D.Doctor";
