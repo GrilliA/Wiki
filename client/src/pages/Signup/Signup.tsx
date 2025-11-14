@@ -1,4 +1,3 @@
-import { yupResolver } from "mantine-form-yup-resolver";
 import {
   Box,
   Button,
@@ -9,17 +8,12 @@ import {
   TextInput,
   Title,
 } from "@mantine/core";
-import { signupInitialValues, signupValidationSchema } from "./Signup.helper";
-import { useForm } from "@mantine/form";
-import { useRouter } from "../../hooks/useRouter";
 import { GoogleButton } from "../../components/GoogleButton.tsx/GoogleButton";
 import { WikiLink } from "@/components/Link";
+import { useSignup } from "./useSignup";
 
 export const Signup = (_) => {
-  const { getInputProps, onSubmit } = useForm({
-    initialValues: signupInitialValues,
-    validate: yupResolver(signupValidationSchema),
-  });
+  const { getInputProps, handleSubmit } = useSignup();
 
   return (
     <Stack>
@@ -29,7 +23,7 @@ export const Signup = (_) => {
           Enter the requested details and be part of the community
         </Text>
       </Box>
-      <form onSubmit={onSubmit(() => {})} id="signup">
+      <form onSubmit={handleSubmit} id="signup">
         <Stack>
           <TextInput
             {...getInputProps("email")}
