@@ -1,9 +1,9 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { baseUrl } from "../helper/constants";
+import { createApi } from "@reduxjs/toolkit/query/react";
+import { normalizeBaseQuery } from "@/helper/normalizeBaseQuery";
 
 export const authApi = createApi({
   reducerPath: "authApi",
-  baseQuery: fetchBaseQuery({ baseUrl }),
+  baseQuery: normalizeBaseQuery,
   endpoints: (builder) => ({
     currentUser: builder.query({
       query: () => {
