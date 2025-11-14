@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router";
 import WikiProvider from "./WikiProvider.tsx";
 import { store } from "./state/store.ts";
 import { Provider } from "react-redux";
+import { WikiLoader } from "./components/Loader/Loader.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -12,6 +13,7 @@ createRoot(document.getElementById("root")!).render(
       <BrowserRouter>
         <WikiProvider>
           <App />
+          <WikiLoader />
         </WikiProvider>
       </BrowserRouter>
     </Provider>

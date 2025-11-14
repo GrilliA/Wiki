@@ -2,9 +2,7 @@ import { WikiModal } from "../../components/Modal";
 import { Signup } from "./Signup";
 
 export const SignupModal = () => {
-  const handleClose = () => {
-    console.log("close");
-  };
+  const handleClose = () => {};
   return (
     <WikiModal
       title={"Signup"}

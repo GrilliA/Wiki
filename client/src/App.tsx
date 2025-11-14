@@ -11,28 +11,33 @@ import LoginPage from "./pages/Login/LoginPage";
 import { Profile } from "./pages/Profile/Profile";
 import { ProfileForm } from "./pages/ProfileForm/ProfileForm";
 import { HomePage } from "./pages/Home/HomePage";
-import { useCurrentUserQuery } from "./services/auth";
-import { RedirectionManager } from "./pages/RedirectionManager/RedirectionManager";
-import { useEffect } from "react";
+import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
+import { AuthPageTemplate } from "./components/AuthPageTemplate/AuthPageTemplate";
+import { useAppInit } from "./hooks/useAppInit";
+import { PageTemplate } from "./components/PageTemplate/PageTemplate";
+import { useTranslationsQuery } from "./services/translation";
 
 function App() {
-  const { data } = useCurrentUserQuery();
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  useAppInit();
 
+  const { data } = useTranslationsQuery();
+  console.log(data);
   return (
     <Routes>
-      <Route index path="/" element={<Navigate to={"/home"} />} />
-      <Route path="/auth/signup" element={<SignupPage />} />
-      <Route path="/auth/login" element={<LoginPage />} />
-      <Route path="/auth/onboarding" element={<OnBoardingForm />} />
-      <Route path="/auth/email_verification" element={<EmailVerification />} />
-      <Route path="/auth/forgotten_password" element={<ForgottenPassword />} />
-      <Route path="/home" element={<HomePage />} />
-      <Route path="/profile/edit" element={<ProfileForm />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="*" element={<RedirectionManager />} />
+      <Route index path="/" element={<Navigate to={"/home"} replace />} />
+      <Route path="auth" element={<AuthPageTemplate />}>
+        <Route path="signup" element={<SignupPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="email_verification" element={<EmailVerification />} />
+        <Route path="forgotten_password" element={<ForgottenPassword />} />
+      </Route>
+      <Route path="onboarding" element={<OnBoardingForm />} />
+      <Route element={<PageTemplate />}>
+        <Route index path="home" element={<HomePage />} />
+        <Route path="profile/edit" element={<ProfileForm />} />
+        <Route path="profile" element={<Profile />} />
+      </Route>
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }

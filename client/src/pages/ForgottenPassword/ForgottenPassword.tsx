@@ -14,31 +14,29 @@ export const ForgottenPassword = () => {
   });
 
   return (
-    <AuthPageTemplate>
-      <Stack align="center">
-        <Title order={2} ta={"center"}>
-          Forgotten Password
-        </Title>
-        <Text ta={"center"}>
-          Please check your email to verify your account. If you did not receive
-          the email, please check your spam folder or click the button below to
-          resend the verification email.
-        </Text>
-        <form style={{ width: "100%" }} onSubmit={onSubmit(() => {})}>
-          <Stack align="center">
-            <TextInput
-              {...getInputProps("email")}
-              label={"Email"}
-              type="email"
-              size="md"
-              w={"100%"}
-              autoComplete="email"
-              error={errors.email}
-            />
-            <Button fullWidth>Continue</Button>
-          </Stack>
-        </form>
-      </Stack>
-    </AuthPageTemplate>
+    <Stack align="center">
+      <Title order={2} ta={"center"}>
+        Forgotten Password
+      </Title>
+      <Text ta={"center"}>
+        Please check your email to verify your account. If you did not receive
+        the email, please check your spam folder or click the button below to
+        resend the verification email.
+      </Text>
+      <form style={{ width: "100%" }} onSubmit={onSubmit(() => {})}>
+        <Stack align="center">
+          <TextInput
+            {...getInputProps("email")}
+            label={"Email"}
+            type="email"
+            size="md"
+            w={"100%"}
+            autoComplete="email"
+            error={errors.email}
+          />
+          <Button fullWidth>Continue</Button>
+        </Stack>
+      </form>
+    </Stack>
   );
 };
