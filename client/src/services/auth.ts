@@ -13,16 +13,26 @@ export const authApi = createApi({
         };
       },
     }),
+    register: builder.mutation<any, any>({
+      query: (payload) => {
+        return {
+          url: "/auth/local/register",
+          method: "POST",
+          payload,
+        };
+      },
+    }),
     login: builder.mutation<any, any>({
       query: (payload) => {
         return {
           url: "/auth/local",
           method: "POST",
-          body: payload,
+          payload,
         };
       },
     }),
   }),
 });
 
-export const { useLoginMutation, useCurrentUserQuery } = authApi;
+export const { useRegisterMutation, useLoginMutation, useCurrentUserQuery } =
+  authApi;

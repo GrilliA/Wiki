@@ -11,13 +11,13 @@ import { useSelector } from "react-redux";
 export const AuthPageTemplate = () => {
   const { push } = useRouter();
   const apiErrors = useSelector((state: TRootState) => state.apiError);
-  const isAuthenticated = apiErrors.find((err) => err.status !== 401);
+  const hasAuthError = apiErrors.find((err) => err.status === 401);
 
   useEffect(() => {
-    if (isAuthenticated) {
+    if (hasAuthError) {
       push("/", { replace: true });
     }
-  }, [isAuthenticated]);
+  }, [hasAuthError]);
 
   return (
     <>
