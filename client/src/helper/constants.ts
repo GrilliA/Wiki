@@ -1,6 +1,9 @@
 export const baseUrl =
   "https://incredible-purpose-39ec375761.strapiapp.com/api";
 export const appName = "Dance Diction";
+export const enum EStoreSlice {
+  Modal = "Modal",
+}
 export enum AppModals {
   Login,
   Signup,
