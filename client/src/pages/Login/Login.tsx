@@ -15,6 +15,7 @@ import { WikiLink } from "../../components/Link";
 import { useRouter } from "../../hooks/useRouter";
 import { GoogleButton } from "../../components/GoogleButton.tsx/GoogleButton";
 import { useLoginMutation } from "../../services/auth";
+import { useTranslation } from "react-i18next";
 
 export const Login = (_) => {
   const { push } = useRouter();
@@ -22,7 +23,7 @@ export const Login = (_) => {
     initialValues: loginInitialValues,
     validate: yupResolver(loginValidationSchema),
   });
-
+  const { t } = useTranslation();
   const [login, { isSuccess }] = useLoginMutation();
   const handleSubmit = async () => {
     await login(values);
@@ -33,14 +34,14 @@ export const Login = (_) => {
   return (
     <Stack>
       <Box>
-        <Title order={2}>Welcome Back</Title>
-        <Text c={"dimmed"}>Welcome back, please enter your credentials</Text>
+        <Title order={2}>{t("Login.Title")}</Title>
+        <Text c={"dimmed"}>{t("Login.Subtitle")}</Text>
       </Box>
       <form onSubmit={onSubmit(handleSubmit)} id="login">
         <Stack>
           <TextInput
             {...getInputProps("identifier")}
-            label={"Email or Username"}
+            label={t("Login.Identifier")}
             size="md"
           />
           <Flex
@@ -53,7 +54,7 @@ export const Login = (_) => {
               {...getInputProps("password")}
               autoComplete="current-password"
               error={errors.password}
-              label={"Password"}
+              label={t("Login.Password")}
               size="md"
             />
             <WikiLink
@@ -62,19 +63,19 @@ export const Login = (_) => {
               fw={"bold"}
               href="/auth/forgotten_password"
             >
-              {"Forgotten password?"}
+              {t("Login.ForgottenPassword")}
             </WikiLink>
           </Flex>
         </Stack>
       </form>
       <Stack>
         <Button form="login" type="submit">
-          Login
+          {t("Login.Login")}
         </Button>
-        <GoogleButton>Login with google</GoogleButton>
+        <GoogleButton>{t("Login.LoginWithGoogle")}</GoogleButton>
       </Stack>
       <WikiLink c="dimmed" size="xs" fw={"bold"} href="/auth/signup">
-        Are you new? Create an account
+        {t("Login.SignupMessage")}
       </WikiLink>
     </Stack>
   );

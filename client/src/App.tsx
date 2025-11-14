@@ -16,12 +16,21 @@ import { AuthPageTemplate } from "./components/AuthPageTemplate/AuthPageTemplate
 import { useAppInit } from "./hooks/useAppInit";
 import { PageTemplate } from "./components/PageTemplate/PageTemplate";
 import { useTranslationsQuery } from "./services/translation";
+import { useEffect } from "react";
+import i18n from "./helper/i18n";
 
 function App() {
   useAppInit();
 
-  const { data } = useTranslationsQuery();
-  console.log(data);
+  const { isSuccess, data } = useTranslationsQuery();
+  useEffect(() => {
+    if (isSuccess) {
+      const lang = data?.locale;
+      i18n.addResourceBundle(lang, "translation", data?.data, true, true);
+      i18n.changeLanguage(lang);
+    }
+  }, [isSuccess]);
+
   return (
     <Routes>
       <Route index path="/" element={<Navigate to={"/home"} replace />} />
