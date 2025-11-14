@@ -21,7 +21,6 @@ export const AuthPageTemplate = () => {
 
   return (
     <>
-      <WikiNavigation />
       <PageComponent withPadding>
         <section className={style.wrapper}>
           <Outlet />
