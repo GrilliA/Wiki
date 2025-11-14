@@ -6,6 +6,7 @@ import WikiProvider from "./WikiProvider.tsx";
 import { store } from "./state/store.ts";
 import { Provider } from "react-redux";
 import { WikiLoader } from "./components/Loader/Loader.tsx";
+import "./helper/i18n.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

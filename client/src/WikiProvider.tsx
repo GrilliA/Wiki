@@ -1,11 +1,16 @@
 import { createTheme, Button, MantineProvider } from "@mantine/core";
 import type { PropsWithChildren } from "react";
+import { I18nextProvider } from "react-i18next";
+import { useTranslationsQuery } from "./services/translation";
 
 const WikiProvider = (props: PropsWithChildren) => {
+  const { data } = useTranslationsQuery();
   return (
-    <MantineProvider theme={theme} defaultColorScheme="auto">
-      {props.children}
-    </MantineProvider>
+    <I18nextProvider>
+      <MantineProvider theme={theme} defaultColorScheme="auto">
+        {props.children}
+      </MantineProvider>
+    </I18nextProvider>
   );
 };
 
