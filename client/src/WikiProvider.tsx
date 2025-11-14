@@ -1,12 +1,10 @@
 import { createTheme, Button, MantineProvider } from "@mantine/core";
-import { ErrorModal } from "./components/ErrorModal/ErrorModal";
 import type { PropsWithChildren } from "react";
 
 const WikiProvider = (props: PropsWithChildren) => {
   return (
     <MantineProvider theme={theme} defaultColorScheme="auto">
       {props.children}
-      <ErrorModal />
     </MantineProvider>
   );
 };

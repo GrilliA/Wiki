@@ -40,12 +40,9 @@ export const ErrorModal = () => {
     >
       <Stack>
         {apiErrors?.map((msg, i) => (
-          <Stack>
+          <Stack key={`error${i}${msg.status}`}>
             <Text fw={"bold"}>{msg.status}</Text>
-            <Text
-              key={`error${i}${msg}`}
-              dangerouslySetInnerHTML={{ __html: msg.message }}
-            />
+            <Text dangerouslySetInnerHTML={{ __html: msg.message }} />
           </Stack>
         ))}
       </Stack>

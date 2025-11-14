@@ -2,9 +2,7 @@ import { WikiModal } from "@/components/Modal";
 import { ChangePassword } from "./ChangePassword";
 
 export const ChangePasswordModal = () => {
-  const handleClose = () => {
-    console.log("open");
-  };
+  const handleClose = () => {};
   return (
     <WikiModal
       title={"Change password"}
