@@ -2,9 +2,7 @@ import { WikiModal } from "@/components/Modal";
 import { Contact } from "./Contact";
 
 export const ContactModal = () => {
-  const handleClose = () => {
-    console.log("close");
-  };
+  const handleClose = () => {};
   return (
     <WikiModal
       title={"Contact us"}

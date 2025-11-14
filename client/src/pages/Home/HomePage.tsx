@@ -1,5 +1,5 @@
-import { PageTemplate } from "../../components/PageTemplate/PageTemplate";
+import { Text } from "@mantine/core";
 
 export const HomePage = () => {
-  return <PageTemplate>Test</PageTemplate>;
+  return <Text>Test</Text>;
 };

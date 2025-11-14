@@ -1,11 +1,8 @@
 import { WikiModal } from "@/components/Modal";
 import { Login } from "./Login";
-import { AppModals } from "@/helper/constants";
 
 export const LoginModal = () => {
-  const handleClose = () => {
-    console.log("close");
-  };
+  const handleClose = () => {};
   return (
     <WikiModal
       title={"Login"}
