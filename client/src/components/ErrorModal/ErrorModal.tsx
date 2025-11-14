@@ -2,10 +2,10 @@ import { Group, Stack, Text } from "@mantine/core";
 import { WikiModal } from "../Modal";
 import Icon from "../Icon/Icon";
 import { useDispatch, useSelector } from "react-redux";
-import { clearApiErrors } from "@/state/modalSlice/apiErrorSlice/apiErrorSlice";
 import { getAppMode } from "@/helper/getAppMode";
 import { EAppMode } from "@/helper/constants";
 import type { TRootState } from "@/state/store";
+import { clearApiErrors } from "@/state/apiErrorSlice/apiErrorSlice";
 
 export const ErrorModal = () => {
   const dispatch = useDispatch();

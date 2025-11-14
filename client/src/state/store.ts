@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { authApi } from "../services/auth";
 import { modalReducer } from "./modalSlice/modalSlice";
-import { apiErrorReducer } from "./modalSlice/apiErrorSlice/apiErrorSlice";
+import { apiErrorReducer } from "./apiErrorSlice/apiErrorSlice";
+import { uiReducer } from "./uiSlice/uiSlice";
 
 export const store = configureStore({
   reducer: {
+    ui: uiReducer,
     modal: modalReducer,
     apiError: apiErrorReducer,
     [authApi.reducerPath]: authApi.reducer,

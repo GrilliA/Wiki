@@ -15,10 +15,12 @@ import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { AuthPageTemplate } from "./components/AuthPageTemplate/AuthPageTemplate";
 import { useAppInit } from "./hooks/useAppInit";
 import { PageTemplate } from "./components/PageTemplate/PageTemplate";
+import { useCurrentUserQuery } from "./services/auth";
 
 function App() {
   useAppInit();
 
+  const { data } = useCurrentUserQuery();
   return (
     <Routes>
       <Route index path="/" element={<Navigate to={"/home"} replace />} />
