@@ -1,17 +1,25 @@
 import { Group, Stack, Text } from "@mantine/core";
 import { WikiModal } from "../Modal";
 import Icon from "../Icon/Icon";
-import type { ErrorModalProps } from "./Error.model";
-import getFormattedText from "../../helper/getFormattedText";
+import { useDispatch, useSelector } from "react-redux";
+import { clearApiErrors } from "@/state/modalSlice/apiErrorSlice/apiErrorSlice";
+import { getAppMode } from "@/helper/getAppMode";
+import { EAppMode } from "@/helper/constants";
+import type { TRootState } from "@/state/store";
 
-export const ErrorModal = (props: ErrorModalProps) => {
-  const handleClick = () => {
-    if (props.isLocal) {
-      props.handleClose?.();
-      return;
-    }
-    //close error modal
+export const ErrorModal = () => {
+  const dispatch = useDispatch();
+  const apiErrors = useSelector((state: TRootState) => state.apiError);
+  const handleClose = () => {
+    dispatch(clearApiErrors());
   };
+
+  const appMode = getAppMode();
+
+  if (appMode === EAppMode.Production || !apiErrors.length) {
+    return null;
+  }
+
   return (
     <WikiModal
       zIndex={10000}
@@ -24,18 +32,21 @@ export const ErrorModal = (props: ErrorModalProps) => {
         </Group>
       }
       centered
-      onClose={handleClick}
-      opened={false}
+      onClose={handleClose}
+      opened={true}
       w={"600px"}
       maw={"80vw"}
       closeProps={{ label: "Chiudi" }}
     >
       <Stack>
-        {["error"]?.map((msg, i) => (
-          <Text
-            key={`error${i}${msg}`}
-            dangerouslySetInnerHTML={{ __html: getFormattedText(msg) }}
-          />
+        {apiErrors?.map((msg, i) => (
+          <Stack>
+            <Text fw={"bold"}>{msg.status}</Text>
+            <Text
+              key={`error${i}${msg}`}
+              dangerouslySetInnerHTML={{ __html: msg.message }}
+            />
+          </Stack>
         ))}
       </Stack>
     </WikiModal>

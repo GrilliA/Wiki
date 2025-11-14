@@ -14,8 +14,11 @@ import { HomePage } from "./pages/Home/HomePage";
 import { useCurrentUserQuery } from "./services/auth";
 import { RedirectionManager } from "./pages/RedirectionManager/RedirectionManager";
 import { useEffect } from "react";
+import { useAppInit } from "./hooks/useAppInit";
 
 function App() {
+  useAppInit();
+
   const { data } = useCurrentUserQuery();
   useEffect(() => {
     console.log(data);
