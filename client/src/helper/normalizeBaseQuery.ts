@@ -1,10 +1,12 @@
 import type { TBaseQueryFn } from "@/model/baseQuery.model";
 import { baseUrl } from "./constants";
-import { addApiError } from "@/state/modalSlice/apiErrorSlice/apiErrorSlice";
+import { addApiError } from "@/state/apiErrorSlice/apiErrorSlice";
+import { addLoader, removeLoader } from "@/state/uiSlice/uiSlice";
 
 export const normalizeBaseQuery: TBaseQueryFn = async (args, { dispatch }) => {
   const { url, payload, method } = args;
   try {
+    dispatch(addLoader());
     const response = await fetch(`${baseUrl}${url}`, {
       body: JSON.stringify(payload),
       method,
@@ -37,6 +39,6 @@ export const normalizeBaseQuery: TBaseQueryFn = async (args, { dispatch }) => {
       error,
     };
   } finally {
-    //TODO: add loader
+    dispatch(removeLoader());
   }
 };
