@@ -1,4 +1,11 @@
 export default ({ env }) => ({
+  "users-permissions": {
+    config: {
+      register: {
+        allowedFields: ["bio", "isOnboarded"],
+      },
+    },
+  },
   email: {
     config: {
       provider: "mailgun",
