@@ -14,6 +14,7 @@ export const authApi = createApi({
           method: "GET",
         };
       },
+      providesTags: ["CurrentUser"],
     }),
     updateUser: builder.mutation<any, any>({
       query: (payload) => {
@@ -24,6 +25,7 @@ export const authApi = createApi({
           payload: data,
         };
       },
+      invalidatesTags: ["CurrentUser"],
     }),
     register: builder.mutation<any, any>({
       query: (payload) => {
