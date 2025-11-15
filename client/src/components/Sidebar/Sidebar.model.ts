@@ -1,5 +1,5 @@
-import { MaterialSymbol } from "material-symbols";
-import { MouseEventHandler } from "react";
+import { type MaterialSymbol } from "material-symbols";
+import { type MouseEventHandler } from "react";
 
 export type TSidebarProps = {};
 export type TSidebarItemProps = TSidebarItem;
@@ -9,4 +9,5 @@ export type TSidebarItem = {
   icon: MaterialSymbol;
   href?: string;
   size?: number;
+  isDisabled?: boolean;
 };

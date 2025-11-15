@@ -12,7 +12,7 @@ const BottomNavigation = () => {
       <div className={styles.wrapper}>
         {navigationData.map((d) => {
           const isActive = pathname === d.href;
-          const className = `${styles.link} ${isActive ? styles.active : ""}`;
+          const className = `${styles.link} ${isActive ? styles.active : ""} ${d.isDisabled ? styles.disabled : ""}`;
           if (d.href) {
             return (
               <WikiLink key={d.href} href={d.href} className={className}>

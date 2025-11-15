@@ -7,7 +7,7 @@ import { useRouter } from "../../hooks/useRouter";
 import type { TSidebarItemProps } from "./Sidebar.model";
 
 const SidebarItem = (props: TSidebarItemProps) => {
-  const { href, handleClick } = props;
+  const { href, handleClick, isDisabled } = props;
   const pathname = useRouter().pathname;
   const isActive = pathname === props.href;
 
@@ -17,7 +17,10 @@ const SidebarItem = (props: TSidebarItemProps) => {
       onClick={handleClick}
     >
       {href ? (
-        <WikiLink href={href || "#"} className={`${styles.link}`}>
+        <WikiLink
+          href={href || "#"}
+          className={`${styles.link} ${isDisabled ? styles.disabled : ""}`}
+        >
           <Box className={styles.icon}>
             <WikiIcon
               isOutlined={!isActive}

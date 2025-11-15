@@ -38,3 +38,7 @@
     display: flex;
   }
 }
+.disabled {
+  pointer-events: none;
+  color: var(--mantine-color-disabled-color);
+}

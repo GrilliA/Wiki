@@ -7,8 +7,15 @@ const SideBar = (_: TSidebarProps) => {
   return (
     <aside className={styles.nav}>
       <ul className={styles.items}>
-        {navigationData.map(({ href, icon, id, size }) => (
-          <SidebarItem key={id} id={id} href={href} icon={icon} size={size} />
+        {navigationData.map(({ href, icon, id, size, isDisabled }) => (
+          <SidebarItem
+            key={id}
+            id={id}
+            href={href}
+            icon={icon}
+            isDisabled={isDisabled}
+            size={size}
+          />
         ))}
       </ul>
     </aside>

@@ -33,3 +33,7 @@
 .logo {
   border: 3px solid var(--mantine-primary-color-4);
 }
+.disabled {
+  pointer-events: none;
+  color: var(--mantine-color-disabled-color);
+}
