@@ -12,11 +12,16 @@ import {
 import { WikiIcon } from "../../components/Icon";
 import styles from "./Profile.module.css";
 import { useRouter } from "../../hooks/useRouter";
-import { useCurrentUserQuery } from "@/services/auth";
+import { useUser } from "@/hooks/useUser";
 
 export const Profile = () => {
   const { push } = useRouter();
-  const { data: user } = useCurrentUserQuery();
+  const { data: user } = useUser();
+
+  if (!user) {
+    return null;
+  }
+
   const profession = user?.profession ? user?.profession?.split(",") : [];
   const genres = user?.genre ? user?.genre?.split(",") : [];
   const bio = user?.bio;

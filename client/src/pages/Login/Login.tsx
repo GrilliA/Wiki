@@ -14,44 +14,32 @@ import { useForm } from "@mantine/form";
 import { WikiLink } from "../../components/Link";
 import { GoogleButton } from "../../components/GoogleButton.tsx/GoogleButton";
 import { useLoginMutation } from "../../services/auth";
-import { useTranslation } from "react-i18next";
-import { tokenKey } from "@/helper/constants";
 import { useRouter } from "@/hooks/useRouter";
-import type { TRootState } from "@/state/store";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { getAuthToken } from "@/helper/getAuthToken";
 
 export const Login = (_) => {
   const { getInputProps, onSubmit, errors, values } = useForm({
     initialValues: loginInitialValues,
     validate: yupResolver(loginValidationSchema),
   });
-  const token = useSelector((state: TRootState) => state.ui.token);
   const { push } = useRouter();
-  const { t } = useTranslation();
-  const [login] = useLoginMutation();
+  const [login, { isSuccess }] = useLoginMutation();
   const handleSubmit = async () => {
     await login(values);
+    if (!isSuccess) return;
+    push("/home", { replace: true });
   };
-
-  useEffect(() => {
-    if (getAuthToken()) {
-      push("/home", { replace: true });
-    }
-  }, [token]);
 
   return (
     <Stack>
       <Box>
-        <Title order={2}>{t("Login.Title")}</Title>
-        <Text c={"dimmed"}>{t("Login.Subtitle")}</Text>
+        <Title order={2}>Welcome back</Title>
+        <Text c={"dimmed"}>Insert your credentials</Text>
       </Box>
       <form onSubmit={onSubmit(handleSubmit)} id="login">
         <Stack>
           <TextInput
             {...getInputProps("identifier")}
-            label={t("Login.Identifier")}
+            label={"Email or username"}
             size="md"
           />
           <Flex
@@ -64,7 +52,7 @@ export const Login = (_) => {
               {...getInputProps("password")}
               autoComplete="current-password"
               error={errors.password}
-              label={t("Login.Password")}
+              label={"Password"}
               size="md"
             />
             <WikiLink
@@ -73,19 +61,19 @@ export const Login = (_) => {
               fw={"bold"}
               href="/auth/forgotten_password"
             >
-              {t("Login.ForgottenPassword")}
+              Forgotten password?
             </WikiLink>
           </Flex>
         </Stack>
       </form>
       <Stack>
         <Button form="login" type="submit">
-          {t("Login.Login")}
+          Login
         </Button>
-        <GoogleButton>{t("Login.LoginWithGoogle")}</GoogleButton>
+        <GoogleButton>Login with google</GoogleButton>
       </Stack>
       <WikiLink c="dimmed" size="xs" fw={"bold"} href="/auth/signup">
-        {t("Login.SignupMessage")}
+        You don't have an account? Sign up
       </WikiLink>
     </Stack>
   );

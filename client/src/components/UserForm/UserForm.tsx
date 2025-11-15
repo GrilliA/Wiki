@@ -20,17 +20,31 @@ import {
 } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { useRouter } from "../../hooks/useRouter";
-import { useCurrentUserQuery, useUpdateUserMutation } from "@/services/auth";
+import { useUpdateUserMutation } from "@/services/auth";
 import { useUploadMutation } from "@/services/file";
+import { useUser } from "@/hooks/useUser";
 
 export const UserForm = (_) => {
   const [logo, setLogo] = useState("");
   const [content, setContent] = useState("");
-  const { getInputProps, onSubmit, errors, values } = useForm({
+  const { setValues, getInputProps, onSubmit, errors, values } = useForm({
     initialValues: userFormInitialValues,
     validate: yupResolver(userFormValidationSchema),
   });
-  console.log(errors);
+  const { data: user, isSuccess: isUserSuccess } = useUser();
+  useEffect(() => {
+    if (user?.id && isUserSuccess) {
+      setValues({
+        firstName: user?.firstName || "",
+        lastName: user?.lastName || "",
+        nickName: user?.nickName || "",
+        profession: user?.profession ? user?.profession.split(",") : [],
+        genre: user?.genre ? user?.genre.split(",") : [],
+        avatar: null,
+      });
+      setContent(user?.bio || "");
+    }
+  }, [user?.id, isUserSuccess]);
   const { push } = useRouter();
 
   useEffect(() => {
@@ -45,7 +59,6 @@ export const UserForm = (_) => {
 
   const logoSrc = logo;
   const [updateUser, { isSuccess }] = useUpdateUserMutation();
-  const { data: user } = useCurrentUserQuery();
   const userId = user?.id;
   const [uploadFile] = useUploadMutation();
   const handleSubmit = onSubmit(async (data: any) => {
@@ -66,7 +79,11 @@ export const UserForm = (_) => {
       refId: userId,
       field: "avatar",
     };
-    await uploadFile(fileData);
+
+    if (data?.avatar) {
+      await uploadFile(fileData);
+    }
+
     if (isSuccess) {
       push("/profile");
     }

@@ -3,19 +3,18 @@ import Footer from "../Footer/Footer";
 import style from "./AuthPageTemplate.module.css";
 import { Outlet } from "react-router";
 import { useRouter } from "@/hooks/useRouter";
+import { useUser } from "@/hooks/useUser";
 import { useEffect } from "react";
-import type { TRootState } from "@/state/store";
-import { useSelector } from "react-redux";
 
 export const AuthPageTemplate = () => {
+  const { data: user, isSuccess } = useUser();
   const { push } = useRouter();
-  const token = useSelector((state: TRootState) => state.ui.token);
 
   useEffect(() => {
-    if (token) {
+    if (user?.id && isSuccess) {
       push("/", { replace: true });
     }
-  }, [token]);
+  }, [user?.id, isSuccess]);
 
   return (
     <>

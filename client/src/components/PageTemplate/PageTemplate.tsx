@@ -4,27 +4,22 @@ import { WikiNavigation } from "../Navigation";
 import { WikiSidebar } from "../Sidebar";
 import styles from "./PageTemplate.module.css";
 import { Outlet } from "react-router";
+import { ErrorModal } from "../ErrorModal/ErrorModal";
+import { useUser } from "@/hooks/useUser";
 import { useEffect } from "react";
 import { useRouter } from "@/hooks/useRouter";
-import { ErrorModal } from "../ErrorModal/ErrorModal";
-import { useSelector } from "react-redux";
-import type { TRootState } from "@/state/store";
-import { useCurrentUserQuery } from "@/services/auth";
 
 export const PageTemplate = () => {
+  const { data: user, isSuccess } = useUser();
   const { push } = useRouter();
-  const token = useSelector((state: TRootState) => state.ui.token);
-  const { data: user } = useCurrentUserQuery();
-
   useEffect(() => {
-    if (!token) {
+    if (!user?.id && isSuccess) {
       push("/auth/login", { replace: true });
-      return;
     }
-    if (user && !user?.isOnboarded) {
-      push("/onboarding");
+    if (!user?.isOnboarded && isSuccess) {
+      push("/onboarding", { replace: true });
     }
-  }, [token, user?.isOnboarded]);
+  }, [user?.id, isSuccess]);
 
   return (
     <Container>

@@ -15,21 +15,9 @@ import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { AuthPageTemplate } from "./components/AuthPageTemplate/AuthPageTemplate";
 import { useAppInit } from "./hooks/useAppInit";
 import { PageTemplate } from "./components/PageTemplate/PageTemplate";
-import { useTranslationsQuery } from "./services/translation";
-import { useEffect } from "react";
-import i18n from "./helper/i18n";
-import { useCurrentUserQuery } from "./services/auth";
 
 function App() {
   useAppInit();
-  const { isSuccess, data } = useTranslationsQuery();
-  useEffect(() => {
-    const lang = data?.locale;
-    if (isSuccess && lang) {
-      i18n.addResourceBundle(lang, "translation", data?.data, true, true);
-      i18n.changeLanguage(lang);
-    }
-  }, [isSuccess]);
 
   return (
     <Routes>
