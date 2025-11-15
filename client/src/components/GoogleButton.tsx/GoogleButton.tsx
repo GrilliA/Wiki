@@ -38,6 +38,7 @@ export function GoogleButton(
   return (
     <Button
       size="md"
+      disabled={true}
       type="submit"
       leftSection={<GoogleIcon />}
       variant="default"
