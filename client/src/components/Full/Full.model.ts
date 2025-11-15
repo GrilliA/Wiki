@@ -1,4 +1,4 @@
-import { MouseEventHandler, ReactNode } from "react";
+import { type MouseEventHandler, type ReactNode } from "react";
 
 export type TDirection = {
   icon?: ReactNode;
@@ -16,4 +16,5 @@ export type TFull = {
   isDirty?: boolean;
   clear?: string;
   id?: string;
+  noNav?: boolean;
 };

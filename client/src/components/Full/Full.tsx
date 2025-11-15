@@ -7,6 +7,7 @@ import { forwardRef, type RefObject, useState, isValidElement } from "react";
 import type { TFull, TDirection } from "./Full.model";
 
 const Full = forwardRef((props: TFull, ref: RefObject<HTMLDivElement>) => {
+  const { noNav } = props;
   const { back } = useRouter();
   const [isOpened, setIsOpened] = useState(false);
   const handleBackNavigation = () => {
@@ -73,13 +74,15 @@ const Full = forwardRef((props: TFull, ref: RefObject<HTMLDivElement>) => {
         Are you sure you want to leave without saving changes?
       </WikiModal>
       <section className={styles.wrapper}>
-        <div className={styles.nav}>
-          {left}
-          <Text fw="bold" size="md">
-            {props.title}
-          </Text>
-          {right}
-        </div>
+        {noNav ? null : (
+          <div className={styles.nav}>
+            {left}
+            <Text fw="bold" size="md">
+              {props.title}
+            </Text>
+            {right}
+          </div>
+        )}
         <div className={styles.full} ref={ref} id={props.id}>
           {props.children}
         </div>

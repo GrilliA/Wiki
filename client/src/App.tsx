@@ -33,6 +33,7 @@ function App() {
         <Route index path="home" element={<HomePage />} />
         <Route path="profile/edit" element={<ProfileForm />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="search" element={<>search</>} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

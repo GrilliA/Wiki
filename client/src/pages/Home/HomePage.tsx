@@ -1,5 +1,9 @@
-import { Text } from "@mantine/core";
-
+import { WikiFull } from "@/components/Full";
+import { HeroSection } from "@/components/HeroSection/HeroSection";
 export const HomePage = () => {
-  return <Text>Test</Text>;
+  return (
+    <WikiFull noNav>
+      <HeroSection />
+    </WikiFull>
+  );
 };

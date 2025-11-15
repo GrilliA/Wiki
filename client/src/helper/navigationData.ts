@@ -20,7 +20,7 @@ export const navigationData: TNavigationData = [
     id: "search",
     href: "/search",
     icon: "search",
-    isDisabled: true,
+    isDisabled: false,
   },
   {
     id: "add",
