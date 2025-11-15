@@ -20,14 +20,21 @@ import {
 } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { useRouter } from "../../hooks/useRouter";
+import { useCurrentUserQuery, useUpdateUserMutation } from "@/services/auth";
+import { useUploadMutation } from "@/services/file";
+import { imageCompressionOptions } from "@/helper/constants";
+import imageCompression from "browser-image-compression";
 
 export const UserForm = (_) => {
   const [logo, setLogo] = useState("");
+  const [content, setContent] = useState("");
   const { getInputProps, onSubmit, errors, values } = useForm({
     initialValues: userFormInitialValues,
     validate: yupResolver(userFormValidationSchema),
   });
+  console.log(errors);
   const { push } = useRouter();
+
   useEffect(() => {
     if (!values.avatar) return;
     const logo = values.avatar as File;
@@ -37,12 +44,34 @@ export const UserForm = (_) => {
       setLogo(fileReader.result as string),
     );
   }, [(values.avatar as File)?.lastModified]);
+
   const logoSrc = logo;
-  const handleSubmit = () => {
-    //onSubmit(fetch)
-    push("/profile");
-  };
-  const [content, setContent] = useState("");
+  const [updateUser, { isSuccess }] = useUpdateUserMutation();
+  const { data: user } = useCurrentUserQuery();
+  const userId = user?.id;
+  const [uploadFile] = useUploadMutation();
+  const handleSubmit = onSubmit(async (data: any) => {
+    await updateUser({
+      userId,
+      data: {
+        ...data,
+        profession: data?.profession?.join(","),
+        genre: data?.genre?.join(","),
+        bio: content,
+      },
+    });
+
+    const fileData = {
+      files: data?.avatar,
+      ref: "plugin::users-permissions.user",
+      refId: userId,
+    };
+    await uploadFile(fileData);
+    if (isSuccess) {
+      push("/profile");
+    }
+  });
+
   const editor = useEditor({
     extensions: [StarterKit],
     content,
@@ -50,6 +79,7 @@ export const UserForm = (_) => {
       setContent(editor.getHTML());
     },
   });
+
   return (
     <form onSubmit={handleSubmit} id="onboarding-form">
       <Stack>
@@ -90,14 +120,14 @@ export const UserForm = (_) => {
           size="md"
         />
         <TextInput
-          {...getInputProps("artistName")}
+          {...getInputProps("nickName")}
           label={"What is your artist name?"}
           size="md"
         />
         <MultiSelect
           data={["dj", "dancer", "choreographer", "teacher"]}
           label={"What is your profession on the dance community?"}
-          {...getInputProps("job")}
+          {...getInputProps("profession")}
           size="md"
         />
         <MultiSelect
@@ -106,7 +136,7 @@ export const UserForm = (_) => {
           {...getInputProps("genre")}
           size="md"
         />
-        <div>
+        <div className={styles.editor}>
           <InputLabel size="md">Tell us about your self</InputLabel>
           <RichTextEditor editor={editor} variant="subtle">
             <RichTextEditor.Toolbar

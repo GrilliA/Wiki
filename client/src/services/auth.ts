@@ -15,6 +15,16 @@ export const authApi = createApi({
         };
       },
     }),
+    updateUser: builder.mutation<any, any>({
+      query: (payload) => {
+        const { userId, data } = payload;
+        return {
+          url: `/users/${userId}`,
+          method: "PUT",
+          payload: data,
+        };
+      },
+    }),
     register: builder.mutation<any, any>({
       query: (payload) => {
         return {
@@ -44,5 +54,9 @@ export const authApi = createApi({
   }),
 });
 
-export const { useRegisterMutation, useLoginMutation, useCurrentUserQuery } =
-  authApi;
+export const {
+  useUpdateUserMutation,
+  useRegisterMutation,
+  useLoginMutation,
+  useCurrentUserQuery,
+} = authApi;

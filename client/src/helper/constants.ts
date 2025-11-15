@@ -23,3 +23,13 @@ export const API_TOKEN =
 export const defaultAppMode = EAppMode.Development;
 export const appModeKey = "AppMode";
 export const tokenKey = "appToken";
+export enum HttpType {
+  File = "File",
+  Json = "Json",
+}
+
+export const imageCompressionOptions = {
+  maxSizeMB: 5,
+  maxWidthOrHeight: 1920,
+  useWebWorker: true,
+};

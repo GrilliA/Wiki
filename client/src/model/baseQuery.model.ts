@@ -1,4 +1,5 @@
-import type { TApiError } from "@/state/modalSlice/apiErrorSlice/apiErrorSlice.model";
+import type { HttpType } from "@/helper/constants";
+import type { TApiError } from "@/state/apiErrorSlice/apiErrorSlice.model";
 import type { ThunkDispatch } from "@reduxjs/toolkit";
 
 export type TBaseQueryFn<
@@ -6,6 +7,7 @@ export type TBaseQueryFn<
     payload?: object;
     method: "POST" | "GET" | "PUT" | "DELETE";
     url: string;
+    type?: HttpType;
   },
   Result = {
     data: unknown;

@@ -1,24 +1,50 @@
 import type { TBaseQueryFn } from "@/model/baseQuery.model";
-import { baseUrl, tokenKey } from "./constants";
+import {
+  baseUrl,
+  HttpType,
+  imageCompressionOptions,
+  tokenKey,
+} from "./constants";
 import { addApiError } from "@/state/apiErrorSlice/apiErrorSlice";
 import { addLoader, removeLoader } from "@/state/uiSlice/uiSlice";
+import { toFormData } from "./toFormData";
+import imageCompression from "browser-image-compression";
 
 export const normalizeBaseQuery: TBaseQueryFn = async (args, { dispatch }) => {
-  const { url, payload, method } = args;
+  const { url, payload, method, type } = args;
   try {
     dispatch(addLoader());
+
+    let body;
+    if (type === HttpType.File) {
+      const files = await imageCompression(
+        payload.files,
+        imageCompressionOptions,
+      );
+
+      body = toFormData({
+        ...body,
+        files,
+      });
+    } else {
+      body = JSON.stringify(payload);
+    }
+
     const auth = localStorage.getItem(tokenKey);
+    let headers = new Headers();
+
+    if (auth) {
+      headers.append("Authorization", `Bearer ${auth}`);
+    }
+
+    if (!type) {
+      headers.append("Content-type", "application/json; charset=UTF-8");
+    }
+
     const response = await fetch(`${baseUrl}${url}`, {
-      body: JSON.stringify(payload),
+      body,
       method,
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-        ...(auth
-          ? {
-              Authorization: `Bearer ${auth}`,
-            }
-          : {}),
-      },
+      headers: headers,
     });
 
     const data = await response.json();

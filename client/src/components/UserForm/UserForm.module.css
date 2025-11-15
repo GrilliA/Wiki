@@ -5,3 +5,13 @@
 .link {
   color: inherit;
 }
+
+/* remove outline */
+.editor :global(.ProseMirror):focus {
+  outline: none;
+}
+/* set */
+.editor :global(.ProseMirror) {
+  min-height: 200px;
+  max-height: 200px;
+}

@@ -72,6 +72,29 @@
     "isOnboarded": {
       "type": "boolean",
       "default": false
+    },
+    "firstName": {
+      "type": "string",
+      "required": false
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "nickName": {
+      "type": "string"
+    },
+    "genre": {
+      "type": "string"
+    },
+    "profession": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

@@ -4,13 +4,14 @@ export const userFormInitialValues = {
   firstName: "",
   lastName: "",
   bio: "",
-  username: "",
   avatar: null,
+  nickName: "",
+  genre: [],
+  profession: [],
 };
 
 export const userFormValidationSchema = Yup.object({
-  firstName: Yup.string().required(),
-  lastName: Yup.string().required(),
-  bio: Yup.string().required(),
-  username: Yup.string().required(),
+  firstName: Yup.string(),
+  lastName: Yup.string(),
+  bio: Yup.string(),
 });
