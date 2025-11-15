@@ -1,4 +1,4 @@
-import { Button, Container, Overlay, Text, Title } from "@mantine/core";
+import { Button, Container, Image, Overlay, Text, Title } from "@mantine/core";
 import classes from "./HeroSection.module.css";
 import { SearchComponent } from "./SearchComponent";
 import { appName } from "@/helper/constants";
@@ -28,8 +28,16 @@ export const HeroSection = () => {
             content and providing new content.
           </Text>
         </Container>
-        <Container>
+        <Container mb={"md"}>
           <SearchComponent onClick={handleSearch} />
+        </Container>
+        <Container size={640} mb={"md"}>
+          <Text size="lg" className={classes.description} fw={"bolder"}>
+            sponsored by:
+          </Text>
+          <div style={{ width: 150 }}>
+            <Image src="mike.avif" maw={"100%"} h={"100%"} />
+          </div>
         </Container>
       </div>
     </div>
