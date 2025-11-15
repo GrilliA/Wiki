@@ -14,14 +14,14 @@
     "title": {
       "type": "string"
     },
-    "content": {
-      "type": "text"
-    },
     "page": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::event-page.event-page",
       "inversedBy": "sections"
+    },
+    "content": {
+      "type": "blocks"
     }
   }
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-11-15T13:42:37.748Z"
+    "x-generation-date": "2025-11-15T14:06:21.705Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -3134,9 +3134,6 @@
                 "title": {
                   "type": "string"
                 },
-                "content": {
-                  "type": "string"
-                },
                 "page": {
                   "type": "object",
                   "properties": {
@@ -3477,6 +3474,7 @@
                     }
                   }
                 },
+                "content": {},
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -3607,9 +3605,6 @@
               "title": {
                 "type": "string"
               },
-              "content": {
-                "type": "string"
-              },
               "page": {
                 "oneOf": [
                   {
@@ -3621,6 +3616,7 @@
                 ],
                 "example": "string or id"
               },
+              "content": {},
               "locale": {
                 "type": "string"
               },
@@ -3689,9 +3685,6 @@
           "title": {
             "type": "string"
           },
-          "content": {
-            "type": "string"
-          },
           "page": {
             "type": "object",
             "properties": {
@@ -3727,9 +3720,6 @@
                     "title": {
                       "type": "string"
                     },
-                    "content": {
-                      "type": "string"
-                    },
                     "page": {
                       "type": "object",
                       "properties": {
@@ -3741,6 +3731,7 @@
                         }
                       }
                     },
+                    "content": {},
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -4100,6 +4091,7 @@
               }
             }
           },
+          "content": {},
           "createdAt": {
             "type": "string",
             "format": "date-time"

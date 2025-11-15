@@ -15,6 +15,7 @@ import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { AuthPageTemplate } from "./components/AuthPageTemplate/AuthPageTemplate";
 import { useAppInit } from "./hooks/useAppInit";
 import { PageTemplate } from "./components/PageTemplate/PageTemplate";
+import { SearchPage } from "./pages/SearchPage/SearchPage";
 
 function App() {
   useAppInit();
@@ -33,7 +34,7 @@ function App() {
         <Route index path="home" element={<HomePage />} />
         <Route path="profile/edit" element={<ProfileForm />} />
         <Route path="profile" element={<Profile />} />
-        <Route path="search" element={<>search</>} />
+        <Route path="search" element={<SearchPage />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
