@@ -24,8 +24,8 @@ export const Login = (_) => {
   const { push } = useRouter();
   const [login, { isSuccess }] = useLoginMutation();
   const handleSubmit = async () => {
-    await login(values);
-    if (!isSuccess) return;
+    const data = await login(values);
+    if (!data.data?.user?.id) return;
     push("/home", { replace: true });
   };
 

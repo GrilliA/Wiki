@@ -12,11 +12,12 @@ export const useSignup = () => {
   });
   const [registerUser, { isSuccess }] = useRegisterMutation();
   const handleSubmit = onSubmit(async (values) => {
-    await registerUser({
+    const data = await registerUser({
       username: values.username,
       email: values.email,
       password: values.password,
     });
+    if (!data.data?.user?.id) return;
     push("/auth/login");
   });
   return { getInputProps, handleSubmit };
