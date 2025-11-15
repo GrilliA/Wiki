@@ -17,9 +17,6 @@ export const useSignup = () => {
       email: values.email,
       password: values.password,
     });
-    if (isSuccess) {
-      push("/");
-    }
   });
   return { getInputProps, handleSubmit };
 };

@@ -10,6 +10,9 @@ export const normalizeBaseQuery: TBaseQueryFn = async (args, { dispatch }) => {
     const response = await fetch(`${baseUrl}${url}`, {
       body: JSON.stringify(payload),
       method,
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
     });
 
     const data = await response.json();

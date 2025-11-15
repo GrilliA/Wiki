@@ -3,8 +3,9 @@ export enum EAppMode {
   Production = "production",
 }
 
-export const baseUrl =
-  "https://incredible-purpose-39ec375761.strapiapp.com/api";
+export const baseUrl = "https://api.dancediction.com/api";
+//"http://localhost:1337/api";
+//"https://incredible-purpose-39ec375761.strapiapp.com/api";
 export const appName = "Dance Diction";
 export const enum EStoreSlice {
   Modal = "Modal",
