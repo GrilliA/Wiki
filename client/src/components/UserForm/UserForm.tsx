@@ -22,8 +22,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "../../hooks/useRouter";
 import { useCurrentUserQuery, useUpdateUserMutation } from "@/services/auth";
 import { useUploadMutation } from "@/services/file";
-import { imageCompressionOptions } from "@/helper/constants";
-import imageCompression from "browser-image-compression";
 
 export const UserForm = (_) => {
   const [logo, setLogo] = useState("");
@@ -65,6 +63,7 @@ export const UserForm = (_) => {
       files: data?.avatar,
       ref: "plugin::users-permissions.user",
       refId: userId,
+      field: "avatar",
     };
     await uploadFile(fileData);
     if (isSuccess) {
