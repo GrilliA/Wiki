@@ -7,32 +7,34 @@ import {
   Spoiler,
   Stack,
   Text,
+  Typography,
 } from "@mantine/core";
 import { WikiIcon } from "../../components/Icon";
 import styles from "./Profile.module.css";
 import { useRouter } from "../../hooks/useRouter";
+import { useCurrentUserQuery } from "@/services/auth";
 
 export const Profile = () => {
-  const jobs = ["dancer"];
-  const name = "D.Doctor";
-  const genres = ["hip hop", "house"];
-  const bio = "I am trust!";
   const { push } = useRouter();
+  const { data: user } = useCurrentUserQuery();
+  const profession = user?.profession ? user?.profession?.split(",") : [];
+  const genres = user?.genre ? user?.genre?.split(",") : [];
+  const bio = user?.bio;
   return (
     <Stack gap={"xl"}>
       <Stack gap={"md"}>
         <Group gap={"sm"}>
-          <Avatar src={"/trust.jpeg"} size={"xl"} className={styles.logo} />
+          <Avatar src={user?.avatar?.url} size={"xl"} className={styles.logo} />
           <Stack gap={0}>
             <Group>
-              {jobs.map((item) => (
+              {profession?.map((item) => (
                 <Badge key={item} variant="outline" size="xs">
                   {item}
                 </Badge>
               ))}
             </Group>
             <Text component="div" fw={"bold"} tt={"capitalize"}>
-              {name}
+              {user?.nickName}
             </Text>
             <Group gap={0}>
               {genres.map((item) => (
@@ -57,8 +59,7 @@ export const Profile = () => {
             </Text>
           }
         >
-          <Text
-            size="sm"
+          <Typography
             dangerouslySetInnerHTML={{
               __html: bio,
             }}

@@ -56,6 +56,7 @@ export const UserForm = (_) => {
         profession: data?.profession?.join(","),
         genre: data?.genre?.join(","),
         bio: content,
+        isOnboarded: true,
       },
     });
 

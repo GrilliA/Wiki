@@ -17,14 +17,15 @@ export const normalizeBaseQuery: TBaseQueryFn = async (args, { dispatch }) => {
 
     let body;
     if (type === HttpType.File) {
-      const files = await imageCompression(
-        payload.files,
+      const { files, ...rest } = payload;
+      const compressedFiles = await imageCompression(
+        files,
         imageCompressionOptions,
       );
 
       body = toFormData({
-        ...body,
-        files,
+        ...rest,
+        files: compressedFiles,
       });
     } else {
       body = JSON.stringify(payload);

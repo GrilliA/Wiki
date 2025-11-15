@@ -21,7 +21,7 @@ export const PageTemplate = () => {
       push("/auth/login", { replace: true });
       return;
     }
-    if (!user?.isOnboarded) {
+    if (user && !user?.isOnboarded) {
       push("/onboarding");
     }
   }, [token, user?.isOnboarded]);

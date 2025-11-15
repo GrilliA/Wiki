@@ -10,7 +10,7 @@ export const authApi = createApi({
     currentUser: builder.query({
       query: () => {
         return {
-          url: "/users/me",
+          url: "/users/me?populate=*",
           method: "GET",
         };
       },
