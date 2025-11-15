@@ -83,14 +83,6 @@ export const Profile = () => {
           >
             Edit profile
           </Button>
-          <Button
-            size="sm"
-            className={styles["profile-button"]}
-            variant="outline"
-            onClick={() => {}}
-          >
-            Check my style
-          </Button>
         </Group>
       </Stack>
       <Divider />
