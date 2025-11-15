@@ -14,13 +14,18 @@ import { useCurrentUserQuery } from "@/services/auth";
 export const PageTemplate = () => {
   const { push } = useRouter();
   const token = useSelector((state: TRootState) => state.ui.token);
+  const { data: user } = useCurrentUserQuery();
+
   useEffect(() => {
     if (!token) {
       push("/auth/login", { replace: true });
+      return;
     }
-  }, [token]);
+    if (!user?.isOnboarded) {
+      push("/onboarding");
+    }
+  }, [token, user?.isOnboarded]);
 
-  const { data: user } = useCurrentUserQuery();
   return (
     <Container>
       <div className={styles.template}>

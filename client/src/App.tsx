@@ -40,8 +40,8 @@ function App() {
         <Route path="email_verification" element={<EmailVerification />} />
         <Route path="forgotten_password" element={<ForgottenPassword />} />
       </Route>
-      <Route path="onboarding" element={<OnBoardingForm />} />
       <Route element={<PageTemplate />}>
+        <Route path="onboarding" element={<OnBoardingForm />} />
         <Route index path="home" element={<HomePage />} />
         <Route path="profile/edit" element={<ProfileForm />} />
         <Route path="profile" element={<Profile />} />
