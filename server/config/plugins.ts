@@ -2,9 +2,16 @@ export default ({ env }) => ({
   "users-permissions": {
     config: {
       register: {
-        allowedFields: ["bio", "isOnboarded"],
+        allowedFields: [
+          "bio",
+          "isOnboarded",
+          "firstName",
+          "lastName",
+          "nickName",
+          "genre",
+          "profession",
+        ],
       },
-      jwtManagement: "refresh",
     },
   },
   // email: {

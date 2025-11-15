@@ -16,32 +16,8 @@ export const OnBoardingForm = (_) => {
     form: formId,
   };
   return (
-    <section>
-      <PageComponent>
-        <WikiFull title="OnBoarding" right={confirmProps}>
-          <UserForm />
-        </WikiFull>
-        <Stack mt="md" align="center">
-          <Divider mt={"md"} />
-
-          <WikiLogo />
-          <Group justify="center" mb={"lg"}>
-            <WikiLink className={styles.link} href="#" size="xs">
-              Cookies Policy
-            </WikiLink>
-            <WikiLink className={styles.link} href="#" size="xs">
-              Privacy Policy
-            </WikiLink>
-            <WikiLink className={styles.link} href="#" size="xs">
-              Terms and Service Policy
-            </WikiLink>
-            <WikiLink className={styles.link} href="#" size="xs">
-              Contribute
-            </WikiLink>
-          </Group>
-        </Stack>
-      </PageComponent>
-      <CopyRight />
-    </section>
+    <WikiFull title="OnBoarding" right={confirmProps}>
+      <UserForm />
+    </WikiFull>
   );
 };
