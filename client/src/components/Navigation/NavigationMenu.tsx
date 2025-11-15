@@ -31,9 +31,9 @@ const NavigationMenu = () => {
         </Button>
       </Menu.Target>
       <Menu.Dropdown>
-        <Menu.Item leftSection={<Icon name="shield" />}>
-          {"Area riservata"}
-        </Menu.Item>
+        {/* <Menu.Item leftSection={<Icon name="shield" />}> */}
+        {/*   {"Area riservata"} */}
+        {/* </Menu.Item> */}
         {/* <Menu.Item leftSection={<Icon name="edit" />} onClick={handlePassRoute}> */}
         {/*   {"Cambia password"} */}
         {/* </Menu.Item> */}
@@ -45,7 +45,7 @@ const NavigationMenu = () => {
           leftSection={<Icon name="logout" />}
           onClick={handleLogout}
         >
-          {"Esci"}
+          Logout
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>
