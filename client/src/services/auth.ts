@@ -1,5 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { normalizeBaseQuery } from "@/helper/normalizeBaseQuery";
+import { addToken } from "@/state/uiSlice/uiSlice";
+import { tokenKey } from "@/helper/constants";
 
 export const authApi = createApi({
   reducerPath: "authApi",
@@ -29,6 +31,14 @@ export const authApi = createApi({
           method: "POST",
           payload,
         };
+      },
+      async onQueryStarted(_, mutationLifeCycleApi) {
+        const { data } = await mutationLifeCycleApi.queryFulfilled;
+        mutationLifeCycleApi.queryFulfilled;
+        if (data?.jwt) {
+          localStorage.setItem(tokenKey, data?.jwt);
+          mutationLifeCycleApi.dispatch(addToken(data?.jwt));
+        }
       },
     }),
   }),

@@ -4,23 +4,23 @@ import { WikiNavigation } from "../Navigation";
 import { WikiSidebar } from "../Sidebar";
 import styles from "./PageTemplate.module.css";
 import { Outlet } from "react-router";
-import type { TRootState } from "@/state/store";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { useRouter } from "@/hooks/useRouter";
 import { ErrorModal } from "../ErrorModal/ErrorModal";
+import { useSelector } from "react-redux";
+import type { TRootState } from "@/state/store";
+import { useCurrentUserQuery } from "@/services/auth";
 
 export const PageTemplate = () => {
   const { push } = useRouter();
-  const apiErrors = useSelector((state: TRootState) => state.apiError);
-  const isAuthenticated = apiErrors.find((err) => err.status !== 401);
-
+  const token = useSelector((state: TRootState) => state.ui.token);
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!token) {
       push("/auth/login", { replace: true });
     }
-  }, [isAuthenticated]);
+  }, [token]);
 
+  const { data: user } = useCurrentUserQuery();
   return (
     <Container>
       <div className={styles.template}>

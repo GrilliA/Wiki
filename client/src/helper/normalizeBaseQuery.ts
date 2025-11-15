@@ -1,5 +1,5 @@
 import type { TBaseQueryFn } from "@/model/baseQuery.model";
-import { baseUrl } from "./constants";
+import { baseUrl, tokenKey } from "./constants";
 import { addApiError } from "@/state/apiErrorSlice/apiErrorSlice";
 import { addLoader, removeLoader } from "@/state/uiSlice/uiSlice";
 
@@ -7,11 +7,17 @@ export const normalizeBaseQuery: TBaseQueryFn = async (args, { dispatch }) => {
   const { url, payload, method } = args;
   try {
     dispatch(addLoader());
+    const auth = localStorage.getItem(tokenKey);
     const response = await fetch(`${baseUrl}${url}`, {
       body: JSON.stringify(payload),
       method,
       headers: {
         "Content-type": "application/json; charset=UTF-8",
+        ...(auth
+          ? {
+              Authorization: `Bearer ${auth}`,
+            }
+          : {}),
       },
     });
 

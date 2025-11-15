@@ -12,25 +12,35 @@ import {
 import { loginInitialValues, loginValidationSchema } from "./Login.helper";
 import { useForm } from "@mantine/form";
 import { WikiLink } from "../../components/Link";
-import { useRouter } from "../../hooks/useRouter";
 import { GoogleButton } from "../../components/GoogleButton.tsx/GoogleButton";
 import { useLoginMutation } from "../../services/auth";
 import { useTranslation } from "react-i18next";
+import { tokenKey } from "@/helper/constants";
+import { useRouter } from "@/hooks/useRouter";
+import type { TRootState } from "@/state/store";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { getAuthToken } from "@/helper/getAuthToken";
 
 export const Login = (_) => {
-  const { push } = useRouter();
   const { getInputProps, onSubmit, errors, values } = useForm({
     initialValues: loginInitialValues,
     validate: yupResolver(loginValidationSchema),
   });
+  const token = useSelector((state: TRootState) => state.ui.token);
+  const { push } = useRouter();
   const { t } = useTranslation();
-  const [login, { isSuccess }] = useLoginMutation();
+  const [login] = useLoginMutation();
   const handleSubmit = async () => {
     await login(values);
-    if (isSuccess) {
-      push("/auth/onboarding");
-    }
   };
+
+  useEffect(() => {
+    if (getAuthToken()) {
+      push("/home", { replace: true });
+    }
+  }, [token]);
+
   return (
     <Stack>
       <Box>

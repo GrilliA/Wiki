@@ -1,7 +1,4 @@
 export type TUiState = {
-  loaders: boolean;
-};
-
-export type TLoaderPayload = {
-  id: string;
+  loaders: number;
+  token: string;
 };

@@ -1,9 +1,21 @@
 import { Button, Menu } from "@mantine/core";
-import { useNavigate } from "react-router-dom";
 import Icon from "../Icon/Icon";
 import styles from "./Navigation.module.css";
+import { tokenKey } from "@/helper/constants";
+import { useRouter } from "@/hooks/useRouter";
+import { removeToken } from "@/state/uiSlice/uiSlice";
+import { useDispatch } from "react-redux";
 
 const NavigationMenu = () => {
+  const { push } = useRouter();
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    localStorage.removeItem(tokenKey);
+    dispatch(removeToken());
+    push("/auth/login");
+  };
+
   return (
     <Menu width={300} withArrow>
       <Menu.Target>
@@ -28,7 +40,11 @@ const NavigationMenu = () => {
         {/* <Menu.Item leftSection={<Icon name="settings" />} onClick={handleSettingsRoute}> */}
         {/*   {"Impostazioni"} */}
         {/* </Menu.Item> */}
-        <Menu.Item color="red" leftSection={<Icon name="logout" />}>
+        <Menu.Item
+          color="red"
+          leftSection={<Icon name="logout" />}
+          onClick={handleLogout}
+        >
           {"Esci"}
         </Menu.Item>
       </Menu.Dropdown>

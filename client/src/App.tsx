@@ -18,14 +18,14 @@ import { PageTemplate } from "./components/PageTemplate/PageTemplate";
 import { useTranslationsQuery } from "./services/translation";
 import { useEffect } from "react";
 import i18n from "./helper/i18n";
+import { useCurrentUserQuery } from "./services/auth";
 
 function App() {
   useAppInit();
-
   const { isSuccess, data } = useTranslationsQuery();
   useEffect(() => {
-    if (isSuccess) {
-      const lang = data?.locale;
+    const lang = data?.locale;
+    if (isSuccess && lang) {
       i18n.addResourceBundle(lang, "translation", data?.data, true, true);
       i18n.changeLanguage(lang);
     }
