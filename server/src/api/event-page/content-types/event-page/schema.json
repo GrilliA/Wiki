@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_pages",
+  "info": {
+    "singularName": "event-page",
+    "pluralName": "event-pages",
+    "displayName": "Event page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "judges": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::section.section",
+      "mappedBy": "page"
+    }
+  }
+}
