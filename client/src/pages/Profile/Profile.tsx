@@ -76,6 +76,7 @@ export const Profile = () => {
             size="sm"
             variant="filled"
             className={styles["profile-button"]}
+            disabled
             onClick={() => {
               push("/profile/edit");
             }}

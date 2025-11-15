@@ -62,29 +62,31 @@ export const UserForm = (_) => {
   const userId = user?.id;
   const [uploadFile] = useUploadMutation();
   const handleSubmit = onSubmit(async (data: any) => {
-    await updateUser({
-      userId,
-      data: {
-        ...data,
-        profession: data?.profession?.join(","),
-        genre: data?.genre?.join(","),
-        bio: content,
-        isOnboarded: true,
-      },
-    });
+    try {
+      await updateUser({
+        userId,
+        data: {
+          ...data,
+          profession: data?.profession?.join(","),
+          genre: data?.genre?.join(","),
+          bio: content,
+          isOnboarded: true,
+        },
+      });
 
-    const fileData = {
-      files: data?.avatar,
-      ref: "plugin::users-permissions.user",
-      refId: userId,
-      field: "avatar",
-    };
+      const fileData = {
+        files: data?.avatar,
+        ref: "plugin::users-permissions.user",
+        refId: userId,
+        field: "avatar",
+      };
 
-    if (data?.avatar) {
-      await uploadFile(fileData);
-    }
-
-    if (isSuccess) {
+      if (data?.avatar) {
+        await uploadFile(fileData);
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
       push("/profile");
     }
   });
