@@ -12,7 +12,7 @@ export const AuthPageTemplate = () => {
 
   useEffect(() => {
     if (user?.id && isSuccess) {
-      push("/", { replace: true });
+      push("/");
     }
   }, [user?.id, isSuccess]);
 

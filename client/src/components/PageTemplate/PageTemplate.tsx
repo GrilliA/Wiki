@@ -13,11 +13,12 @@ export const PageTemplate = () => {
   const { data: user, isSuccess } = useUser();
   const { push } = useRouter();
   useEffect(() => {
-    if (!user?.id && isSuccess) {
-      push("/auth/login", { replace: true });
+    if (!user?.id) {
+      push("/auth/login");
+      return;
     }
-    if (!user?.isOnboarded && isSuccess) {
-      push("/onboarding", { replace: true });
+    if (user && !user?.isOnboarded) {
+      push("/onboarding");
     }
   }, [user?.id, isSuccess]);
 

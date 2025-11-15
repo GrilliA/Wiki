@@ -26,7 +26,7 @@ export const Login = (_) => {
   const handleSubmit = async () => {
     const data = await login(values);
     if (!data.data?.user?.id) return;
-    push("/home", { replace: true });
+    push("/home");
   };
 
   return (
