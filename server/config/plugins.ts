@@ -4,6 +4,7 @@ export default ({ env }) => ({
       register: {
         allowedFields: ["bio", "isOnboarded"],
       },
+      jwtManagement: "refresh",
     },
   },
   // email: {
