@@ -10,6 +10,7 @@ export default ({ env }) => ({
           "nickName",
           "genre",
           "profession",
+          "avatar",
         ],
       },
     },
