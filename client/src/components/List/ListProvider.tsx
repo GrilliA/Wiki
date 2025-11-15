@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { TListProviderProps, TListSharedProps } from "./List.model";
+import { type TListProviderProps, type TListSharedProps } from "./List.model";
 
 export const listContext = createContext<TListSharedProps>(null);
 const ListProvider = (props: TListProviderProps) => {

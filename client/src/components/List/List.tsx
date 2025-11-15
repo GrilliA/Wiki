@@ -1,4 +1,4 @@
-import { TListProps, TListSharedProps } from "./List.model";
+import { type TListProps, type TListSharedProps } from "./List.model";
 import styles from "./List.module.css";
 import ListProvider from "./ListProvider";
 

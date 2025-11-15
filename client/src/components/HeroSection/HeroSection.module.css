@@ -2,10 +2,8 @@
   position: relative;
   padding-top: 180px;
   padding-bottom: 130px;
-  background-image: url(/hero.jpg);
   background-size: cover;
   background-position: center;
-
   @media (max-width: $mantine-breakpoint-xs) {
     padding-top: 80px;
     padding-bottom: 50px;

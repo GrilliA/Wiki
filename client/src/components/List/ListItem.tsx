@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { TListItemProps } from "./List.model";
+import { type TListItemProps } from "./List.model";
 import styles from "./List.module.css";
 import { listContext } from "./ListProvider";
 

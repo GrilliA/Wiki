@@ -11,12 +11,13 @@ export const useSignup = () => {
     validate: yupResolver(signupValidationSchema),
   });
   const [registerUser, { isSuccess }] = useRegisterMutation();
-  const handleSubmit = onSubmit((values) => {
-    registerUser({
+  const handleSubmit = onSubmit(async (values) => {
+    await registerUser({
       username: values.username,
       email: values.email,
       password: values.password,
     });
+    push("/auth/login");
   });
   return { getInputProps, handleSubmit };
 };

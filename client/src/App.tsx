@@ -16,6 +16,7 @@ import { AuthPageTemplate } from "./components/AuthPageTemplate/AuthPageTemplate
 import { useAppInit } from "./hooks/useAppInit";
 import { PageTemplate } from "./components/PageTemplate/PageTemplate";
 import { SearchPage } from "./pages/SearchPage/SearchPage";
+import { EventPage } from "./pages/EventPage/EventPage";
 
 function App() {
   useAppInit();
@@ -35,6 +36,7 @@ function App() {
         <Route path="profile/edit" element={<ProfileForm />} />
         <Route path="profile" element={<Profile />} />
         <Route path="search" element={<SearchPage />} />
+        <Route path="page/:id" element={<EventPage />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
