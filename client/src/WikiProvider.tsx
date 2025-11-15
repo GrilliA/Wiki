@@ -3,7 +3,7 @@ import type { PropsWithChildren } from "react";
 
 const WikiProvider = (props: PropsWithChildren) => {
   return (
-    <MantineProvider theme={theme} defaultColorScheme="auto">
+    <MantineProvider theme={theme} defaultColorScheme="dark">
       {props.children}
     </MantineProvider>
   );
