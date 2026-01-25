@@ -1,5 +1,4 @@
 import { render } from "@react-email/components";
-import CredentialsEmail from "../../emails/auth/CredentialsEmail";
 import { USER_ROLE } from "../../helper/constants";
 import logger from "../../helper/logger";
 import prisma from "../../helper/prisma";

@@ -1,8 +1,14 @@
 import { Response, Request } from "express";
-import { createUser, getAllUsers, getUserByEmail, getUserById, updateUser } from "./user.service";
+import {
+  createUser,
+  getAllUsers,
+  getUserByEmail,
+  getUserById,
+  updateUser,
+} from "./user.service";
 import { hash, compare } from "bcryptjs";
 import logger from "../../helper/logger";
-import { PASSWORD_SALT, USER_ROLE } from "../../helper/constants";
+import { PASSWORD_SALT } from "../../helper/constants";
 import { getUserResponseMapper, getUserRequestMapper } from "./user.mapper";
 import { getUuid } from "../../helper/uuid";
 import userEvent, { USER_EVENT_ACTION_TYPE } from "./user.event";
@@ -50,7 +56,9 @@ export const updateUserController = async (req: Request, res: Response) => {
   const userData = getUserRequestMapper(req.body);
   const user = await updateUser(id, userData);
   logger.info(`Company updated with email: ${user.email}`);
-  res.status(201).json({ message: "Azienda cambiata con successo", data: user });
+  res
+    .status(201)
+    .json({ message: "Azienda cambiata con successo", data: user });
 };
 
 export const deleteUserController = async (req: Request, res: Response) => {
@@ -67,7 +75,9 @@ export const changePasswordController = async (req: Request, res: Response) => {
   const { newPassword, currentPassword } = req.body;
   const isSame = await compare(newPassword, currentPassword);
   if (!isSame) {
-    res.status(403).json({ message: "current password is not correct, please retry" });
+    res
+      .status(403)
+      .json({ message: "current password is not correct, please retry" });
   }
   const password = await hash(req.body.password, PASSWORD_SALT);
   await updateUser(req.params.id, { password });

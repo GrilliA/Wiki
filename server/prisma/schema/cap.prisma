@@ -1,9 +1,0 @@
-model Cap {
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @default(now()) @updatedAt
-  deletedAt DateTime?
-  id        Int       @id @default(autoincrement())
-  istatCode String
-  code      String
-  comuni    Comune[]
-}

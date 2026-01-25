@@ -12,8 +12,4 @@ model User {
   status      Int?
   role        Int?
   facilityId  Int?
-  facility    Option?   @relation(fields: [facilityId], references: [id])
-  tokens      Token[]
-  clients     Client[]
-  likes       Like[]
 }
