@@ -1,0 +1,15 @@
+model Province {
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @default(now()) @updatedAt
+  deletedAt    DateTime?
+  id           Int       @id @default(autoincrement())
+  name         String
+  abbreviation String
+  type         String
+  areaKmQ      String
+  code         String    @unique
+  regionCode   String
+  region       Region    @relation(fields: [regionCode], references: [code])
+  comuni       Comune[]
+  clients      Client[]
+}

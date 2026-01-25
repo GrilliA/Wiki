@@ -1,0 +1,16 @@
+model Crop {
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @default(now()) @updatedAt
+  deletedAt DateTime?
+  id        Int       @id @default(autoincrement())
+  regime    Option?   @relation("crop_regime", fields: [regimeId], references: [id])
+  group     Option?   @relation("crop_group", fields: [groupId], references: [id])
+  crop      Option?   @relation("crop", fields: [cropId], references: [id])
+  plan      Plan      @relation(fields: [planId], references: [id])
+  regimeId  Int?
+  groupId   Int?
+  cropId    Int?
+  planId    Int
+  recipes   Recipe[]
+  threads   Thread[]
+}

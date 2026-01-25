@@ -1,0 +1,11 @@
+model Inventory {
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @default(now()) @updatedAt
+  deletedAt     DateTime?
+  id            Int       @id @default(autoincrement())
+  stockQuantity Int
+  product       Option    @relation(name: "product_option", fields: [productId], references: [id])
+  productId     Int
+  storage       Option    @relation(name: "storage_option", fields: [storageId], references: [id])
+  storageId     Int
+}

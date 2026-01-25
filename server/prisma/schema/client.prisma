@@ -1,0 +1,29 @@
+model Client {
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @default(now()) @updatedAt
+  deletedAt        DateTime?
+  id               Int       @id @default(autoincrement())
+  email            String
+  surname          String?
+  name             String?
+  companyName      String?
+  vatNumber        String?
+  phoneNumber      String?
+  address          String?
+  addressNumber    String?
+  cap              String?
+  regionId         Int?
+  region           Region?   @relation(fields: [regionId], references: [id])
+  provinceId       Int?
+  province         Province? @relation(fields: [provinceId], references: [id])
+  comuneId         Int?
+  comune           Comune?   @relation(fields: [comuneId], references: [id])
+  facilityId       Int?
+  facility         Option?   @relation(fields: [facilityId], references: [id])
+  representativeId String?
+  representative   User?     @relation(fields: [representativeId], references: [id])
+  parentId         Int?
+  parent           Client?   @relation("parent", fields: [parentId], references: [id])
+  children         Client[]  @relation("parent")
+  plans            Plan[]
+}

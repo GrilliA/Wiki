@@ -1,0 +1,18 @@
+model Recipe {
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @default(now()) @updatedAt
+  deletedAt         DateTime?
+  id                Int       @id @default(autoincrement())
+  date              DateTime
+  hectares          Int
+  clientNote        String?
+  internalNote      String?
+  comments          Comment[]
+  products          Product[]
+  typeOfTreatment   Option    @relation("treatment_type", fields: [typeOfTreatmentId], references: [id])
+  treatmentPhase    Option    @relation("treatment_phase", fields: [treatmentPhaseId], references: [id])
+  crop              Crop      @relation(fields: [cropId], references: [id])
+  cropId            Int
+  typeOfTreatmentId Int
+  treatmentPhaseId  Int
+}

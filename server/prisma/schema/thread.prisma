@@ -1,0 +1,12 @@
+model Thread {
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @default(now()) @updatedAt
+  deletedAt   DateTime?
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String
+  comments    Comment[]
+  crop        Crop      @relation(fields: [cropId], references: [id])
+  cropId      Int
+  likes       Like[]
+}

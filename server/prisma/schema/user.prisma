@@ -1,0 +1,19 @@
+model User {
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @default(now()) @updatedAt
+  deletedAt   DateTime?
+  id          String    @id @default(uuid())
+  email       String    @unique
+  password    String
+  name        String?
+  surname     String?
+  phoneNumber String?
+  permissions String    @default("")
+  status      Int?
+  role        Int?
+  facilityId  Int?
+  facility    Option?   @relation(fields: [facilityId], references: [id])
+  tokens      Token[]
+  clients     Client[]
+  likes       Like[]
+}
