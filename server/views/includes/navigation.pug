@@ -2,7 +2,6 @@ nav
   .navbar
     .container
       .wrapper
-        .lines
         ul.nav-list
           li.nav-item.lang-select
             span.lang EN
@@ -13,7 +12,7 @@ nav
           li.nav-item.logo
             img.logo(src="/images/logo.svg" alt="Wiki Server Logo")
           li.nav-item: a.nav-link(href="/contact") Contact Us
-          li.nav-item: a.nav-link(href="/signup") Sign Up
+          li.nav-item: a.nav-link(href="/work") Work with us
           li.nav-item.menu
 
         ul.dropdown-menu
@@ -21,10 +20,19 @@ nav
           li.dropdown-item: a(href="#") Spanish
           li.dropdown-item: a(href="#") French
           li.dropdown-item: a(href="#") German
-
-        ul.menu-list
-          li.menu-link: a(href="/") Home
-          li.menu-link: a(href="/mission") Our mission
-          li.menu-link: a(href="/team") Team
-          li.menu-link: a(href="/contact") Contact Us
-          li.menu-link: a(href="/signup") Sign Up
+        .menu-wrapper
+          .menu-header.border-bottom.border-top
+            .container
+              ul.menu-list.border-right.border-left
+                li: a.menu-link(href="/") Home
+                li: a.menu-link(href="/mission") Our mission
+                li: a.menu-link(href="/team") Team
+                li: a.menu-link(href="/contact") Contact Us
+                li: a.menu-link(href="/work") Work with us
+          .menu-social.border-bottom
+            .container
+              ul.menu-icons.border-right.border-left
+                li: a(href="#"): i(data-feather="facebook" height="4em" width="4em")
+                li: a(href="#"): i(data-feather="twitter" height="4em" width="4em")
+                li: a(href="#"): i(data-feather="instagram" height="4em" width="4em")
+                li: a(href="#"): i(data-feather="linkedin" height="4em" width="4em")

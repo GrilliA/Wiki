@@ -10,6 +10,8 @@ const getMenuIcon = () => {
 
 getMenuIcon();
 
+navbar.classList.add("active");
+
 navMenu.addEventListener("click", () => {
   navbar.classList.toggle("active");
   getMenuIcon();

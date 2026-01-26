@@ -25,8 +25,33 @@
   --neutral-800: #262626;
   --neutral-900: #171717;
   --neutral-950: #0a0a0a;
+  /* Colors - Fixed Neutral */
+  --neutral-fixed-50: #fafafa;
+  --neutral-fixed-100: #f5f5f5;
+  --neutral-fixed-200: #e5e5e5;
+  --neutral-fixed-300: #d4d4d4;
+  --neutral-fixed-400: #a3a3a3;
+  --neutral-fixed-500: #737373;
+  --neutral-fixed-600: #525252;
+  --neutral-fixed-700: #404040;
+  --neutral-fixed-800: #262626;
+  --neutral-fixed-900: #171717;
+  --neutral-fixed-950: #0a0a0a;
 
-  /* Colors - Amber */
+  /* Colors - Primary */
+  --color-fixed-primary-50: #f5f3ff;
+  --color-fixed-primary-100: #ede9fe;
+  --color-fixed-primary-200: #ddd6fe;
+  --color-fixed-primary-300: #c4b5fd;
+  --color-fixed-primary-400: #a78bfa;
+  --color-fixed-primary-500: #8b5cf6;
+  --color-fixed-primary-600: #7c3aed;
+  --color-fixed-primary-700: #6d28d9;
+  --color-fixed-primary-800: #5b21b6;
+  --color-fixed-primary-900: #4c1d95;
+  --color-fixed-primary-950: #2e1065;
+
+  /* Colors - Fixed Primary */
   --color-primary-50: #f5f3ff;
   --color-primary-100: #ede9fe;
   --color-primary-200: #ddd6fe;
