@@ -216,3 +216,38 @@ nav.active .menu-wrapper {
 .border-right {
   border-right: 1px solid var(--neutral-fixed-300);
 }
+
+.terms-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+.terms-list a {
+  padding: calc(var(--spacing-base) * 2) calc(var(--spacing-base) * 4);
+
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.terms-policy,
+.terms-help {
+  border-right: 1px solid var(--neutral-fixed-300);
+}
+.terms-policy,
+.terms-service {
+  border-bottom: 1px solid var(--neutral-fixed-300);
+}
+
+.copyright {
+  display: flex;
+  padding: calc(var(--spacing-base) * 4);
+  justify-content: center;
+  align-items: center;
+}
