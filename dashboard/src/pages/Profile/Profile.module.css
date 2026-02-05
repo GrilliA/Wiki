@@ -1,0 +1,22 @@
+.profile-button {
+  width: 100%;
+}
+
+.logo {
+  border: 3px solid var(--mantine-primary-color-4);
+}
+
+.wrapper {
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+@media (min-width: 500px) {
+  .profile-button {
+    width: auto;
+  }
+
+  .wrapper {
+    width: auto;
+  }
+}
