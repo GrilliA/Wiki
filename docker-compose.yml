@@ -1,11 +1,22 @@
 services:
+  client:
+    build: ./dashboard/
+    env_file: ./.env
+    command: npm run dev
+    volumes:
+      - ./dashboard/:/client
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+
   server:
-    build: ./
+    build: ./app
     env_file: ./.env
     command: sh -c "npm run db:migrate && npm run dev"
     volumes:
-      - ./:/app
-      - ./prisma/migrations:/app/prisma/migrations
+      - ./app:/app
+      - ./app/prisma/migrations:/app/prisma/migrations
     ports:
       - "5000:5000"
     environment:
@@ -53,8 +64,10 @@ services:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    attach: false
     depends_on:
       - server
+      - client
 
 volumes:
   pgdata:
