@@ -22,6 +22,7 @@ export const sendEmail = async (opts: TEmailOptions) => {
         pass: GOOGLE_PASSWORD,
       },
     });
+
     const { html, subject, from, to, text } = opts;
     await transporter.verify();
     const info = await transporter.sendMail({

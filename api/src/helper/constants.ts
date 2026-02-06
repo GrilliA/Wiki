@@ -39,6 +39,7 @@ export const CORS_WHITELIST = [
   "https://agrogemma.com",
   "https://www.agrogemma.com",
 ];
+
 export const {
   PORT,
   HOST,
