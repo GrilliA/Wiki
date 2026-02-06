@@ -1,28 +1,25 @@
 import express from "express";
 import path from "path";
 import { getHomePageController } from "./controllers/HomePage";
+import type { ViteDevServer } from "vite";
 
 export const app = express();
 app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "pug");
 
-// Webpack middleware for development (hot module replacement)
 if (process.env.NODE_ENV === "development") {
-  const webpack = require("webpack");
-  const webpackDevMiddleware = require("webpack-dev-middleware");
-  const webpackHotMiddleware = require("webpack-hot-middleware");
-  const webpackConfig = require("../webpack.config.ts").default;
+  const { createServer } = require("vite");
   
-  const compiler = webpack(webpackConfig);
-  
-  app.use(
-    webpackDevMiddleware(compiler, {
-      publicPath: webpackConfig.output.publicPath,
-    })
-  );
-  
-  // HMR with reload=true will auto-reload when server restarts (e.g., on Pug file changes)
-  app.use(webpackHotMiddleware(compiler));
+  createServer({
+    root: path.join(__dirname, "../views/scripts"),
+    base: "/dist/",
+    server: {
+      middlewareMode: true
+    },
+    appType: "custom"
+  }).then((vite: ViteDevServer) => {
+    app.use(vite.middlewares);
+  });
 }
 
 app.use(express.static(path.join(__dirname, "../public")));
