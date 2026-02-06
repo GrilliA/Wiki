@@ -3,8 +3,8 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet" href="/css/variables.css")
-    link(rel="stylesheet" href="/css/home.css")
+    if env !== 'development'
+      link(rel="stylesheet" href="/dist/styles.css")
     title Welcome to Wiki Server
   body
     include includes/navigation.pug
@@ -36,7 +36,5 @@ html(lang="en")
             
             .footer
               p Server running on port #{port || 3000}
-    script(src="/js/icons.js")
-    script(src="/js/navigation.js")
-    script.
-      feather.replace();
+    script(src="/dist/bundle.js")
+
