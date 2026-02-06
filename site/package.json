@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "express": "^5.0.1",
+    "feather-icons": "^4.29.2",
     "pug": "^3.0.3",
     "yup": "^1.6.1"
   }
