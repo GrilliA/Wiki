@@ -1,0 +1,6 @@
+{
+  "watch": ["src", "views"],
+  "ext": "ts,json,pug",
+  "ignore": ["node_modules", "public/dist"],
+  "exec": "ts-node src/server.ts"
+}

@@ -4,18 +4,23 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev": "nodemon src/server.ts",
+    "dev": "NODE_ENV=development nodemon",
+    "build:client": "vite build",
+    "build": "npm ci && npm run build:client && tsc -p ./tsconfig.json",
     "email:dev": "email dev --dir=./src/emails --port=3005",
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
-    "build": "npm ci && tsc -p ./tsconfig.json",
     "serve": "node ./dist/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.11.7"
+    "@types/node": "^20.11.7",
+    "nodemon": "^3.1.11",
+    "sass": "^1.97.3",
+    "ts-node": "^10.9.2",
+    "vite": "^7.3.1"
   },
   "dependencies": {
     "express": "^5.0.1",
