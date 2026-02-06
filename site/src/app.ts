@@ -1,7 +1,6 @@
 import express from "express";
 import path from "path";
 import { getHomePageController } from "./controllers/HomePage";
-import { getComponentsDocsController } from "./controllers/ComponentsDocs";
 import type { ViteDevServer } from "vite";
 
 export const app = express();
@@ -25,4 +24,3 @@ if (process.env.NODE_ENV === "development") {
 
 app.use(express.static(path.join(__dirname, "../public")));
 app.get("/", getHomePageController);
-app.get("/components", getComponentsDocsController);

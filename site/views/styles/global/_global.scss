@@ -58,12 +58,10 @@ nav {
   background-color: var(--color-surface);
   position: sticky;
   top: 0;
-  /* left: 0; */
-  /* right: 0; */
-  /* z-index: 20; */
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25rem;
+  border-bottom: 1px solid var(--neutral-fixed-300);
 }
 nav.active {
   color: var(--neutral-fixed-100);
