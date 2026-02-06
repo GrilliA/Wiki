@@ -3,14 +3,12 @@ const navMenu = document.querySelector(".nav-item.menu");
 const menuList = document.querySelector(".menu-list");
 
 const getMenuIcon = () => {
-  navMenu.innerHTML = navbar.classList.contains("active")
-    ? feather.icons.x.toSvg()
-    : feather.icons.menu.toSvg();
+  navMenu!.innerHTML = navbar!.classList.contains("active") ? "x" : "menu";
 };
 
 getMenuIcon();
 
-navMenu.addEventListener("click", () => {
-  navbar.classList.toggle("active");
+navMenu!.addEventListener("click", () => {
+  navbar!.classList.toggle("active");
   getMenuIcon();
 });
