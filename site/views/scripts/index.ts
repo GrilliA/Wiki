@@ -1,21 +1,44 @@
-// Entry point for client-side assets
-// Import styles
 import '../styles/main.scss';
-
-// Import the feather icons library
 import './icons.js';
-
-// Import navigation functionality
 import './navigation.js';
 
-// Initialize feather icons on page load
-document.addEventListener('DOMContentLoaded', () => {
+function initializeFeatherIcons(): void {
   if (typeof feather !== 'undefined') {
     feather.replace();
   }
-});
+}
 
-// Hot Module Replacement
+function setupServerRestartReload(): void {
+  let serverWasDisconnected = false;
+  let disconnectMessageShown = false;
+  const HMR_ENDPOINT = '/__webpack_hmr';
+  
+  const connectionMonitor = new EventSource(HMR_ENDPOINT);
+  
+  connectionMonitor.onerror = () => {
+    serverWasDisconnected = true;
+    if (!disconnectMessageShown) {
+      console.log('[HMR] Connection lost, waiting for server...');
+      disconnectMessageShown = true;
+    }
+  };
+  
+  connectionMonitor.onopen = () => {
+    if (serverWasDisconnected) {
+      console.log('[HMR] Server reconnected, reloading page...');
+      window.location.reload();
+    }
+  };
+  
+  const closeConnectionMonitor = () => connectionMonitor.close();
+  
+  window.addEventListener('beforeunload', closeConnectionMonitor);
+  module.hot?.dispose(closeConnectionMonitor);
+}
+
+document.addEventListener('DOMContentLoaded', initializeFeatherIcons);
+
 if (module.hot) {
   module.hot.accept();
+  setupServerRestartReload();
 }
