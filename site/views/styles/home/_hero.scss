@@ -40,6 +40,10 @@
   border-right: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);
 }
-
 .hero-search {
+  border-bottom: 1px solid var(--border-color);
+}
+.hero-search__input {
+  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
 }

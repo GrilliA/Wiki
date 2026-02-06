@@ -1,7 +1,11 @@
 import { LOGIN_URL } from "../../src/helpers/constant";
+import { searchInput } from "./searchInput";
 
-const loginButton = document.querySelector(".js-home-login");
+addEventListener("DOMContentLoaded", () => {
+  const loginButton = document.querySelector(".js-home-login");
 
-loginButton?.addEventListener("click", () => {
-  location.href = LOGIN_URL;
+  loginButton?.addEventListener("click", () => {
+    location.href = LOGIN_URL;
+  });
+  searchInput();
 });

@@ -51,7 +51,10 @@ html(lang="en")
             .line
       .hero-search
         .container
-          .hero-search__input
+          .hero-search__input.input-search
+            input.input-search__field.input-search__lg( placeholder="Search for dance moves, styles, or anything related to dance..." )
+            i.input-search__icon(data-feather="search" height="24" width="24")
+            i.input-search__clear(data-feather="x" height="16" width="16")
     
     footer
       .footer footer

@@ -28,10 +28,13 @@
 
 #### Home page
 
-- [ ] Add the primary message, for user to login or sign up
+- [x] Add the primary message, for user to login or sign up
   - Message: "[website] [home page] Add primary message"
   - Steps:
-    - [ ] Create the button component
+    - [x] Create the button component
+
+- [ ] Add the clear for top message
+  - Message: "[website] [home page] Add clear for top message"
 
 #### Entity page
 
