@@ -1,3 +1,11 @@
+/*
+ * Component: Button
+ * Status: Stable
+ * Variants: filled, outline, transparent
+ * Sizes: sm, default, lg
+ * Usage: .btn + .btn--{variant} + optional .btn--{size}
+ */
+
 .btn {
   display: inline-flex;
   align-items: center;
