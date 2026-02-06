@@ -1,0 +1,50 @@
+nav
+  .navbar
+    .container
+      .wrapper
+        ul.nav-list
+          li.nav-item.lang-select
+            span.lang EN
+            i(data-feather="chevron-down")
+          li.nav-item: a.nav-link(href="/") Home
+          li.nav-item: a.nav-link(href="/mission") Our mission
+          li.nav-item: a.nav-link(href="/team") Team
+          li.nav-item.logo
+            img.logo(src="/images/logo.svg" alt="Wiki Server Logo")
+          li.nav-item: a.nav-link(href="/contact") Contact Us
+          li.nav-item: a.nav-link(href="/work") Work with us
+          li.nav-item.menu
+
+        ul.dropdown-menu
+          li.dropdown-item: a(href="#") English
+          li.dropdown-item: a(href="#") Spanish
+          li.dropdown-item: a(href="#") French
+          li.dropdown-item: a(href="#") German
+        .menu-wrapper
+          .menu-header.border-bottom.border-top
+            .container
+              ul.menu-list.border-right.border-left
+                li: a.menu-link(href="/") Home
+                li: a.menu-link(href="/mission") Our mission
+                li: a.menu-link(href="/team") Team
+                li: a.menu-link(href="/contact") Contact Us
+                li: a.menu-link(href="/work") Work with us
+          .menu-social.border-bottom
+            .container
+              ul.menu-icons.border-right.border-left
+                li: a(href="#"): i(data-feather="facebook" height="4em" width="4em")
+                li: a(href="#"): i(data-feather="twitter" height="4em" width="4em")
+                li: a(href="#"): i(data-feather="instagram" height="4em" width="4em")
+                li: a(href="#"): i(data-feather="linkedin" height="4em" width="4em")
+
+          .menu-terms.border-bottom
+            .container
+              ul.terms-list.border-right.border-left
+                li: a.terms-policy(href="#") Privacy Policy
+                li: a.terms-service(href="#") Terms of Service
+                li: a.terms-help(href="#") Help Center
+                li: a.terms-cookie(href="#") Cookie Policy
+
+          .menu-footer
+            .container
+              .copyright © 2024 Wiki Server. All rights reserved.
