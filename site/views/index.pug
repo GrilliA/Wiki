@@ -8,38 +8,18 @@ html(lang="en")
     else
       link(rel="stylesheet" href="/dist/styles.css")
     title Welcome to Wiki Server
-  body
-    include includes/navigation.pug
-    main
-      header(style="height: 100vh")
-        .container
-          .header-content
-            div  🚀 Wiki Dancers
-            div.subtitle Powered by Express & Pug
-            div.description
-              | Your modern web application server is up and running! 
-              | This page is rendered using Pug templates with Express.
-            
-            .features
-              .feature
-                .feature-icon ⚡
-                .feature-title Fast & Efficient
-              .feature
-                .feature-icon 🔒
-                .feature-title Secure
-              .feature
-                .feature-icon 🎨
-                .feature-title Beautiful
-              .feature
-                .feature-icon 📱
-                .feature-title Responsive
-            
-            a.cta-button(href="/api") Explore API
-            
-            .footer
-              p Server running on port #{port || 3000}
     if env === 'development'
       script(type="module" src="/dist/index.ts")
     else
       script(src="/dist/bundle.js")
+  body
+    include includes/navigation.pug
+
+    main
+      .grid-lines
+      .Search history
+    
+    footer
+      .footer footer
+
 
