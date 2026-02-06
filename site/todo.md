@@ -9,11 +9,14 @@
 - [ ] Add the minimally needed css variables for the website
   - Message: "[website] [feature] Add css variables"
 
-- [ ] Add integration between vitejs and nodejs
+- [x] Add integration between vitejs and nodejs
   - Message: "[website] [feature] Add vitejs and nodejs integration"
 
 - [x] Create a generic body for the website
   - Message: "[website] [feature] Create generic body"
+
+- [ ] Divide all the components in their own scss folder
+  - Message: "[website] [feature] Divide components in scss folders"
 
 ## Mobile
 
@@ -24,6 +27,11 @@
 ### Pages
 
 #### Home page
+
+- [ ] Add the primary message, for user to login or sign up
+  - Message: "[website] [home page] Add primary message"
+  - Steps:
+    - [ ] Create the button component
 
 #### Entity page
 
