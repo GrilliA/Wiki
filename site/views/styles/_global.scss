@@ -136,6 +136,21 @@ nav.active {
   grid-column: span 2;
 }
 
+.menu__icon {
+  display: initial;
+}
+
+.close-menu__icon {
+  display: none;
+}
+
+nav.active .menu__icon {
+  display: none;
+}
+
+nav.active .close-menu__icon {
+  display: initial;
+}
 /*menu*/
 
 .dropdown-menu {

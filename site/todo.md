@@ -1,15 +1,37 @@
 # To do
 
-- [x] Create the navigation bar
-  - Message: "[website] [feature] Create navigation bar"
-  - Steps:
-    - [ ] Implement the navigation bar in the dashboard on mobile
-      - [ ] style the navigation bar for mobile
-    - [ ] Test the navigation bar on tablet
-    - [ ] Test the navigation bar on desktop
+- [ ] Create the dark mode for the website
+  - Message: "[website] [feature] Create dark mode"
+
+- [ ] Add icon library - Feather icons
+  - Message: "[website] [feature] Add icon library"
+
+- [ ] Add the minimally needed css variables for the website
+  - Message: "[website] [feature] Add css variables"
+- [ ] Add integration between vitejs and nodejs
+  - Message: "[website] [feature] Add vitejs and nodejs integration"
+
+## Mobile
+
+### Navigation bar
 
 - [ ] Create a generic body for the website
   - Message: "[website] [feature] Create generic body"
 
-- [ ] Create the dark mode for the website
-  - Message: "[website] [feature] Create dark mode"
+### Footer
+
+### Pages
+
+#### Home page
+
+#### Entity page
+
+#### Blog page
+
+#### Our mission page
+
+#### Why to contribute page
+
+## Tablet
+
+## Desktop
