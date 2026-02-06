@@ -1,7 +1,6 @@
 import express from "express";
 import path from "path";
 import { getHomePageController } from "./controllers/HomePage";
-import { getButtonDemoController } from "./controllers/ButtonDemo";
 import { getComponentsDocsController } from "./controllers/ComponentsDocs";
 import type { ViteDevServer } from "vite";
 
@@ -11,14 +10,14 @@ app.set("view engine", "pug");
 
 if (process.env.NODE_ENV === "development") {
   const { createServer } = require("vite");
-  
+
   createServer({
     root: path.join(__dirname, "../views/scripts"),
     base: "/dist/",
     server: {
-      middlewareMode: true
+      middlewareMode: true,
     },
-    appType: "custom"
+    appType: "custom",
   }).then((vite: ViteDevServer) => {
     app.use(vite.middlewares);
   });
@@ -26,5 +25,4 @@ if (process.env.NODE_ENV === "development") {
 
 app.use(express.static(path.join(__dirname, "../public")));
 app.get("/", getHomePageController);
-app.get("/button-demo", getButtonDemoController);
 app.get("/components", getComponentsDocsController);
