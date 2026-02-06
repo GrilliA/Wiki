@@ -11,7 +11,6 @@ if (process.env.NODE_ENV === "development") {
   const webpack = require("webpack");
   const webpackDevMiddleware = require("webpack-dev-middleware");
   const webpackHotMiddleware = require("webpack-hot-middleware");
-  const chokidar = require("chokidar");
   const webpackConfig = require("../webpack.config.ts").default;
   
   const compiler = webpack(webpackConfig);
@@ -22,34 +21,8 @@ if (process.env.NODE_ENV === "development") {
     })
   );
   
-  const hotMiddleware = webpackHotMiddleware(compiler);
-  app.use(hotMiddleware);
-  
-  // Watch for Pug file changes and trigger browser reload
-  const viewsPath = path.join(__dirname, "../views");
-  
-  const watcher = chokidar.watch(viewsPath, {
-    ignored: /node_modules/,
-    persistent: true,
-    ignoreInitial: true,
-    usePolling: true,
-    interval: 300
-  });
-  
-  watcher.on("ready", () => {
-    console.log(`[HMR] Watching view files for changes in: ${viewsPath}`);
-  });
-  
-  watcher.on("all", (event: string, filePath: string) => {
-    if (filePath.endsWith(".pug")) {
-      console.log(`[HMR] Pug file ${event}: ${filePath}`);
-      hotMiddleware.publish({ action: "reload" });
-    }
-  });
-  
-  watcher.on("error", (error: Error) => {
-    console.error(`[HMR] Watcher error: ${error}`);
-  });
+  // HMR with reload=true will auto-reload when server restarts (e.g., on Pug file changes)
+  app.use(webpackHotMiddleware(compiler));
 }
 
 app.use(express.static(path.join(__dirname, "../public")));

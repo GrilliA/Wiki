@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development nodemon src/server.ts",
+    "dev": "NODE_ENV=development nodemon",
     "build:client": "NODE_ENV=production webpack --config webpack.config.ts",
     "build": "npm ci && npm run build:client && tsc -p ./tsconfig.json",
     "email:dev": "email dev --dir=./src/emails --port=3005",
@@ -33,7 +33,6 @@
     "webpack-hot-middleware": "^2.26.1"
   },
   "dependencies": {
-    "chokidar": "^5.0.0",
     "express": "^5.0.1",
     "pug": "^3.0.3",
     "yup": "^1.6.1"

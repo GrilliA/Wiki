@@ -17,18 +17,6 @@ interface NodeModule {
   };
 }
 
-// Webpack Hot Middleware Client
-declare module 'webpack-hot-middleware/client' {
-  interface HotMiddlewareMessage {
-    action?: string;
-    [key: string]: unknown;
-  }
-  
-  export function subscribe(callback: (message: HotMiddlewareMessage) => void): void;
-  export function useCustomOverlay(options: unknown): void;
-  export function setOptionsAndConnect(options: unknown): void;
-}
-
 // SCSS module imports
 declare module '*.scss' {
   const content: Record<string, string>;
