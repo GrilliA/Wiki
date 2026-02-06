@@ -9,5 +9,5 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["DOM", "ES2020"]
   },
-  "include": ["views/scripts/**/*.ts"]
+  "include": ["views/scripts/**/*.ts", "types/client.d.ts"]
 }
