@@ -2,6 +2,10 @@ import express from "express";
 import path from "path";
 import { getHomePageController } from "./controllers/HomePage";
 import { getContributePageController } from "./controllers/ContributePage";
+import { getMissionPageController } from "./controllers/MissionPage";
+import { getTeamPageController } from "./controllers/TeamPage";
+import { getContactPageController } from "./controllers/ContactPage";
+import { getBlogPageController } from "./controllers/BlogPage";
 import type { ViteDevServer } from "vite";
 
 export const app = express();
@@ -26,3 +30,7 @@ if (process.env.NODE_ENV === "development") {
 app.use(express.static(path.join(__dirname, "../public")));
 app.get("/", getHomePageController);
 app.get("/contribute", getContributePageController);
+app.get("/mission", getMissionPageController);
+app.get("/team", getTeamPageController);
+app.get("/contact", getContactPageController);
+app.get("/blog", getBlogPageController);
