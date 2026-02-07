@@ -51,12 +51,35 @@ html(lang="en")
             .line
       .hero-search
         .container
-          .hero-search__input.input-search
-            input.input-search__field.input-search__lg(placeholder="Search for dance moves, styles, or anything related to dance..." enterkeyhint="search")
-            i.input-search__icon(data-feather="search" height="24" width="24")
-            i.input-search__clear(data-feather="x" height="16" width="16")
+          .hero-search__input
+            input.hero-search__input-field(placeholder="Search for dance moves, styles, or anything related to dance..." enterkeyhint="search")
+            i.hero-search__input-icon(data-feather="search" height="24" width="24")
+            i.hero-search__input-clear(data-feather="x" height="16" width="16")
+      .sponsors
+        .container
+          .sponsors__wrapper
+            .sponsors__title Our Sponsors:
+            .sponsors__list
+              .sponsors__item
+                a.sponsor(href="https://www.mike.com" target="_blank")
+                  img.sponsor__logo(src="/images/mike.avif" alt="Mike's Logo")
     
-    footer
-      .footer footer
+      .menu-social.border-bottom
+        .container
+          ul.menu-icons.border-right.border-left
+            li: a(href="#"): i(data-feather="facebook" height="4em" width="4em")
+            li: a(href="#"): i(data-feather="twitter" height="4em" width="4em")
+            li: a(href="#"): i(data-feather="instagram" height="4em" width="4em")
+            li: a(href="#"): i(data-feather="linkedin" height="4em" width="4em")
 
+      .menu-terms.border-bottom
+        .container
+          ul.terms-list.border-right.border-left
+            li: a.terms-policy(href="#") Privacy Policy
+            li: a.terms-service(href="#") Terms of Service
+            li: a.terms-help(href="#") Help Center
+            li: a.terms-cookie(href="#") Cookie Policy
 
+      .menu-footer
+        .container
+          .copyright © 2024 Wiki Server. All rights reserved.

@@ -3,9 +3,9 @@ export const searchInput = () => {
 
   searchInputsWrapper.forEach((wrapper) => {
     const searchInput = wrapper.querySelector<HTMLInputElement>(
-      ".input-search__field",
+      ".hero-search__input-field",
     );
-    const clearIcon = wrapper.querySelector(".input-search__clear");
+    const clearIcon = wrapper.querySelector(".hero-search__input-clear");
     clearIcon!.addEventListener("click", () => {
       searchInput!.value = "";
     });

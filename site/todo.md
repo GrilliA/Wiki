@@ -3,17 +3,8 @@
 - [ ] Create the dark mode for the website
   - Message: "[website] [feature] Create dark mode"
 
-- [x] Add icon library - Feather icons
-  - Message: "[website] [feature] Add icon library"
-
 - [ ] Add the minimally needed css variables for the website
   - Message: "[website] [feature] Add css variables"
-
-- [x] Add integration between vitejs and nodejs
-  - Message: "[website] [feature] Add vitejs and nodejs integration"
-
-- [x] Create a generic body for the website
-  - Message: "[website] [feature] Create generic body"
 
 - [ ] Divide all the components in their own scss folder
   - Message: "[website] [feature] Divide components in scss folders"
@@ -23,6 +14,9 @@
 ### Navigation bar
 
 ### Footer
+
+- [ ] Make the footer an include file, to be used in all pages
+  - Message: "[website] [feature] Make footer an include file"
 
 ### Pages
 
@@ -35,6 +29,9 @@
 
 - [ ] Add the clear for top message
   - Message: "[website] [home page] Add clear for top message"
+
+- [ ] Add the blog section
+  - Message: "[website] [home page] Add blog section"
 
 #### Entity page
 
