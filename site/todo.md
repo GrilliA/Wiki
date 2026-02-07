@@ -9,6 +9,15 @@
 - [ ] Divide all the components in their own scss folder
   - Message: "[website] [feature] Divide components in scss folders"
 
+- [ ] Use the --color-border variable for all the borders in the website
+  - Message: "[website] [feature] Use --border-color variable for borders"
+  - Steps:
+    - [ ] Add the --color-border variable to the css variables
+    - [ ] Replace all the border colors with the --color-border variable (--border-color and --neutral-color-300)
+
+- [ ] change the color of the buttons
+  - Message: "[website] [feature] Change the color of the buttons"
+
 ## Mobile
 
 ### Navigation bar
@@ -29,7 +38,8 @@
 
 - [ ] Add the clear for top message
   - Message: "[website] [home page] Add clear for top message"
-
+- [ ] Make the top message sticky to the nav
+  - Message: "[website] [home page] Make top message sticky to nav"
 - [ ] Add the blog section
   - Message: "[website] [home page] Add blog section"
 

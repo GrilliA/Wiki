@@ -42,10 +42,6 @@ body {
   font-size: var(--text-base);
 }
 
-main {
-  height: 100vh;
-}
-
 nav.active ~ header {
   background-image: var(--background-image);
 }
