@@ -4,7 +4,7 @@
 
 .grid-lines__wrapper {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(16, 1fr);
   width: 100%;
   border-right: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);

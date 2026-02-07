@@ -1,7 +1,14 @@
 const navbar = document.querySelector("nav");
-const navMenu = document.querySelector(".nav-item.menu");
-const menuList = document.querySelector(".menu-list");
+const [openMenuButton, closeMenuButton] =
+  document.querySelectorAll(".navbar .menu");
+const mobileNav = document.querySelector(".mobile-nav");
+console.log(mobileNav);
+openMenuButton!.addEventListener("click", () => {
+  navbar!.classList.add("active");
+  mobileNav!.classList.add("active");
+});
 
-navMenu!.addEventListener("click", () => {
-  navbar!.classList.toggle("active");
+closeMenuButton!.addEventListener("click", () => {
+  navbar!.classList.remove("active");
+  mobileNav!.classList.remove("active");
 });

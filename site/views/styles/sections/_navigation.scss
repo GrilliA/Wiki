@@ -1,0 +1,137 @@
+nav.active ~ header {
+  background-image: var(--background-image);
+}
+
+nav {
+  @media (min-width: 768px) {
+  }
+
+  background-image: var(--background-image);
+  background-color: var(--color-surface);
+  position: sticky;
+  top: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+nav.active {
+  color: var(--neutral-fixed-100);
+}
+
+.navbar {
+  height: 80px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.top-section {
+  background-color: var(--color-primary-200);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.top-section__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: calc(var(--spacing-base) * 1) 0;
+  font-size: var(--text-sm);
+}
+.wrapper {
+  height: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  height: 100%;
+  border-right: 1px solid var(--neutral-fixed-300);
+  border-left: 1px solid var(--neutral-fixed-300);
+}
+
+.nav-item {
+  display: none;
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+}
+
+.nav-item:not(:last-child) {
+  border-right: 1px solid var(--neutral-fixed-300);
+}
+
+.nav-link,
+.menu {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  grid-column: span 2;
+}
+
+.nav-item.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--spacing-base) * 2);
+  grid-column: span 4;
+}
+
+.nav-item.logo:hover {
+  background-color: transparent;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.nav-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.nav-item.lang-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: calc(var(--spacing-base) / 2);
+  grid-column: span 2;
+}
+
+.menu__icon {
+  display: initial;
+}
+
+.close-menu__icon {
+  display: none;
+}
+
+.menu-wrapper.active .menu__icon {
+  display: none;
+}
+
+.menu-wrapper.active .close-menu__icon {
+  display: initial;
+}
+/*menu*/
+
+.dropdown-menu {
+  display: none;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--neutral-fixed-300);
+}
+.border-top {
+  border-top: 1px solid var(--neutral-fixed-300);
+}
+.border-left {
+  border-left: 1px solid var(--neutral-fixed-300);
+}
+.border-right {
+  border-right: 1px solid var(--neutral-fixed-300);
+}

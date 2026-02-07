@@ -1,0 +1,23 @@
+.navbar
+  .container
+    .wrapper
+      ul.nav-list
+        li.nav-item.lang-select
+          span.lang EN
+          i(data-feather="chevron-down")
+        li.nav-item: a.nav-link(href="/") Home
+        li.nav-item: a.nav-link(href="/mission") Our mission
+        li.nav-item: a.nav-link(href="/team") Team
+        li.nav-item.logo
+          img.logo(src="/images/logo.svg" alt="Wiki Server Logo")
+        li.nav-item: a.nav-link(href="/contact") Contact Us
+        li.nav-item: a.nav-link(href="/work") Work with us
+        li.nav-item.menu
+          i.menu__icon(data-feather="menu" height="32" width="32")
+          i.close-menu__icon(data-feather="x" height="32" width="32")
+
+      ul.dropdown-menu
+        li.dropdown-item: a(href="#") English
+        li.dropdown-item: a(href="#") Spanish
+        li.dropdown-item: a(href="#") French
+        li.dropdown-item: a(href="#") German

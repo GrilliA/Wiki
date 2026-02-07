@@ -1,0 +1,15 @@
+.mobile-nav
+  .mobile-nav__bar
+    include ./navbar
+  .mobile-nav__wrapper
+    .mobile-nav__header.border-bottom
+      include ./gridLines
+      .container
+        ul.menu-list.border-right.border-left
+          li: a.menu-link(href="/") Home
+          li: a.menu-link(href="/mission") Our mission
+          li: a.menu-link(href="/team") Team
+          li: a.menu-link(href="/contact") Contact Us
+          li: a.menu-link(href="/work") Work with us
+    include ./gridLines
+    include ./footer
