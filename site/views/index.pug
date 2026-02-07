@@ -1,63 +1,50 @@
+extends layout.pug
 include mixins/sectionTitle.pug
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    if env === 'development'
-      script(type="module" src="/@vite/client")
-    else
-      link(rel="stylesheet" href="/dist/styles.css")
-    title Welcome to Wiki Server
-    if env === 'development'
-      script(type="module" src="/dist/index.ts")
-    else
-      script(src="/dist/bundle.js")
-  body
-    include includes/navigation.pug
 
-    main
-      include includes/gridLines.pug
-      .hero-title
-        .container
-          .hero-title__text Search engine made by dancer community, for the dance community!
-      .hero-search
-        .container
-          .hero-search__input
-            input.hero-search__input-field(placeholder="Search for dance moves, styles, or anything related to dance..." enterkeyhint="search")
-            i.hero-search__input-icon(data-feather="search" height="24" width="24")
-            i.hero-search__input-clear(data-feather="x" height="16" width="16")
-      include includes/gridLines.pug
+block title
+  | Welcome to Wiki Server
 
-      .section
-        +sectionTitle('Sponsored by')
-        .container
-          .sponsors__wrapper
-            .sponsors__list
-              .sponsors__item
-                a.sponsor(href="https://www.mike.com" target="_blank")
-                  img.sponsor__logo(src="/images/mike.avif" alt="Mike's Logo")
-      include includes/gridLines.pug
+block content
+  include includes/gridLines.pug
+  .hero-title
+    .container
+      .hero-title__text Search engine made by dancer community, for the dance community!
+  .hero-search
+    .container
+      .hero-search__input
+        input.hero-search__input-field(placeholder="Search for dance moves, styles, or anything related to dance..." enterkeyhint="search")
+        i.hero-search__input-icon(data-feather="search" height="24" width="24")
+        i.hero-search__input-clear(data-feather="x" height="16" width="16")
+  include includes/gridLines.pug
 
-      section.blog
-        +sectionTitle('Latest from the Community')
-        .section-content
-          .container
-            .blog__wrapper
-              .blog__grid
-                each post in blog 
-                  a.blog-card__link(href=post.link)
-                    article.blog-card
-                      .blog-card__image
-                        img(src=post.image alt="Blog Post Image")
-                      .blog-card__body
-                        .blog-card__tags
-                          each tag in post.tags
-                            span.blog-card__tag #{tag}
-                        h3.blog-card__title #{post.title}
-                        p.blog-card__excerpt #{post.body}
-                        .blog-card__footer
-                          span.blog-card__author #{post.author}
-                          time.blog-card__date #{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-      include includes/gridLines.pug
-    include includes/footer.pug
+  .section
+    +sectionTitle('Sponsored by')
+    .container
+      .sponsors__wrapper
+        .sponsors__list
+          .sponsors__item
+            a.sponsor(href="https://www.mike.com" target="_blank")
+              img.sponsor__logo(src="/images/mike.avif" alt="Mike's Logo")
+  include includes/gridLines.pug
+
+  section.blog
+    +sectionTitle('Latest from the Community')
+    .section-content
+      .container
+        .blog__wrapper
+          .blog__grid
+            each post in blog 
+              a.blog-card__link(href=post.link)
+                article.blog-card
+                  .blog-card__image
+                    img(src=post.image alt="Blog Post Image")
+                  .blog-card__body
+                    .blog-card__tags
+                      each tag in post.tags
+                        span.blog-card__tag #{tag}
+                    h3.blog-card__title #{post.title}
+                    p.blog-card__excerpt #{post.body}
+                    .blog-card__footer
+                      span.blog-card__author #{post.author}
+                      time.blog-card__date #{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+  include includes/gridLines.pug

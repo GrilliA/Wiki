@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    if env === 'development'
+      script(type="module" src="/@vite/client")
+    else
+      link(rel="stylesheet" href="/dist/styles.css")
+    title
+      block title
+        | Wiki Server
+    if env === 'development'
+      script(type="module" src="/dist/index.ts")
+    else
+      script(src="/dist/bundle.js")
+  body
+    include includes/navigation.pug
+    main
+      block content
+    include includes/footer.pug
