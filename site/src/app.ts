@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import { getHomePageController } from "./controllers/HomePage";
+import { getContributePageController } from "./controllers/ContributePage";
 import type { ViteDevServer } from "vite";
 
 export const app = express();
@@ -24,3 +25,4 @@ if (process.env.NODE_ENV === "development") {
 
 app.use(express.static(path.join(__dirname, "../public")));
 app.get("/", getHomePageController);
+app.get("/contribute", getContributePageController);
