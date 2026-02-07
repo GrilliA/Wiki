@@ -1,13 +1,13 @@
 # To do
 
-- [ ] Create the dark mode for the website
-  - Message: "[website] [feature] Create dark mode"
-
 - [ ] Add the minimally needed css variables for the website
   - Message: "[website] [feature] Add css variables"
 
 - [ ] Divide all the components in their own scss folder
   - Message: "[website] [feature] Divide components in scss folders"
+
+- [ ] Make the border color for the dark mode too
+  - Message: "[website] [feature] Make border color for dark mode"
 
 - [ ] Use the --color-border variable for all the borders in the website
   - Message: "[website] [feature] Use --border-color variable for borders"
@@ -24,6 +24,9 @@
   - Message: "[website] [feature] Add generic head to layout"
 - [ ] Add the nav and footer to the layout
   - Message: "[website] [feature] Add nav and footer to layout"
+
+- [ ] Create a section title mixin with pug
+  - Message: "[website] [feature] Create section title mixin with pug"
 
 ## Mobile
 
@@ -54,8 +57,8 @@
 - [ ] Add the blog section
   - Message: "[website] [home page] Add blog section"
 
-- [ ] Make the search input not overlapping
-  - Message: "[website] [home page] Make search input not overlapping"
+- [ ] Recreate the search input with flowbite as example
+  - Message: "[website] [home page] Recreate search input with flowbite as example"
 
 #### Entity page
 

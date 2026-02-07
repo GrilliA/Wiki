@@ -30,7 +30,6 @@
 }
 
 .hero-title {
-  border-bottom: 1px solid var(--border-color);
 }
 
 .hero-title__text {
@@ -46,6 +45,7 @@
 }
 
 .hero-search__input {
+  padding: var(--spacing-lg);
   border-right: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);
   position: relative;

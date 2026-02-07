@@ -22,84 +22,48 @@ html(lang="en")
             .top-section__text Are you a contributor? then
             button.btn.btn--transparent.btn--sm.js-home-login Log in
               i.btn__icon(data-feather="log-in" height="16" width="16")
-      .hero-upper
-        .container
-          .hero-upper-grid-lines 
-            .line
-            .line
-            .line
-            .line
-            .line
-            .line
-            .line
-            .line
-
+      include includes/gridLines.pug
       .hero-title
         .container
           .hero-title__text Search engine made by dancer community, for the dance community!
-
-      .hero-upper
-        .container
-          .hero-upper-grid-lines 
-            .line
-            .line
-            .line
-            .line
-            .line
-            .line
-            .line
-            .line
       .hero-search
         .container
           .hero-search__input
             input.hero-search__input-field(placeholder="Search for dance moves, styles, or anything related to dance..." enterkeyhint="search")
             i.hero-search__input-icon(data-feather="search" height="24" width="24")
             i.hero-search__input-clear(data-feather="x" height="16" width="16")
+      include includes/gridLines.pug
       .sponsors
         .container
           .sponsors__wrapper
-            .sponsors__title Our Sponsors:
+            .sponsors__title Sponsored by
             .sponsors__list
               .sponsors__item
                 a.sponsor(href="https://www.mike.com" target="_blank")
                   img.sponsor__logo(src="/images/mike.avif" alt="Mike's Logo")
+      include includes/gridLines.pug
 
       section.blog
-        .container
-          .blog__wrapper
-            .blog__header
-              h2.blog__title Latest from the Community
-              a.btn.btn--transparent.btn--sm(href="/blog") View all
-            .blog__grid
-              a.blog-card__link(href="/blog/1")
-                article.blog-card
-                  .blog-card__image
-                  .blog-card__body
-                    span.blog-card__tag Technique
-                    h3.blog-card__title Understanding Musicality in Partner Dancing
-                    p.blog-card__excerpt Learn how to interpret rhythm and melody to elevate your connection on the dance floor.
-                    .blog-card__footer
-                      span.blog-card__author Maria S.
-                      time.blog-card__date 2 days ago
-              a.blog-card__link(href="/blog/2")
-                article.blog-card
-                  .blog-card__image
-                  .blog-card__body
-                    span.blog-card__tag Culture
-                    h3.blog-card__title The Origins of Bachata
-                    p.blog-card__excerpt A deep dive into how Bachata evolved from the Dominican Republic to dance floors worldwide.
-                    .blog-card__footer
-                      span.blog-card__author Carlos R.
-                      time.blog-card__date 5 days ago
-              a.blog-card__link(href="/blog/3")
-                article.blog-card
-                  .blog-card__image
-                  .blog-card__body
-                    span.blog-card__tag Community
-                    h3.blog-card__title How to Build a Local Dance Scene
-                    p.blog-card__excerpt Tips and strategies from organizers who grew thriving dance communities from scratch.
-                    .blog-card__footer
-                      span.blog-card__author Lena T.
-                      time.blog-card__date 1 week ago
-    
+        .section-title
+          .container
+            h2.blog__title Latest from the Community
+        .section-content
+          .container
+            .blog__wrapper
+              .blog__grid
+                each post in blog 
+                  a.blog-card__link(href=post.link)
+                    article.blog-card
+                      .blog-card__image
+                        img(src=post.image alt="Blog Post Image")
+                      .blog-card__body
+                        .blog-card__tags
+                          each tag in post.tags
+                            span.blog-card__tag #{tag}
+                        h3.blog-card__title #{post.title}
+                        p.blog-card__excerpt #{post.body}
+                        .blog-card__footer
+                          span.blog-card__author #{post.author}
+                          time.blog-card__date #{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+      include includes/gridLines.pug
     include includes/footer.pug

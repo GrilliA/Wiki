@@ -1,0 +1,19 @@
+.grid-lines {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.grid-lines__wrapper {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 100%;
+  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+
+  & .grid-lines__item:not(:last-child) {
+    border-right: 1px solid var(--border-color);
+  }
+
+  & .grid-lines__item {
+    aspect-ratio: 1 / 1;
+  }
+}
