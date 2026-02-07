@@ -1,0 +1,12 @@
+.page-title {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.page-title__text {
+  padding: var(--spacing-xl) var(--spacing-md);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--neutral-900);
+  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
