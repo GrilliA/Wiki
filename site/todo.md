@@ -18,14 +18,23 @@
 - [ ] change the color of the buttons
   - Message: "[website] [feature] Change the color of the buttons"
 
+- [ ] Create a layout for the pages, to be used in all pages
+  - Message: "[website] [feature] Create a layout for the pages"
+- [ ] Add the generic head to the layout
+  - Message: "[website] [feature] Add generic head to layout"
+- [ ] Add the nav and footer to the layout
+  - Message: "[website] [feature] Add nav and footer to layout"
+
 ## Mobile
 
 ### Navigation bar
 
 ### Footer
 
-- [ ] Make the footer an include file, to be used in all pages
+- [x] Make the footer an include file, to be used in all pages
   - Message: "[website] [feature] Make footer an include file"
+- [ ] Use the footer in navigation and the pages in general
+  - Message: "[website] [feature] Use footer in all pages"
 
 ### Pages
 
@@ -38,10 +47,15 @@
 
 - [ ] Add the clear for top message
   - Message: "[website] [home page] Add clear for top message"
+
 - [ ] Make the top message sticky to the nav
   - Message: "[website] [home page] Make top message sticky to nav"
+
 - [ ] Add the blog section
   - Message: "[website] [home page] Add blog section"
+
+- [ ] Make the search input not overlapping
+  - Message: "[website] [home page] Make search input not overlapping"
 
 #### Entity page
 

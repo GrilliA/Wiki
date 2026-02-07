@@ -63,5 +63,43 @@ html(lang="en")
               .sponsors__item
                 a.sponsor(href="https://www.mike.com" target="_blank")
                   img.sponsor__logo(src="/images/mike.avif" alt="Mike's Logo")
+
+      section.blog
+        .container
+          .blog__wrapper
+            .blog__header
+              h2.blog__title Latest from the Community
+              a.btn.btn--transparent.btn--sm(href="/blog") View all
+            .blog__grid
+              a.blog-card__link(href="/blog/1")
+                article.blog-card
+                  .blog-card__image
+                  .blog-card__body
+                    span.blog-card__tag Technique
+                    h3.blog-card__title Understanding Musicality in Partner Dancing
+                    p.blog-card__excerpt Learn how to interpret rhythm and melody to elevate your connection on the dance floor.
+                    .blog-card__footer
+                      span.blog-card__author Maria S.
+                      time.blog-card__date 2 days ago
+              a.blog-card__link(href="/blog/2")
+                article.blog-card
+                  .blog-card__image
+                  .blog-card__body
+                    span.blog-card__tag Culture
+                    h3.blog-card__title The Origins of Bachata
+                    p.blog-card__excerpt A deep dive into how Bachata evolved from the Dominican Republic to dance floors worldwide.
+                    .blog-card__footer
+                      span.blog-card__author Carlos R.
+                      time.blog-card__date 5 days ago
+              a.blog-card__link(href="/blog/3")
+                article.blog-card
+                  .blog-card__image
+                  .blog-card__body
+                    span.blog-card__tag Community
+                    h3.blog-card__title How to Build a Local Dance Scene
+                    p.blog-card__excerpt Tips and strategies from organizers who grew thriving dance communities from scratch.
+                    .blog-card__footer
+                      span.blog-card__author Lena T.
+                      time.blog-card__date 1 week ago
     
     include includes/footer.pug
