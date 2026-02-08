@@ -1,0 +1,25 @@
+//- Usage:
+//-   +btn({
+//-     variant: 'filled' | 'outline' | 'transparent',
+//-     size: 'sm' | 'lg',
+//-     text,
+//-     icon: { name, height, width },
+//-     id,
+//-     class
+//-   })
+mixin btn(options)
+  - const { variant = 'filled', size, text, icon, id, class: extraClass } = options || {}
+  - const classList = ['btn', `btn--${variant}`]
+
+  if size
+    - classList.push(`btn--${size}`)
+
+  if extraClass
+    - classList.push(extraClass)
+
+  button(type='button' class=classList.join(' ') id=id)
+    if icon
+      - const {height = 16, width=16, name} = icon || {}
+      i.btn__icon(data-feather=name height=height width=width)
+    if text
+      span.btn__text= text

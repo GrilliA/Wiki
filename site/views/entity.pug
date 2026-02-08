@@ -1,11 +1,12 @@
 extends layout.pug
-include mixins/toc.pug
 
 block title
   | Entity - Wiki Server
 
 block content
   include includes/gridLines.pug
+  - const options = {text: 'Table of content', class: 'table-of-content__target', size: 'sm',  icon: {name: 'menu'} }
+  +btn(options)
   include includes/gridLines.pug
   section.entity-header
       .container
@@ -60,11 +61,3 @@ block content
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-  //- Mobile Table of Contents
-  -
-    var tocItems = [
-      { title: 'Summary', href: '#summary' },
-      { title: 'Start', href: '#start' },
-      { title: 'Test Title', href: '#test-title' }
-    ]
-  +tocMobile(tocItems, { title: 'Contents' })
