@@ -4,7 +4,7 @@ import { getHomePageController } from "./controllers/HomePage";
 import { getContributePageController } from "./controllers/ContributePage";
 import { getMissionPageController } from "./controllers/MissionPage";
 import { getContactPageController } from "./controllers/ContactPage";
-import { getSourcePageController } from "./controllers/SourcePage";
+import { getEntityPageController } from "./controllers/EntityPage";
 import type { ViteDevServer } from "vite";
 
 export const app = express();
@@ -31,4 +31,4 @@ app.get("/", getHomePageController);
 app.get("/contribute", getContributePageController);
 app.get("/mission", getMissionPageController);
 app.get("/contact", getContactPageController);
-app.get("/source/:id", getSourcePageController);
+app.get("/entity/:id", getEntityPageController);
