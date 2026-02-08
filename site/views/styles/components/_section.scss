@@ -25,3 +25,19 @@
   font-size: var(--text-xl);
   line-height: 1.5;
 }
+
+.section-content ol,
+.section-content ul {
+  padding-left: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  font-size: var(--text-md);
+}
+
+.section-content li {
+  line-height: 1.5;
+}
+.section-content p {
+  line-height: 1.5;
+}
