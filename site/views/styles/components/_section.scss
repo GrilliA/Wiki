@@ -14,3 +14,14 @@
   border-right: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);
 }
+
+.section-content {
+  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  padding: var(--spacing-md);
+}
+
+.section-paragraph {
+  font-size: var(--text-xl);
+  line-height: 1.5;
+}

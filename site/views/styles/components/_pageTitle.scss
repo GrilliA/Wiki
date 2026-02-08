@@ -3,10 +3,11 @@
 }
 
 .page-title__text {
-  padding: var(--spacing-xl) var(--spacing-md);
-  font-size: calc(var(--text-base) * 2);
+  padding: var(--spacing-md);
+  font-size: var(--text-xl);
   font-weight: var(--font-bold);
-  color: var(--neutral-900);
+  color: var(--color-fixed-primary-50);
+  background-color: var(--color-fixed-primary-900);
   border-right: 1px solid var(--border-color);
   grid-column: span 8;
   text-align: center;
