@@ -68,15 +68,15 @@
 
 #### Why to contribute page
 
-- [ ] Create the layout for all the pages, to be used in all pages
+- [x] Create the layout for all the pages, to be used in all pages
   - Branch: "feature/layout-for-pages"
   - Message: "[website] [feature] Create a layout for the pages"
 
-- [ ] Create the section title component
+- [x] Create the section title component
   - Branch: "feature/section-title-component"
   - Message: "[website] [feature] Create section title component"
 
-- [ ] Create the page title component
+- [x] Create the page title component
   - Branch: "feature/page-title-component"
   - Message: "[website] [feature] Create page title component"
 
