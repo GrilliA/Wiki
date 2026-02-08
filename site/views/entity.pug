@@ -27,12 +27,21 @@ block content
             li.data-list__item
               span.data-list__label Frequency
               span.data-list__value Yearly
+  include includes/gridLines.pug
 
-  section.section
-    +sectionTitle('Summary')
+  section.entity-section
     .container
-      .entity-content
-        p 
-          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      .entity-section__content
+        .entity-section__wrapper-1
+          h1.entity-section__title Summary
+          p 
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+        .entity-section__wrapper-2
+          h2.entity-section__title Start
+          p 
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
