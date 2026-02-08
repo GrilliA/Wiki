@@ -2,7 +2,6 @@ const initTocMobile = (): void => {
   const tocContainer = document.querySelector('.toc-mobile');
   const trigger = document.querySelector('.js-toc-trigger');
   const closeBtn = document.querySelector('.js-toc-close');
-  const overlay = document.querySelector('.js-toc-overlay');
   const tocLinks = document.querySelectorAll('.js-toc-link');
 
   if (!tocContainer || !trigger) return;
@@ -10,13 +9,11 @@ const initTocMobile = (): void => {
   const openToc = (): void => {
     tocContainer.classList.add('toc-mobile--open');
     trigger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
   };
 
   const closeToc = (): void => {
     tocContainer.classList.remove('toc-mobile--open');
     trigger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
   };
 
   const toggleToc = (): void => {
@@ -34,14 +31,17 @@ const initTocMobile = (): void => {
     closeBtn.addEventListener('click', closeToc);
   }
 
-  if (overlay) {
-    overlay.addEventListener('click', closeToc);
-  }
-
   tocLinks.forEach((link) => {
     link.addEventListener('click', () => {
       closeToc();
     });
+  });
+
+  document.addEventListener('click', (e) => {
+    const target = e.target as Node;
+    if (!tocContainer.contains(target)) {
+      closeToc();
+    }
   });
 
   document.addEventListener('keydown', (e) => {

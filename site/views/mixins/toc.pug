@@ -1,4 +1,4 @@
-//- Table of Contents Mobile Mixin
+//- Table of Contents Mobile Dropdown Mixin
 //- Usage: +tocMobile(items, options)
 //- items: Array of { title, href, id }
 //- options: { title?: string }
@@ -7,7 +7,6 @@ mixin tocMobile(items, options)
   - options = options || {}
   - var title = options.title || 'Contents'
   nav.toc-mobile(aria-label="Table of contents")
-    .toc-mobile__overlay.js-toc-overlay
     button.toc-mobile__trigger.js-toc-trigger(type="button" aria-expanded="false" aria-controls="toc-panel")
       span.toc-mobile__trigger-icon
         i(data-feather="list" height="24" width="24")
@@ -15,10 +14,10 @@ mixin tocMobile(items, options)
       .toc-mobile__header
         h2.toc-mobile__title
           span.toc-mobile__title-icon
-            i(data-feather="list" height="18" width="18")
+            i(data-feather="list" height="16" width="16")
           span= title
-        button.toc-mobile__close.js-toc-close(type="button" aria-label="Close table of contents")
-          i(data-feather="x" height="20" width="20")
+        button.toc-mobile__close.js-toc-close(type="button" aria-label="Close")
+          i(data-feather="x" height="18" width="18")
       .toc-mobile__content
         ul.toc-mobile__list
           each item in items
