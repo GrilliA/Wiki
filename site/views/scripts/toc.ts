@@ -1,26 +1,58 @@
-const initTableOfContents = (): void => {
-  const tocGroups = document.querySelectorAll('.toc__group');
+const initTocMobile = (): void => {
+  const tocContainer = document.querySelector('.toc-mobile');
+  const trigger = document.querySelector('.js-toc-trigger');
+  const closeBtn = document.querySelector('.js-toc-close');
+  const overlay = document.querySelector('.js-toc-overlay');
+  const tocLinks = document.querySelectorAll('.js-toc-link');
 
-  tocGroups.forEach((group) => {
-    const header = group.querySelector('.toc__group-header');
-    if (!header) return;
+  if (!tocContainer || !trigger) return;
 
-    header.addEventListener('click', () => {
-      const isOpen = group.classList.contains('toc__group--open');
+  const openToc = (): void => {
+    tocContainer.classList.add('toc-mobile--open');
+    trigger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
 
-      if (isOpen) {
-        group.classList.remove('toc__group--open');
-        header.setAttribute('aria-expanded', 'false');
-      } else {
-        group.classList.add('toc__group--open');
-        header.setAttribute('aria-expanded', 'true');
-      }
+  const closeToc = (): void => {
+    tocContainer.classList.remove('toc-mobile--open');
+    trigger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  const toggleToc = (): void => {
+    const isOpen = tocContainer.classList.contains('toc-mobile--open');
+    if (isOpen) {
+      closeToc();
+    } else {
+      openToc();
+    }
+  };
+
+  trigger.addEventListener('click', toggleToc);
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeToc);
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', closeToc);
+  }
+
+  tocLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      closeToc();
     });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && tocContainer.classList.contains('toc-mobile--open')) {
+      closeToc();
+    }
   });
 };
 
 const initActiveTracking = (): void => {
-  const tocLinks = document.querySelectorAll('.toc__link[href^="#"]');
+  const tocLinks = document.querySelectorAll('.js-toc-link[href^="#"]');
   if (tocLinks.length === 0) return;
 
   const observerOptions: IntersectionObserverInit = {
@@ -35,9 +67,9 @@ const initActiveTracking = (): void => {
         tocLinks.forEach((link) => {
           const href = link.getAttribute('href');
           if (href === `#${targetId}`) {
-            link.classList.add('toc__link--active');
+            link.classList.add('toc-mobile__link--active');
           } else {
-            link.classList.remove('toc__link--active');
+            link.classList.remove('toc-mobile__link--active');
           }
         });
       }
@@ -57,8 +89,8 @@ const initActiveTracking = (): void => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTableOfContents();
+  initTocMobile();
   initActiveTracking();
 });
 
-export { initTableOfContents, initActiveTracking };
+export { initTocMobile, initActiveTracking };

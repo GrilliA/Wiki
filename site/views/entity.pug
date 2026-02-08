@@ -1,4 +1,5 @@
 extends layout.pug
+include mixins/toc.pug
 
 block title
   | Entity - Wiki Server
@@ -34,14 +35,14 @@ block content
     .container
       .entity-section__content
         .entity-section__wrapper-1
-          h1.entity-section__title Summary
+          h1#summary.entity-section__title Summary
           p 
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
         .entity-section__wrapper-2
-          h2.entity-section__title Start
+          h2#start.entity-section__title Start
           p 
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -51,10 +52,19 @@ block content
     .container
       .entity-section__content
         .entity-section__wrapper-1
-          h1.entity-section__title Test Title
+          h1#test-title.entity-section__title Test Title
           p 
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+  //- Mobile Table of Contents
+  -
+    var tocItems = [
+      { title: 'Summary', href: '#summary' },
+      { title: 'Start', href: '#start' },
+      { title: 'Test Title', href: '#test-title' }
+    ]
+  +tocMobile(tocItems, { title: 'Contents' })
