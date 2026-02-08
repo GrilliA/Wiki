@@ -13,6 +13,22 @@ nav {
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25rem;
+
+  & .menu__icon {
+    display: initial;
+  }
+
+  & .close-menu__icon {
+    display: none;
+  }
+
+  &.active .menu__icon {
+    display: none;
+  }
+
+  &.active .close-menu__icon {
+    display: initial;
+  }
 }
 
 nav.active {
@@ -102,21 +118,6 @@ nav.active {
   grid-column: span 2;
 }
 
-.menu__icon {
-  display: initial;
-}
-
-.close-menu__icon {
-  display: none;
-}
-
-.menu-wrapper.active .menu__icon {
-  display: none;
-}
-
-.menu-wrapper.active .close-menu__icon {
-  display: initial;
-}
 /*menu*/
 
 .dropdown-menu {

@@ -2,7 +2,7 @@ const navbar = document.querySelector("nav");
 const [openMenuButton, closeMenuButton] =
   document.querySelectorAll(".navbar .menu");
 const mobileNav = document.querySelector(".mobile-nav");
-console.log(mobileNav);
+
 openMenuButton!.addEventListener("click", () => {
   navbar!.classList.add("active");
   mobileNav!.classList.add("active");

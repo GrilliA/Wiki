@@ -43,10 +43,16 @@ body {
   font-size: var(--text-base);
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  min-height: 100%;
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
-
+  display: flex;
+  flex-direction: column;
   background-image: var(--background-image);
   background-color: var(--color-surface);
   color: var(--neutral-900);
@@ -54,4 +60,8 @@ body {
   @media (prefers-color-scheme: dark) {
     --background-image: url("/images/bg-dark.png");
   }
+}
+
+main {
+  flex: 100 0 auto;
 }
