@@ -1,5 +1,8 @@
 # To do
 
+- [ ] Avoid calc for spacing and use css variables instead
+  - Message: "[website] [feature] Avoid calc for spacing and use css variables instead"
+
 - [ ] Add the minimally needed css variables for the website
   - Message: "[website] [feature] Add css variables"
 
@@ -61,6 +64,9 @@
   - Message: "[website] [home page] Recreate search input with flowbite as example"
 
 #### Entity page
+
+- [ ] Add table of contents
+  - Message: "[website] [entity page] Add table of contents"
 
 #### Blog page
 
