@@ -1,0 +1,47 @@
+//- Table of Contents Mixin
+//- Usage: +toc(items, options)
+//- items: Array of { title, href, icon?, badge?, active?, items?: [...] }
+//- options: { title?: string, titleIcon?: string, sticky?: boolean, flat?: boolean }
+
+mixin tocLink(item)
+  a.toc__link(href=item.href class=(item.active ? 'toc__link--active' : ''))
+    if item.icon
+      span.toc__link-icon
+        i(data-feather=item.icon height="16" width="16")
+    span= item.title
+    if item.badge
+      span.toc__badge= item.badge
+
+mixin tocGroup(group, open)
+  li.toc__group(class=(open ? 'toc__group--open' : ''))
+    button.toc__group-header(type="button" aria-expanded=(open ? 'true' : 'false'))
+      span.toc__group-text
+        if group.icon
+          span.toc__group-prefix-icon
+            i(data-feather=group.icon height="16" width="16")
+        span= group.title
+      span.toc__group-icon
+        i(data-feather="chevron-down" height="16" width="16")
+    ul.toc__sublist
+      each item in group.items
+        li.toc__item
+          +tocLink(item)
+
+mixin toc(items, options)
+  - options = options || {}
+  - const sticky = options.sticky || false
+  - const flat = options.flat || false
+  aside.toc(class=(sticky ? 'toc--sticky' : '') + (flat ? ' toc--flat' : ''))
+    if options.title
+      h2.toc__title
+        if options.titleIcon
+          span.toc__title-icon
+            i(data-feather=options.titleIcon height="20" width="20")
+        span= options.title
+    ul.toc__list
+      each item in items
+        if item.items && item.items.length > 0
+          +tocGroup(item, item.open)
+        else
+          li.toc__item
+            +tocLink(item)
