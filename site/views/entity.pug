@@ -4,10 +4,35 @@ block title
   | Entity - Wiki Server
 
 block content
-  +pageTitle('Entity')
-  section.section
-    .container
-      .section-content
-        .section-paragraph
-          | Entity ID: #{id}
   include includes/gridLines.pug
+  section.entity-header
+      .container
+        .entity-header__wrapper
+          .entity-header__image
+            img(src="/images/mike.avif")
+          h1.entity-header__title House Diction
+          ul.data-list
+            li.data-list__item
+              span.data-list__label Creation Date
+              span.data-list__value 1990-01-01
+            li.data-list__item
+              span.data-list__label Organizer
+              span.data-list__value Oriabure Trust
+            li.data-list__item
+              span.data-list__label Type of event
+              span.data-list__value House, Hip-Hop
+            li.data-list__item
+              span.data-list__label Location
+              span.data-list__value Italy
+            li.data-list__item
+              span.data-list__label Frequency
+              span.data-list__value Yearly
+
+  section.section
+    +sectionTitle('Summary')
+    .container
+      .entity-content
+        p 
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
