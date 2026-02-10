@@ -1,0 +1,13 @@
+mixin gridLine(size = 'xl')
+  -
+   const cols = {sm: 64, md: 48, lg: 32, xl: 16, xxl: 8}
+   const maxRows = 9;
+   const maxCols = cols[size] * maxRows;
+   const hasContainer = true;
+   let index = 0;
+
+  div.grid(class=`grid-${size}`)
+    while maxCols > index
+      - index++
+      - const classList = ['grid-line', ]
+      div(class=classList.join(' '))
