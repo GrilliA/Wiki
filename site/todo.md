@@ -1,4 +1,21 @@
-# To do
+# Site Todo
+
+## Strategy
+
+1. [ ] Finish the mobile version of the website first, then move to tablet and desktop #WIP
+
+2. [ ] Clean up the code and refactor as much as possible, to make it easier to maintain and add new features in the future
+
+3. [ ] Finish the tablet version of the website, only through media queries if possible
+
+4. [ ] Finish the desktop version of the website, only through media queries if possible
+
+After this i should do the api part for:
+
+- [ ] Basic User management (without email confirmation for now, or OAuth, just the basic login and sign up) #Fast
+- [ ] Profile management (edit profile, change password, etc)
+
+## Todo
 
 - [ ] Avoid calc for spacing and use css variables instead
   - Message: "[website] [feature] Avoid calc for spacing and use css variables instead"
@@ -31,31 +48,21 @@
 - [ ] Create a section title mixin with pug
   - Message: "[website] [feature] Create section title mixin with pug"
 
-## Mobile
+### Mobile
 
-### Navigation bar
+#### Navigation bar
 
-### Footer
+#### Footer
 
-- [x] Make the footer an include file, to be used in all pages
-  - Message: "[website] [feature] Make footer an include file"
 - [ ] Use the footer in navigation and the pages in general
   - Message: "[website] [feature] Use footer in all pages"
 
-### Pages
+#### Pages
 
-#### Home page
-
-- [x] Add the primary message, for user to login or sign up
-  - Message: "[website] [home page] Add primary message"
-  - Steps:
-    - [x] Create the button component
+##### Home page
 
 - [ ] Add the clear for top message
   - Message: "[website] [home page] Add clear for top message"
-
-- [ ] Make the top message sticky to the nav
-  - Message: "[website] [home page] Make top message sticky to nav"
 
 - [ ] Add the blog section
   - Message: "[website] [home page] Add blog section"
@@ -63,29 +70,17 @@
 - [ ] Recreate the search input with flowbite as example
   - Message: "[website] [home page] Recreate search input with flowbite as example"
 
-#### Entity page
+##### Entity page
 
-- [ ] Add table of contents
+- [ ] Add table of contents #WIP
   - Message: "[website] [entity page] Add table of contents"
 
-#### Blog page
+##### Blog page
 
-#### Our mission page
+##### Our mission page
 
-#### Why to contribute page
+##### Why to contribute page
 
-- [x] Create the layout for all the pages, to be used in all pages
-  - Branch: "feature/layout-for-pages"
-  - Message: "[website] [feature] Create a layout for the pages"
+### Tablet
 
-- [x] Create the section title component
-  - Branch: "feature/section-title-component"
-  - Message: "[website] [feature] Create section title component"
-
-- [x] Create the page title component
-  - Branch: "feature/page-title-component"
-  - Message: "[website] [feature] Create page title component"
-
-## Tablet
-
-## Desktop
+### Desktop
