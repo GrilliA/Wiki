@@ -4,27 +4,11 @@
 
 .page-title__text {
   padding: var(--spacing-md);
-  font-size: var(--text-xl);
-  font-weight: var(--font-bold);
-  color: var(--color-fixed-primary-50);
-  background-color: var(--color-fixed-primary-900);
-  border-right: 1px solid var(--border-color);
-  grid-column: span 8;
+  font-size: 1.5em;
   text-align: center;
-}
-
-.page-title__wrapper {
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-primary-700);
+  border-right: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
-}
-.page-title__lines {
-}
-
-.page-title__lines-item {
-}
-
-.page-title__lines-item:not(:last-child) {
-  border-right: 1px solid var(--border-color);
 }

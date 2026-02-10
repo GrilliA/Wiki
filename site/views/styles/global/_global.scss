@@ -59,7 +59,7 @@ body {
   flex-direction: column;
   background-image: var(--background-image);
   background-color: var(--color-surface);
-  color: var(--neutral-900);
+  color: var(--neutral-800);
   --background-image: url("/images/bg-light.png");
   @media (prefers-color-scheme: dark) {
     --background-image: url("/images/bg-dark.png");

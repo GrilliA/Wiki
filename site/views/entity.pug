@@ -5,9 +5,6 @@ block title
 
 block content
   include includes/gridLines.pug
-  - const options = {text: 'Table of content', class: 'table-of-content__target', size: 'sm',  icon: {name: 'menu'} }
-  +btn(options)
-  include includes/gridLines.pug
   section.entity-header
       .container
         .entity-header__wrapper
@@ -61,3 +58,34 @@ block content
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
+  .dropdown
+    .dropdown__target
+      - const options = {text: 'Table of content', class: 'table-of-content__target', size: 'sm',  icon: {name: 'menu'} }
+      +btn(options)
+    .dropdown__content
+      - const closeOptions = {variant: 'transparent', class: 'dropdown-header__close',  size: 'sm',  icon: {name: 'x', width: 32, height: 32 } }
+      .dropdown-header 
+          .dropdown-header__wrapper
+            +btn(closeOptions)
+            h1.dropdown-header__title Table of content
+      ul.dropdown__list
+        li
+          a(href="#summary") Summary
+        li
+          a(href="#start") Early life
+          ul
+            li
+              a(href="#summary") 1980s
+            li
+              a(href="#start") Recent years
+        li
+          a(href="#summary") Achievements
+        li
+          a(href="#start") Techniques
+          ul
+            li
+              a(href="#summary") Music
+            li
+              a(href="#start") Dance
+          li
+            a(href="#start") Sources

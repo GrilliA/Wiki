@@ -17,3 +17,32 @@
     aspect-ratio: 1 / 1;
   }
 }
+
+.grid {
+  display: grid;
+  border: 1px solid var(--border-color);
+  border-bottom: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+.grid-sm {
+  grid-template-columns: repeat(64, 1fr);
+}
+.grid-md {
+  grid-template-columns: repeat(48, 1fr);
+}
+.grid-lg {
+  grid-template-columns: repeat(32, 1fr);
+}
+.grid-xl {
+  grid-template-columns: repeat(16, 1fr);
+}
+.grid-xxl {
+  grid-template-columns: repeat(8, 1fr);
+}
+.grid-line {
+  aspect-ratio: 1 / 1;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}

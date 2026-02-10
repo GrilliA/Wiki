@@ -1,7 +1,4 @@
 footer {
-  background-color: var(--color-primary-50);
-  background-image: var(--background-image);
-  color: var(--color-primary-900);
   flex: 0 100 auto;
 }
 
@@ -28,7 +25,7 @@ footer {
 }
 
 .footer-icons li:not(:last-child) {
-  border-right: 1px solid var(--neutral-fixed-300);
+  border-right: 1px solid var(--border-color);
 }
 
 .footer-icons li:hover {
@@ -60,15 +57,16 @@ footer {
 
 .terms-policy,
 .terms-help {
-  border-right: 1px solid var(--neutral-fixed-300);
+  border-right: 1px solid var(--border-color);
 }
 .terms-policy,
 .terms-service {
-  border-bottom: 1px solid var(--neutral-fixed-300);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .footer-copyright__text {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-block: var(--spacing-base);
 }

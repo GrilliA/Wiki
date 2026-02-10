@@ -15,8 +15,7 @@
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
   line-height: var(--leading-normal);
-  border: 2px solid transparent;
-  border-radius: var(--radius-md);
+  border: 1px solid transparent;
   cursor: pointer;
   transition:
     background-color 0.2s ease,
@@ -30,7 +29,7 @@
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px var(--color-primary-200);
+    box-shadow: 0 0 0 3px var(--color-fixed-primary-200);
   }
 
   &:active:not(:disabled) {
@@ -45,7 +44,7 @@
   &--sm {
     padding: var(--spacing-sm) var(--spacing-md);
     font-size: var(--text-xs);
-    gap: var(--spacing-base);
+    gap: var(--spacing-sm);
 
     .btn__icon {
       font-size: 1.125em;
@@ -74,9 +73,9 @@
   }
 
   &--filled {
-    background-color: var(--color-primary-600);
-    color: var(--color-surface);
-    border-color: var(--color-primary-600);
+    background-color: var(--color-fixed-primary-900);
+    color: var(--color-fixed-primary-50);
+    border-color: var(--border-color);
 
     &:hover:not(:disabled) {
       background-color: var(--color-primary-700);

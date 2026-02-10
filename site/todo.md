@@ -75,6 +75,9 @@ After this i should do the api part for:
 - [ ] Add table of contents #WIP
   - Message: "[website] [entity page] Add table of contents"
 
+- [ ] Add the slide panel component for the table of contents
+  - Message: "[website] [entity page] Add slide panel component for table of contents"
+
 ##### Blog page
 
 ##### Our mission page
