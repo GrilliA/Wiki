@@ -23,39 +23,20 @@ After this i should do the api part for:
 - [ ] Add the minimally needed css variables for the website
   - Message: "[website] [feature] Add css variables"
 
-- [ ] Divide all the components in their own scss folder
-  - Message: "[website] [feature] Divide components in scss folders"
-
-- [ ] Make the border color for the dark mode too
-  - Message: "[website] [feature] Make border color for dark mode"
-
 - [ ] Use the --color-border variable for all the borders in the website
   - Message: "[website] [feature] Use --border-color variable for borders"
   - Steps:
     - [ ] Add the --color-border variable to the css variables
     - [ ] Replace all the border colors with the --color-border variable (--border-color and --neutral-color-300)
 
-- [ ] change the color of the buttons
-  - Message: "[website] [feature] Change the color of the buttons"
-
-- [ ] Create a layout for the pages, to be used in all pages
-  - Message: "[website] [feature] Create a layout for the pages"
-- [ ] Add the generic head to the layout
-  - Message: "[website] [feature] Add generic head to layout"
-- [ ] Add the nav and footer to the layout
-  - Message: "[website] [feature] Add nav and footer to layout"
-
-- [ ] Create a section title mixin with pug
-  - Message: "[website] [feature] Create section title mixin with pug"
+- [ ] Refactor buttons to match the style in the website
+  - Message: "[website] [feature] Refactor buttons to match the style in the website"
 
 ### Mobile
 
 #### Navigation bar
 
 #### Footer
-
-- [ ] Use the footer in navigation and the pages in general
-  - Message: "[website] [feature] Use footer in all pages"
 
 #### Pages
 
@@ -64,7 +45,7 @@ After this i should do the api part for:
 - [ ] Add the clear for top message
   - Message: "[website] [home page] Add clear for top message"
 
-- [ ] Add the blog section
+- [ ] refactor the blog section, ui wise
   - Message: "[website] [home page] Add blog section"
 
 - [ ] Recreate the search input with flowbite as example
@@ -72,11 +53,8 @@ After this i should do the api part for:
 
 ##### Entity page
 
-- [ ] Add table of contents #WIP
+- [ ] Finish the table of contents for the entity page
   - Message: "[website] [entity page] Add table of contents"
-
-- [ ] Add the slide panel component for the table of contents
-  - Message: "[website] [entity page] Add slide panel component for table of contents"
 
 ##### Blog page
 
