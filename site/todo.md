@@ -31,7 +31,7 @@
   - Steps:
     - [ ] Create a badge component
       - Branch: "feature/badge"
-      - Message: "[generral] [feature] Create badge component"
+      - Message: "[general] [feature] Create badge component"
     - [ ] Create typography component
       - Branch: "feature/typography"
       - Message: "[general] [feature] Create typography component"
