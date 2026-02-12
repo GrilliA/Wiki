@@ -29,10 +29,10 @@
 
 - [ ] refactor the blog section, ui wise
   - Steps:
-    - [ ] Create a badge component
+    - [x] Create a badge component
       - Branch: "feature/badge"
       - Message: "[general] [feature] Create badge component"
-    - [ ] Create typography component
+    - [x] Create typography component
       - Branch: "feature/typography"
       - Message: "[general] [feature] Create typography component"
     - [ ] align the ui with the characteristics of the website (colors, spacing, etc)
