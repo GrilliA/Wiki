@@ -1,5 +1,5 @@
 mixin typography(options)
   - 
-    const { variant = 'body',  text, class: extraClass = '', color='default' } = options;
-    const classList = [...( extraClass ).split(' '), 'typography', `typography--${variant}`, `typography--${color}`]
-  p(class=classList.join(' ')) #{text} 
+    const { tag = 'p', variant = 'body', text, class: extraClass = '', color = 'default' } = options;
+    const classList = [...(extraClass).split(' '), 'typography', `typography--${variant}`, `typography--${color}`];
+  #{tag}(class=classList.join(' ')) #{text} 
