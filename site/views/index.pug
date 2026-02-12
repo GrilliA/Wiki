@@ -40,7 +40,7 @@ block content
                   .blog-card__body
                     .blog-card__tags
                       each tag in post.tags
-                        span.blog-card__tag #{tag}
+                        +badge({text: tag, variant: 'outline', size: 'sm'})
                     h3.blog-card__title #{post.title}
                     p.blog-card__excerpt #{post.body}
                     .blog-card__footer
