@@ -1,12 +1,3 @@
-//- Usage:
-//-   +btn({
-//-     variant: 'filled' | 'outline' | 'transparent',
-//-     size: 'sm' | 'lg',
-//-     text,
-//-     icon: { name, height, width },
-//-     id,
-//-     class
-//-   })
 mixin btn(options)
   - const { variant = 'filled', size, text, icon, id, class: extraClass } = options || {}
   - const classList = ['btn', `btn--${variant}`]

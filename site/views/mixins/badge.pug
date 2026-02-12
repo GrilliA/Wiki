@@ -1,0 +1,7 @@
+mixin badge(options)
+  - 
+    const { variant = 'filled', size = 'md', text = '',  class: extraClass = [] } = options || {}
+    const classList = [...extraClass, 'badge', `badge--${variant}`, `badge--${size}`]
+
+  .badge(class=classList.join(' '))
+      span.badge__text= text
