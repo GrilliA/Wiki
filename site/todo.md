@@ -41,7 +41,7 @@
 
 - [ ] Recreate the search input
   - Steps:
-    - [ ] Create the input componenet
+    - [ ] Create the input component
       - Branch: "feature/input"
       - Message: "[general] [feature] Create input component"
       - Details:
