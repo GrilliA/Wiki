@@ -29,7 +29,7 @@
 
 - [ ] refactor the blog section, ui wise
   - Steps:
-    - [ ] Create a bagde component
+    - [ ] Create a badge component
       - Branch: "feature/badge"
       - Message: "[generral] [feature] Create badge component"
     - [ ] Create typography component
