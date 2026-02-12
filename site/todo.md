@@ -1,20 +1,5 @@
 # Site Todo
 
-## Strategy
-
-1. [ ] Finish the mobile version of the website first, then move to tablet and desktop #WIP
-
-2. [ ] Clean up the code and refactor as much as possible, to make it easier to maintain and add new features in the future
-
-3. [ ] Finish the tablet version of the website, only through media queries if possible
-
-4. [ ] Finish the desktop version of the website, only through media queries if possible
-
-After this i should do the api part for:
-
-- [ ] Basic User management (without email confirmation for now, or OAuth, just the basic login and sign up) #Fast
-- [ ] Profile management (edit profile, change password, etc)
-
 ## Todo
 
 - [ ] Avoid calc for spacing and use css variables instead
@@ -42,14 +27,37 @@ After this i should do the api part for:
 
 ##### Home page
 
-- [ ] Add the clear for top message
-  - Message: "[website] [home page] Add clear for top message"
-
 - [ ] refactor the blog section, ui wise
-  - Message: "[website] [home page] Add blog section"
+  - Steps:
+    - [ ] Create a badge component
+      - Branch: "feature/badge"
+      - Message: "[general] [feature] Create badge component"
+    - [ ] Create typography component
+      - Branch: "feature/typography"
+      - Message: "[general] [feature] Create typography component"
+    - [ ] align the ui with the characteristics of the website (colors, spacing, etc)
+      - Branch: "chores/homepage_blog_section"
+      - Message: "[website] [chores] Uniform the blog section with the rest of the ui"
 
-- [ ] Recreate the search input with flowbite as example
-  - Message: "[website] [home page] Recreate search input with flowbite as example"
+- [ ] Recreate the search input
+  - Steps:
+    - [ ] Create the input component
+      - Branch: "feature/input"
+      - Message: "[general] [feature] Create input component"
+      - Details:
+        - The input component should be a simple input with a label and an icon (optional)
+        - Variants: number, text, search, email
+    - [ ] Add the search button (in small screens it shall be wide as the input)
+      - Branch: "chores/homepage_search_input"
+      - Message: "[website] [feature] Add search input to the homepage"
+- [ ] Add dropdown for the language selection
+  - Steps:
+    - Create the dropdown component
+      - Branch: "feature/dropdown"
+      - Message: "[general] [feature] Create dropdown component"
+    - Add dropdown for language selection in the Navigation bar
+      - Branch: "chores/homepage_language_dropdown"
+      - Message: "[website] [feature] Add dropdown for language selection"
 
 ##### Entity page
 
