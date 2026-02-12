@@ -37,7 +37,7 @@ block content
             .blog__body
               .blog-card__tags
                 each tag in post.tags
-                  +badge({text: tag, variant: 'outline', size: 'sm'})
+                  +badge({text: tag, variant: 'filled', size: 'sm'})
               +typography({ variant: 'title', text: post.title })
               +typography({ variant: 'body', text: post.body })
               .blog-card__footer
