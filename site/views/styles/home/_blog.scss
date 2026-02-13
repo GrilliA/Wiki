@@ -23,10 +23,7 @@
 .blog__body {
   display: flex;
   flex-direction: column;
-  padding-top: 0;
-  padding-bottom: var(--spacing-md);
-  padding-right: var(--spacing-md);
-  padding-left: var(--spacing-md);
+  padding: 0 var(--spacing-md) var(--spacing-md);
 }
 
 .blog-card__tags {
