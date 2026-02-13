@@ -41,5 +41,5 @@ block content
               +typography({ variant: 'title', text: post.title })
               +typography({ variant: 'body', text: post.body })
               .blog-card__footer
-                +typography({ variant: 'caption',  color: 'dimmed',text: post.author })
+                +typography({ variant: 'caption', color: 'dimmed', text: post.author })
                 +typography({ variant: 'caption', color: 'dimmed', text: new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })})
