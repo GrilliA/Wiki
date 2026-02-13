@@ -30,7 +30,7 @@ block content
     +sectionTitle('Latest from the Community')
     .container
       .section-content.blog__wrapper
-        each post, index in blog 
+        each post in blog 
           article.blog-card
             .blog-card__image
               img(src=post.image alt="Blog Post Image")
