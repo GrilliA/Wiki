@@ -28,21 +28,18 @@ block content
 
   section.blog
     +sectionTitle('Latest from the Community')
-    .section-content
-      .container
-        .blog__wrapper
-          .blog__grid
-            each post in blog 
-              a.blog-card__link
-                article.blog-card
-                  .blog-card__image
-                    img(src=post.image alt="Blog Post Image")
-                  .blog-card__body
-                    .blog-card__tags
-                      each tag in post.tags
-                        +badge({text: tag, variant: 'outline', size: 'sm'})
-                    h3.blog-card__title #{post.title}
-                    p.blog-card__excerpt #{post.body}
-                    .blog-card__footer
-                      span.blog-card__author #{post.author}
-                      time.blog-card__date #{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+    .container
+      .section-content.blog__wrapper
+        each post in blog 
+          article.blog-card
+            .blog-card__image
+              img(src=post.image alt="Blog Post Image")
+            .blog-card__body
+              .blog-card__tags
+                each tag in post.tags
+                  +badge({text: tag, variant: 'filled', size: 'sm'})
+              +typography({ variant: 'title', text: post.title })
+              +typography({ variant: 'body', text: post.body })
+              .blog-card__footer
+                +typography({ variant: 'caption', color: 'dimmed', text: post.author })
+                +typography({ variant: 'caption', color: 'dimmed', text: new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })})

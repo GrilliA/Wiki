@@ -29,13 +29,13 @@
 
 - [ ] refactor the blog section, ui wise
   - Steps:
-    - [ ] Create a badge component
+    - [x] Create a badge component
       - Branch: "feature/badge"
       - Message: "[general] [feature] Create badge component"
-    - [ ] Create typography component
+    - [x] Create typography component
       - Branch: "feature/typography"
       - Message: "[general] [feature] Create typography component"
-    - [ ] align the ui with the characteristics of the website (colors, spacing, etc)
+    - [x] align the ui with the characteristics of the website (colors, spacing, etc)
       - Branch: "chores/homepage_blog_section"
       - Message: "[website] [chores] Uniform the blog section with the rest of the ui"
 
@@ -50,6 +50,7 @@
     - [ ] Add the search button (in small screens it shall be wide as the input)
       - Branch: "chores/homepage_search_input"
       - Message: "[website] [feature] Add search input to the homepage"
+
 - [ ] Add dropdown for the language selection
   - Steps:
     - Create the dropdown component
