@@ -7,7 +7,6 @@ const slidePanelContent = document.querySelector(
 const slidePanelCloseButton = document.querySelector(
   ".dropdown-header__close",
 ) as HTMLElement;
-console.log(slidePanelTarget, slidePanelContent);
 slidePanelTarget?.addEventListener("click", () => {
   slidePanelContent.classList.add("active");
 });

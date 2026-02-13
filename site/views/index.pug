@@ -5,15 +5,14 @@ block title
 
 block content
   include includes/gridLines.pug
-  .hero-title
+  .section.hero
     .container
-      .hero-title__text Search engine made by dancer community, for the dance community!
-  .hero-search
-    .container
-      .hero-search__input
-        input.hero-search__input-field(placeholder="Search for dance moves, styles, or anything related to dance..." enterkeyhint="search")
-        i.hero-search__input-icon(data-feather="search" height="24" width="24")
-        i.hero-search__input-clear(data-feather="x" height="16" width="16")
+      .section-content.hero__content
+        .hero__text Search engine made by dancer community, for the dance community!
+        form.js-hero__form
+          .hero__input
+            input.hero__field(placeholder="Search for dance moves, styles, or anything related to dance..." enterkeyhint="search")
+          +btn({text: 'Search', variant: 'filled', size: 'full-width'})
   include includes/gridLines.pug
 
   .section

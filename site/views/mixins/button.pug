@@ -1,5 +1,5 @@
 mixin btn(options)
-  - const { variant = 'filled', size, text, icon, id, class: extraClass } = options || {}
+  - const { variant = 'filled', size, text, icon, id, class: extraClass, type="button" } = options || {}
   - const classList = ['btn', `btn--${variant}`]
 
   if size
@@ -8,7 +8,7 @@ mixin btn(options)
   if extraClass
     - classList.push(extraClass)
 
-  button(type='button' class=classList.join(' ') id=id)
+  button(class=classList.join(' ') id=id type=type)
     if icon
       - const {height = 16, width=16, name} = icon || {}
       i.btn__icon(data-feather=name height=height width=width)
