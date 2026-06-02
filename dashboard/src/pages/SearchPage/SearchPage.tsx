@@ -6,10 +6,7 @@ import { PageComponent } from "@/components/PageComponent/PageComponent";
 import { usePage } from "@/hooks/usePage";
 import { Divider, Stack, Text, Title } from "@mantine/core";
 import { useState } from "react";
-import {
-  BlocksRenderer,
-  type BlocksContent,
-} from "@strapi/blocks-react-renderer";
+
 import { useRouter } from "@/hooks/useRouter";
 export const SearchPage = () => {
   const { push } = useRouter();
@@ -41,18 +38,9 @@ export const SearchPage = () => {
                   <Text size="md" c={"violet.5"} fw={"bolder"}>
                     {page?.name}
                   </Text>
-                  <BlocksRenderer
-                    content={page?.description}
-                    blocks={{
-                      paragraph: ({ children }) => {
-                        return (
-                          <Text size="sm" c="dimmed" lineClamp={2}>
-                            {children}
-                          </Text>
-                        );
-                      },
-                    }}
-                  />
+                  <Text size="md" c={"violet.5"} fw={"bolder"}>
+                    {page?.description}
+                  </Text>
                 </Stack>
               </GemmaListItem>
             );

@@ -1,18 +1,31 @@
-import { Container, Group, Stack, Text } from "@mantine/core";
-import classes from "./UnderConstructionPage.module.css";
-import { WikiIcon } from "@/components/Icon";
+import { navigationData } from "@/helper/navigationData";
+import { Anchor, Container, Group, Stack, Text, Title } from "@mantine/core";
 
 export const UnderConstructionPage = () => {
   return (
     <Container h={"100vh"} py={"md"}>
       <Stack style={{ margin: "100px auto" }}>
-        <Group c="violet" align="center">
-          <WikiIcon name="construction" size={64} />
-          <Text fw={"bolder"} size="64px">
-            Under construction
-          </Text>
-        </Group>
-        <Text size="xl">We are working actively on the site. Stay tuned!</Text>
+        <Stack>
+          <Title>Authentication</Title>
+          <Anchor href="/auth/signup">Sign up</Anchor>
+          <Anchor href="/auth/login">Login</Anchor>
+          <Anchor href="/auth/email_verification">email verification</Anchor>
+          <Anchor href="/auth/forgotten_password">forgotten_password</Anchor>
+        </Stack>
+        <Stack>
+          <Title>Pages</Title>
+          <Anchor href="/home">home</Anchor>
+          <Anchor href="/profile">Profile page</Anchor>
+          <Anchor href="/search">Search</Anchor>
+          <Anchor href="/page/mike">wiki page</Anchor>
+        </Stack>
+        <Stack>
+          <Title>Forms</Title>
+          <Anchor href="/onboarding">on boarding</Anchor>
+          <Anchor href="/home">profile form</Anchor>
+          <Anchor href="/profile">Profile form</Anchor>
+          <Anchor href="/search">Wiki form</Anchor>
+        </Stack>
       </Stack>
     </Container>
   );

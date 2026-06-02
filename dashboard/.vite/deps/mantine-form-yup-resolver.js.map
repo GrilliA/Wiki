@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/mantine-form-yup-resolver/dist/esm/index.mjs"],
+  "sourcesContent": ["import { ValidationError } from 'yup';\n\nfunction yupResolver(schema) {\n  return (values) => {\n    try {\n      schema.validateSync(values, { abortEarly: false });\n      return {};\n    } catch (yupError) {\n      const results = {};\n      if (yupError instanceof ValidationError) {\n        yupError.inner.forEach((error) => {\n          results[error.path.replaceAll(\"[\", \".\").replaceAll(\"]\", \"\")] = error.message;\n        });\n      }\n      return results;\n    }\n  };\n}\n\nexport { yupResolver };\n"],
+  "mappings": ";;;;;;AAEA,SAAS,YAAY,QAAQ;AAC3B,SAAO,CAAC,WAAW;AACjB,QAAI;AACF,aAAO,aAAa,QAAQ,EAAE,YAAY,MAAM,CAAC;AACjD,aAAO,CAAC;AAAA,IACV,SAAS,UAAU;AACjB,YAAM,UAAU,CAAC;AACjB,UAAI,oBAAoB,iBAAiB;AACvC,iBAAS,MAAM,QAAQ,CAAC,UAAU;AAChC,kBAAQ,MAAM,KAAK,WAAW,KAAK,GAAG,EAAE,WAAW,KAAK,EAAE,CAAC,IAAI,MAAM;AAAA,QACvE,CAAC;AAAA,MACH;AACA,aAAO;AAAA,IACT;AAAA,EACF;AACF;",
+  "names": []
+}

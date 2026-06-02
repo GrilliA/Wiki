@@ -10,10 +10,7 @@ import classes from "./NotFoundPage.module.css";
 import { useRouter } from "@/hooks/useRouter";
 
 export const NotFoundPage = () => {
-  const { push } = useRouter();
-  const goToHomepage = () => {
-    push("/");
-  };
+  const { back } = useRouter();
 
   return (
     <Container className={classes.root}>
@@ -30,10 +27,10 @@ export const NotFoundPage = () => {
             variant="outline"
             size="md"
             mt="xl"
-            onClick={goToHomepage}
+            onClick={back}
             className={classes.control}
           >
-            Get back to home page
+            Get back to previous page
           </Button>
         </div>
         <Image src={"/not_found_page.svg"} className={classes.desktopImage} />

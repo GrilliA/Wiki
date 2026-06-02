@@ -1,16 +1,12 @@
 import { WikiFull } from "@/components/Full";
 import { useSinglePage } from "@/hooks/useSinglePage";
 import { useParams } from "react-router";
-import {
-  BlocksRenderer,
-  type BlocksContent,
-} from "@strapi/blocks-react-renderer";
-import { Group, Stack, Text, Title, Typography } from "@mantine/core";
+import { Stack, Text, Title } from "@mantine/core";
 import { TableOfContents } from "@/components/TableOfContent/TableOfContent";
 
 export const EventPage = () => {
   const { id } = useParams();
-  const { data: page } = useSinglePage(id);
+  const { data: page } = useSinglePage(Number(id));
   const currentPage = page?.data;
   console.log(currentPage);
   const links = [...(currentPage?.sections ?? [])].map((sec, i) => ({
@@ -35,14 +31,7 @@ export const EventPage = () => {
                 <Title order={4} mb={"md"} id={`${i}`}>
                   {sec?.title}
                 </Title>
-                <BlocksRenderer
-                  content={sec?.content}
-                  blocks={{
-                    paragraph: ({ children }) => {
-                      return <Typography>{children}</Typography>;
-                    },
-                  }}
-                />
+                <Text>{sec?.content}</Text>
               </div>
             );
           })}
