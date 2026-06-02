@@ -5,8 +5,9 @@ import { Outlet } from "react-router";
 import { useRouter } from "@/hooks/useRouter";
 import { useUser } from "@/hooks/useUser";
 import { useEffect } from "react";
+import type { TAuthPageTemplateProps } from "./AuthPageTemplate.model";
 
-export const AuthPageTemplate = () => {
+export const AuthPageTemplate = (props: TAuthPageTemplateProps) => {
   const { data: user, isSuccess } = useUser();
   const { push } = useRouter();
 
