@@ -1,11 +1,18 @@
 import { createTheme, Button, MantineProvider } from "@mantine/core";
 import type { PropsWithChildren } from "react";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router";
+import { store } from "./state/store";
 
 const WikiProvider = (props: PropsWithChildren) => {
   return (
-    <MantineProvider theme={theme} defaultColorScheme="dark">
-      {props.children}
-    </MantineProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <MantineProvider theme={theme} defaultColorScheme="dark">
+          {props.children}
+        </MantineProvider>
+      </BrowserRouter>
+    </Provider>
   );
 };
 
