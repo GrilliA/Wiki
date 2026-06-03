@@ -13,19 +13,22 @@ import { loginInitialValues, loginValidationSchema } from "./Login.helper";
 import { useForm } from "@mantine/form";
 import { WikiLink } from "../../components/Link";
 import { GoogleButton } from "../../components/GoogleButton.tsx/GoogleButton";
-import { useLoginMutation } from "../../services/auth";
+import { useLoginMutation } from "../../services/auth/auth";
 import { useRouter } from "@/hooks/useRouter";
+import type { TLoginParams } from "@/services/auth/auth.model";
 
-export const Login = (_) => {
-  const { getInputProps, onSubmit, errors, values } = useForm({
+export const Login = () => {
+  const { getInputProps, onSubmit, errors, values } = useForm<TLoginParams>({
     initialValues: loginInitialValues,
     validate: yupResolver(loginValidationSchema),
   });
   const { push } = useRouter();
-  const [login, { isSuccess }] = useLoginMutation();
+  const [login] = useLoginMutation();
   const handleSubmit = async () => {
-    const data = await login(values);
-    if (!data.data?.user?.id) return;
+    const { data } = await login(values);
+    if (!data.isSuccess) {
+      return;
+    }
     push("/home");
   };
 

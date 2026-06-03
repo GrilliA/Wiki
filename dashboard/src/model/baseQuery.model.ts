@@ -2,6 +2,11 @@ import type { HttpType } from "@/helper/constants";
 import type { TApiError } from "@/state/apiErrorSlice/apiErrorSlice.model";
 import type { ThunkDispatch } from "@reduxjs/toolkit";
 
+export type TWikiResponseData<T> = {
+  code: number | null;
+  isSuccess: boolean;
+  data: T;
+};
 export type TBaseQueryFn<
   Args = {
     payload?: object;

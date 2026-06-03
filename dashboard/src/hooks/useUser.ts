@@ -1,4 +1,4 @@
-import { useCurrentUserQuery } from "@/services/auth";
+import { useCurrentUserQuery } from "@/services/auth/auth";
 import type { TRootState } from "@/state/store";
 import { useSelector } from "react-redux";
 

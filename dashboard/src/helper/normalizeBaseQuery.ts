@@ -48,26 +48,25 @@ export const normalizeBaseQuery: TBaseQueryFn = async (args, { dispatch }) => {
       headers: headers,
     });
 
-    const data = await response.json();
+    const responseData = await response.json();
 
-    if (!response.ok) {
-      const error = data?.error;
+    if (!responseData.isSuccess) {
       dispatch(
         addApiError({
-          status: error?.status,
-          message: error?.message,
+          status: response?.status !== 200 ? response?.status : null,
+          code: responseData?.code,
         }),
       );
     }
 
     return {
-      data,
+      data: responseData,
     };
   } catch (error) {
     dispatch(
       addApiError({
         status: 500,
-        message: "generic",
+        code: null,
       }),
     );
 

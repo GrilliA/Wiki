@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { authApi } from "../services/auth";
+import { authApi } from "../services/auth/auth";
 import { modalReducer } from "./modalSlice/modalSlice";
 import { apiErrorReducer } from "./apiErrorSlice/apiErrorSlice";
 import { uiReducer } from "./uiSlice/uiSlice";

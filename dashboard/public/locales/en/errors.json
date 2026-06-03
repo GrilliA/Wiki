@@ -1,0 +1,4 @@
+{
+  "wrong_credentials": "The username or password you entered doesn’t match our records. Please try again or reset your password if needed.",
+  "generic_api_error": "Something went wrong while processing your request. Please try again, or come back later."
+}

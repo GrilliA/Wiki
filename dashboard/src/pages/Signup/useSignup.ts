@@ -1,7 +1,7 @@
 import { useForm } from "@mantine/form";
 import { yupResolver } from "mantine-form-yup-resolver";
 import { signupInitialValues, signupValidationSchema } from "./Signup.helper";
-import { useRegisterMutation } from "@/services/auth";
+import { useRegisterMutation } from "@/services/auth/auth";
 import { useRouter } from "@/hooks/useRouter";
 
 export const useSignup = () => {

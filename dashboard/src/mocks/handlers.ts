@@ -1,11 +1,21 @@
 import { http, HttpResponse } from "msw";
 
 export const handlers = [
-  http.get("/api/auth/login/data", () => {
+  http.post("/api/auth/login", async ({ request }) => {
+    const { identifier } = (await request.json()) as any;
+
+    if (identifier === "admin") {
+      return HttpResponse.json({
+        isSuccess: true,
+        data: null,
+        code: null,
+      });
+    }
+
     return HttpResponse.json({
-      id: "abc-123",
-      firstName: "John",
-      lastName: "Maverick",
+      isSuccess: false,
+      data: null,
+      code: 100,
     });
   }),
 ];

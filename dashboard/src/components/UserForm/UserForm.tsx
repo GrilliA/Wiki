@@ -20,7 +20,7 @@ import {
 } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { useRouter } from "../../hooks/useRouter";
-import { useUpdateUserMutation } from "@/services/auth";
+import { useUpdateUserMutation } from "@/services/auth/auth";
 import { useUploadMutation } from "@/services/file";
 import { useUser } from "@/hooks/useUser";
 

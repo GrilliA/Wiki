@@ -1,4 +1,6 @@
 {
-  "title": "Welcome back",
-  "subtitle": "Insert your credentials"
+  "button": {
+    "close": "Close"
+  },
+  "attention": "Attention"
 }
