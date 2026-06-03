@@ -1,4 +1,14 @@
 {
+  "document": {
+    "title": "Log in",
+    "description": "Secure login page for accessing your private account, saved data, and personalized tools."
+  },
   "title": "Welcome back",
-  "subtitle": "Insert your credentials"
+  "subtitle": "Insert your credentials",
+  "email": "Email or username",
+  "password": "Password",
+  "forgotten_password": "Forgotten password?",
+  "login_button": "Login",
+  "login_google_button": "Login with google",
+  "sign_up": "You don't have an account? Sign up"
 }

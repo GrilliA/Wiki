@@ -12,6 +12,7 @@ i18n
     debug: true,
     ns: ["common", "login", "errors"],
     defaultNS: "common",
+    lng: "it",
   });
 
 export default i18n;

@@ -1,0 +1,14 @@
+{
+  "document": {
+    "title": "Log in",
+    "description": "Pagina di accesso sicura per accedere al tuo account privato, ai dati salvati e agli strumenti personalizzati."
+  },
+  "title": "Bentornato/a",
+  "subtitle": "Inserisci le tue credenziali",
+  "email": "Email or nome utente",
+  "password": "Password",
+  "forgotten_password": "Password dimenticata?",
+  "login_button": "Accedi",
+  "login_google_button": "Accedi con google",
+  "sign_up": "Non hai un account? Registrati."
+}

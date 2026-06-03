@@ -1,0 +1,4 @@
+{
+  "wrong_credentials": "Il nome utente o la password inseriti non corrispondono ai nostri dati. Riprova oppure reimposta la password se necessario.",
+  "generic_api_error": "Si è verificato un problema durante l’elaborazione della tua richiesta. Riprova oppure torna più tardi."
+}
