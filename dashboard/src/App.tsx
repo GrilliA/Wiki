@@ -22,7 +22,7 @@ function App() {
   return (
     <Routes>
       <Route index path="/" element={<UnderConstructionPage />} />
-      <Route path="auth" element={<AuthPageTemplate />}>
+      <Route path="auth">
         <Route path="signup" element={<SignupPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="email_verification" element={<EmailVerification />} />

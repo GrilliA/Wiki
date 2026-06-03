@@ -1,4 +1,5 @@
 export type TLogoProps = {
   className?: string;
-  size?: 'sm' | 'md' | 'lg';
-}
+  size?: "sm" | "md" | "lg" | "xl";
+};
+

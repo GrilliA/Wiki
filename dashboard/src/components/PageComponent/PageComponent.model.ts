@@ -5,4 +5,6 @@ export type TPageComponentProps = {
   children: ReactNode;
   title?: string;
   description?: string;
+  header?: ReactNode;
+  footer?: ReactNode;
 };

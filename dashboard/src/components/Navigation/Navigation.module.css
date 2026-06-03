@@ -35,3 +35,9 @@
   line-height: 1;
   height: 100% !important;
 }
+
+.simple {
+  display: flex;
+  justify-content: center;
+  padding: var(--mantine-spacing-md) 0;
+}

@@ -11,9 +11,7 @@ const LoginPage = () => {
         "“Secure login page for accessing your private account, saved data, and personalized tools."
       }
     >
-      <Paper withBorder maw={600} w={"100%"} radius="md" p="xl">
-        <Login />
-      </Paper>
+      <Login />
     </PageComponent>
   );
 };

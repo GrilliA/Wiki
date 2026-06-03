@@ -9,8 +9,8 @@ const Logo = (props: TLogoProps) => {
   return (
     <WikiLink href={"/"} className={`${className} ${styles.logo}`}>
       <Image
-        src={"/light_logo.svg"}
-        w={sizes[size]}
+        src={"/logo.svg"}
+        w={sizes[size] ?? size}
         alt="logo"
         className={styles.img}
       />

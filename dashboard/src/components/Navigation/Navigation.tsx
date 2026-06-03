@@ -1,16 +1,17 @@
-import { WikiLogo } from "../Logo";
-import styles from "./Navigation.module.css";
-import NavigationMenu from "./NavigationMenu";
+import type { TNavigationProps } from "./Navigation.model";
+import NavigationDashboard from "./NavigationDashboard";
+import NavigationSimple from "./NavigationSimple";
 
-const Navigation = () => {
-  return (
-    <>
-      <nav className={`${styles.nav}`}>
-        <WikiLogo className={styles.logo} />
-        <NavigationMenu />
-      </nav>
-    </>
-  );
+const Navigation = (props: TNavigationProps) => {
+  if (props.variant === "simple") {
+    return <NavigationSimple />;
+  }
+
+  if (props.variant === "dashboard") {
+    return <NavigationDashboard />;
+  }
+
+  return <NavigationSimple />;
 };
 
 export default Navigation;
