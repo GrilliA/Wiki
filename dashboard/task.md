@@ -1,33 +1,43 @@
 # To do
 
+- [ ] Remove auth template
+
 ## Login
 
-- [ ] Add translations for login page
-  - Branch: "dashboard/login_translations page"
+- [x] Add Header and Footer for the login page
+  - Branch: "dashboard/login_layout"
+  - Message: "Add layout for the login page"
+
+- [x] Add translations for login page, it and eng
+  - Branch: "dashboard/login_translations_page"
   - Message: "[dashboard][feature] add translations to the login page"
 
-- [ ] Add meta data to the login page
+- [x] Add types for all the login related functions
+  - Branch: "dashboard/login_types"
+  - Message: "[dashboard][feature] add types to all the functions related to the login feature"
+
+- [x] Add meta data to the login page
   - Branch: "dashboard/login_metadata"
   - Message: "[dashboard][feature] add metadata to login page: title, description and etch"
   - Steps:
-    - [ ] Understand all the metadata needed for the website
-    - [ ] add the description text and the others if needed
-    - [ ] Structure page component like the other components
-    - [ ] Add the Page component props to all the auth template and the page template
+    - [x] Understand all the metadata needed for the website
+    - [x] add the description text and the others if needed
+    - [x] Structure page component like the other components
+    - [x] Add the Page component props to all the auth template and the page template
 
-- [ ] Add tests config
+- [x] Add tests config
   - Branch: "dashboard/tests"
   - Message: "[dashboard][feature] add tests config"
 
-- [ ] Add tests for all the functions involved with the login page
+- [x] Add tests for all the functions involved with the login page
   - Branch: "dashboard/login_test"
   - Message: "[dashboard][feature] add tests for all functions related to the login page"
 
-- [ ] Set up mock data with msw
+- [x] Set up mock data with msw
   - Branch: "dashboard/mock_data"
   - Message: "[dashboard][feature] add mock data config"
 
-- [ ] Add mock for the login
+- [x] Add mock for the login
   - Branch: "dashboard/mock_login"
   - Message: "[dashboard][feature] add mock data for the login page"
 

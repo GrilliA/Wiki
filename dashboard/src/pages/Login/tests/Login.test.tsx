@@ -3,7 +3,7 @@ import { test, expect } from "vitest";
 import WikiProvider from "@/WikiProvider";
 import { Login } from "../Login";
 
-test("renders children when specified", async () => {
+test("renders login page when specified", async () => {
   const { asFragment } = await render(<Login />, {
     wrapper: WikiProvider,
   });
