@@ -1,11 +1,18 @@
-import { Paper } from "@mantine/core";
 import { Signup } from "./Signup";
+import { useTranslation } from "react-i18next";
+import { PageComponent } from "@/components/PageComponent/PageComponent";
 
 const SignupPage = () => {
+  const { t } = useTranslation("login");
+
   return (
-    <Paper withBorder maw={600} w={"100%"} radius="md" p="xl">
+    <PageComponent
+      withPadding
+      title={t("document.title")}
+      description={t("document.description")}
+    >
       <Signup />
-    </Paper>
+    </PageComponent>
   );
 };
 

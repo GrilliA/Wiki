@@ -1,5 +1,5 @@
 export type TNavigationProps = {
-  variant: "simple" | "dashboard";
+  variant?: "simple" | "dashboard";
 };
 
 export type TNavigationDashboardProps = {

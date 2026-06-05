@@ -1,6 +1,7 @@
 .main {
-  flex: 100 0 auto;
+  flex: 1 1 auto;
   max-width: 100%;
+  overflow: auto;
 }
 
 .padding {
