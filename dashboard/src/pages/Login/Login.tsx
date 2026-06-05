@@ -1,4 +1,3 @@
-import { yupResolver } from "mantine-form-yup-resolver";
 import {
   Box,
   Button,
@@ -9,30 +8,14 @@ import {
   TextInput,
   Title,
 } from "@mantine/core";
-import { loginInitialValues, loginValidationSchema } from "./Login.helper";
-import { useForm } from "@mantine/form";
 import { WikiLink } from "../../components/Link";
 import { GoogleButton } from "../../components/GoogleButton.tsx/GoogleButton";
-import { useLoginMutation } from "../../services/auth/auth";
-import { useRouter } from "@/hooks/useRouter";
-import type { TLoginParams } from "@/services/auth/auth.model";
 import { useTranslation } from "react-i18next";
+import { useLogin } from "./useLogin";
 
 export const Login = () => {
-  const { getInputProps, onSubmit, errors, values } = useForm<TLoginParams>({
-    initialValues: loginInitialValues,
-    validate: yupResolver(loginValidationSchema),
-  });
+  const { handleSubmit, getInputProps } = useLogin();
   const { t } = useTranslation("login");
-  const { push } = useRouter();
-  const [login] = useLoginMutation();
-  const handleSubmit = async () => {
-    const { data } = await login(values);
-    if (!data.isSuccess) {
-      return;
-    }
-    push("/home");
-  };
 
   return (
     <Stack>
@@ -40,12 +23,13 @@ export const Login = () => {
         <Title order={2}>{t("title")}</Title>
         <Text c={"dimmed"}>{t("subtitle")}</Text>
       </Box>
-      <form onSubmit={onSubmit(handleSubmit)} id="login">
+      <form onSubmit={handleSubmit} id="login">
         <Stack>
           <TextInput
             {...getInputProps("identifier")}
             label={t("email")}
             size="md"
+            id="email"
           />
           <Flex
             justify="space-between"
@@ -56,9 +40,9 @@ export const Login = () => {
             <PasswordInput
               {...getInputProps("password")}
               autoComplete="current-password"
-              error={errors.password}
               label={t("password")}
               size="md"
+              id="password"
             />
             <WikiLink
               c="dimmed"

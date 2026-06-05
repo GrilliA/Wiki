@@ -12,6 +12,7 @@ export default defineConfig({
       enabled: true,
       provider: webdriverio(),
       instances: [{ browser: "chrome" }],
+      screenshotFailures: false,
     },
   },
   resolve: {
