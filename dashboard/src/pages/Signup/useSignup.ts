@@ -5,24 +5,29 @@ import { useRegisterMutation } from "@/services/auth/auth";
 import { useRouter } from "@/hooks/useRouter";
 import * as Yup from "yup";
 import { useTranslation } from "react-i18next";
+import type { TSignupParams } from "@/services/auth/auth.model";
 
 export const useSignup = () => {
   const { push } = useRouter();
+  const [registerUser] = useRegisterMutation();
   const signupValidationSchema = useSignupValidationSchema();
-  const { getInputProps, onSubmit } = useForm({
+  const { getInputProps, onSubmit } = useForm<TSignupParams>({
     initialValues: signupInitialValues,
     validate: yupResolver(signupValidationSchema),
   });
 
-  const [registerUser] = useRegisterMutation();
   const handleSubmit = onSubmit(async (values) => {
-    const data = await registerUser({
+    const { data } = await registerUser({
       username: values.username,
       email: values.email,
       password: values.password,
     });
-    if (!data.data?.user?.id) return;
-    push("/auth/login");
+
+    if (!data.isSuccess) {
+      return;
+    }
+
+    push("/auth/email_verification");
   });
   return { getInputProps, handleSubmit };
 };

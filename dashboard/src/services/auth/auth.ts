@@ -1,6 +1,11 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { normalizeBaseQuery } from "@/helper/normalizeBaseQuery";
-import type { TLoginParams, TLoginResponseData } from "./auth.model";
+import type {
+  TLoginParams,
+  TLoginResponseData,
+  TSignupParams,
+  TSignupResponseData,
+} from "./auth.model";
 
 export const authApi = createApi({
   reducerPath: "authApi",
@@ -26,10 +31,10 @@ export const authApi = createApi({
       },
       invalidatesTags: ["CurrentUser"],
     }),
-    register: builder.mutation<any, any>({
+    register: builder.mutation<TSignupResponseData, TSignupParams>({
       query: (payload) => {
         return {
-          url: "/auth/local/register",
+          url: "/auth/register",
           method: "POST",
           payload,
         };

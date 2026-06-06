@@ -4,7 +4,6 @@ import "@mantine/core/styles.css";
 import "@mantine/tiptap/styles.css";
 import { Route, Routes } from "react-router";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
-import { AuthPageTemplate } from "./components/AuthPageTemplate/AuthPageTemplate";
 import EmailVerification from "./pages/EmailVerification/EmailVerification";
 import { ForgottenPassword } from "./pages/ForgottenPassword/ForgottenPassword";
 import LoginPage from "./pages/Login/LoginPage";
