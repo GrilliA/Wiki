@@ -21,30 +21,30 @@
   - [ ] user default settings
   - [ ] System options in general
 
-## ForgottenPassword
+## Profile
 
-- [x] Add Header and Footer for the forgotten_password page
-  - Branch: "dashboard/forgotten_password_layout"
-  - Message: "[dashboard][feature] Add layout for the forgotten_password page"
+- [ ] Add Header and Footer for the profile page
+  - Branch: "dashboard/profile_layout"
+  - Message: "[dashboard][feature] Add layout for the profile page"
 
-- [ ] Add translations for forgotten_password page, it and eng
-  - Branch: "dashboard/forgotten_password_translations_page"
-  - Message: "[dashboard][feature] add translations to the forgotten_password page"
+- [ ] Add translations for profile page, it and eng
+  - Branch: "dashboard/profile_translations_page"
+  - Message: "[dashboard][feature] add translations to the profile page"
 
-- [x] Add types for all the forgotten_password related functions
-  - Branch: "dashboard/forgotten_password_types"
-  - Message: "[dashboard][feature] add types to all the functions related to the forgotten_password feature"
+- [ ] Add types for all the profile related functions
+  - Branch: "dashboard/profile_types"
+  - Message: "[dashboard][feature] add types to all the functions related to the profile feature"
 
-- [x] Add meta data to the forgotten_password page
-  - Branch: "dashboard/forgotten_password_metadata"
-  - Message: "[dashboard][feature] add metadata to forgotten_password page: title, description and etch"
+- [ ] Add meta data to the profile page
+  - Branch: "dashboard/profile_metadata"
+  - Message: "[dashboard][feature] add metadata to profile page: title, description and etch"
 
-- [x] Add tests for all the functions involved with the forgotten_password page
-  - Branch: "dashboard/forgotten_password_test"
-  - Message: "[dashboard][feature] add tests for all functions related to the forgotten_password page"
+- [ ] Add tests for all the functions involved with the profile page
+  - Branch: "dashboard/profile_test"
+  - Message: "[dashboard][feature] add tests for all functions related to the profile page"
 
-- [ ] Add mock for the forgotten_password
-  - Branch: "dashboard/mock_forgotten_password"
-  - Message: "[dashboard][feature] add mock data for the forgotten_password page"
+- [ ] Add mock for the profile
+  - Branch: "dashboard/mock_profile"
+  - Message: "[dashboard][feature] add mock data for the profile page"
 
-## ForgottenPassword forgotten_password
+## ForgottenPassword profile
