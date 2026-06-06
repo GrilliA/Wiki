@@ -1,0 +1,9 @@
+{
+  "document": {
+    "title": "Verification mail",
+    "description": "Your sign‑up was successful. Access your new account, explore your dashboard, and start using all features."
+  },
+  "title": "Account created successfully",
+  "content": "Please check your email to verify your account. \n If you did not receive the email, please check your spam folder or click the button below to resend the verification email.",
+  "resend_button": "Resend"
+}

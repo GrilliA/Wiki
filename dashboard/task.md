@@ -8,7 +8,7 @@
 
 ## Email Verification
 
-- [ ] Add Header and Footer for the verification page
+- [x] Add Header and Footer for the verification page
   - Branch: "dashboard/verification_layout"
   - Message: "[dashboard][feature] Add layout for the verification page"
 
@@ -16,23 +16,23 @@
   - Branch: "dashboard/verification_translations_page"
   - Message: "[dashboard][feature] add translations to the verification page"
 
-- [ ] Add types for all the verification related functions
+- [x] Add types for all the verification related functions
   - Branch: "dashboard/verification_types"
   - Message: "[dashboard][feature] add types to all the functions related to the verification feature"
 
-- [ ] Add meta data to the verification page
+- [x] Add meta data to the verification page
   - Branch: "dashboard/verification_metadata"
   - Message: "[dashboard][feature] add metadata to verification page: title, description and etch"
 
-- [ ] Add tests for all the functions involved with the verification page
+- [x] Add tests for all the functions involved with the verification page
   - Branch: "dashboard/verification_test"
   - Message: "[dashboard][feature] add tests for all functions related to the verification page"
 
-- [ ] Add mock for the verification
+- [x] Add mock for the verification
   - Branch: "dashboard/mock_verification"
   - Message: "[dashboard][feature] add mock data for the verification page"
 
-- [ ] Add timer for the resend button
+- [x] Add timer for the resend button
   - Branch: "dashboard/resend_verification"
   - Message: "[ dashboard ][feature] add timer for the resend feature"
 

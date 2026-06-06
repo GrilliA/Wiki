@@ -14,11 +14,11 @@ import { useTranslation } from "react-i18next";
 import { resendFormatTime } from "./EmailVerificationPage.util";
 
 const EmailVerificationPage = () => {
-  const { t } = useTranslation("email_verification");
   const { colors } = useMantineTheme();
   const primaryColor = colors.violet[7];
   const RESEND_DELAY = RESEND_EMAIL_DELAY * 60;
   const [secondsLeft, setSecondsLeft] = useState(0);
+  const { t } = useTranslation("email_verification");
 
   useEffect(() => {
     if (secondsLeft === 0) {
@@ -41,7 +41,7 @@ const EmailVerificationPage = () => {
   };
 
   const buttonLabel =
-    secondsLeft !== 0 ? resendFormatTime(secondsLeft) : "Resend";
+    secondsLeft !== 0 ? resendFormatTime(secondsLeft) : t("resend_button");
 
   return (
     <PageComponent
@@ -53,14 +53,10 @@ const EmailVerificationPage = () => {
         <Group>
           <WikiIcon name="check_circle" size={48} color={primaryColor} />
           <Title order={2} ta={"center"}>
-            Account created successfully
+            {t("title")}
           </Title>
         </Group>
-        <Text>
-          Please check your email to verify your account. If you did not receive
-          the email, please check your spam folder or click the button below to
-          resend the verification email.
-        </Text>
+        <Text>{t("content")}</Text>
         <Button onClick={handleResend} disabled={secondsLeft !== 0}>
           {buttonLabel}
         </Button>
