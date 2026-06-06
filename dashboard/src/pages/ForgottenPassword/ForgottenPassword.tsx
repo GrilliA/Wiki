@@ -13,15 +13,9 @@ export const ForgottenPassword = () => {
       title={t("document.title")}
       description={t("document.description")}
     >
-      <Stack align="center">
-        <Title order={2} ta={"center"}>
-          Forgotten Password
-        </Title>
-        <Text ta={"center"}>
-          Please check your email to verify your account. If you did not receive
-          the email, please check your spam folder or click the button below to
-          resend the verification email.
-        </Text>
+      <Stack>
+        <Title order={2}>{t("title")}</Title>
+        <Text>{t("content")}</Text>
         <form style={{ width: "100%" }} onSubmit={handleSubmit}>
           <Stack align="center">
             <TextInput
@@ -32,7 +26,7 @@ export const ForgottenPassword = () => {
               w={"100%"}
               autoComplete="email"
             />
-            <Button fullWidth>Continue</Button>
+            <Button fullWidth>{t("continue_button")}</Button>
           </Stack>
         </form>
       </Stack>

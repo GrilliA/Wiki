@@ -31,7 +31,7 @@
   - Branch: "dashboard/forgotten_password_translations_page"
   - Message: "[dashboard][feature] add translations to the forgotten_password page"
 
-- [ ] Add types for all the forgotten_password related functions
+- [x] Add types for all the forgotten_password related functions
   - Branch: "dashboard/forgotten_password_types"
   - Message: "[dashboard][feature] add types to all the functions related to the forgotten_password feature"
 
