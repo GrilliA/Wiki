@@ -23,7 +23,7 @@
 
 ## ForgottenPassword
 
-- [ ] Add Header and Footer for the forgotten_password page
+- [x] Add Header and Footer for the forgotten_password page
   - Branch: "dashboard/forgotten_password_layout"
   - Message: "[dashboard][feature] Add layout for the forgotten_password page"
 
@@ -35,11 +35,11 @@
   - Branch: "dashboard/forgotten_password_types"
   - Message: "[dashboard][feature] add types to all the functions related to the forgotten_password feature"
 
-- [ ] Add meta data to the forgotten_password page
+- [x] Add meta data to the forgotten_password page
   - Branch: "dashboard/forgotten_password_metadata"
   - Message: "[dashboard][feature] add metadata to forgotten_password page: title, description and etch"
 
-- [ ] Add tests for all the functions involved with the forgotten_password page
+- [x] Add tests for all the functions involved with the forgotten_password page
   - Branch: "dashboard/forgotten_password_test"
   - Message: "[dashboard][feature] add tests for all functions related to the forgotten_password page"
 
