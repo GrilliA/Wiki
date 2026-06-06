@@ -4,7 +4,7 @@
 
 ## Sign up
 
-- [ ] Add Header and Footer for the signup page
+- [x] Add Header and Footer for the signup page
   - Branch: "dashboard/signup_layout"
   - Message: "[dashboard][feature] Add layout for the signup page"
 

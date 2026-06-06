@@ -11,58 +11,63 @@ import {
 import { GoogleButton } from "../../components/GoogleButton.tsx/GoogleButton";
 import { WikiLink } from "@/components/Link";
 import { useSignup } from "./useSignup";
+import { useTranslation } from "react-i18next";
 
 export const Signup = (_) => {
   const { getInputProps, handleSubmit } = useSignup();
+  const { t } = useTranslation("signup");
 
   return (
     <Stack>
       <Box>
-        <Title order={2}>Hi, register here</Title>
-        <Text c={"dimmed"}>
-          Enter the requested details and be part of the community
-        </Text>
+        <Title order={2}>{t("title")}</Title>
+        <Text c={"dimmed"}>{t("subtitle")}</Text>
       </Box>
       <form onSubmit={handleSubmit} id="signup">
         <Stack>
           <TextInput
             {...getInputProps("email")}
-            label={"Email"}
+            label={t("email")}
             type="email"
+            id="email"
             size="md"
             autoComplete="email"
           />
           <TextInput
             {...getInputProps("username")}
-            label={"Username"}
+            label={t("username")}
+            id="username"
             size="md"
           />
           <PasswordInput
             {...getInputProps("password")}
             autoComplete="current-password"
-            label={"Password"}
+            label={t("password")}
+            id="password"
             size="md"
           />
           <PasswordInput
             {...getInputProps("confirmPassword")}
-            label={"Confirm password"}
+            label={t("confirm_password")}
+            id="confirm_password"
             size="md"
           />
           <Checkbox
             {...getInputProps("terms", { type: "checkbox" })}
-            label="I agree to the terms and conditions"
+            label={t("terms")}
+            id="terms"
             size="md"
           />
         </Stack>
       </form>
       <Stack>
         <Button form="signup" type="submit">
-          Signup
+          {t("signup_button")}
         </Button>
-        <GoogleButton>Signup with google</GoogleButton>
+        <GoogleButton>{t("signup_google_button")}</GoogleButton>
       </Stack>
       <WikiLink c="dimmed" size="xs" fw={"bold"} href="/auth/login">
-        You already have an account? Login
+        {t("login")}
       </WikiLink>
     </Stack>
   );

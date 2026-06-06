@@ -5,5 +5,8 @@
   "attention": "Attention",
   "footer": {
     "copyright": "© {{date}} {{company}}. All rights reserved."
+  },
+  "validation": {
+    "required": "{{fieldName}} is required"
   }
 }

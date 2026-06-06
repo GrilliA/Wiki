@@ -10,7 +10,7 @@ i18n
   .init({
     fallbackLng: "en",
     debug: true,
-    ns: ["common", "login", "errors"],
+    ns: ["common", "login", "errors", "signup"],
     defaultNS: "common",
     lng: "it",
   });

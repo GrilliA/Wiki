@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { PageComponent } from "@/components/PageComponent/PageComponent";
 
 const SignupPage = () => {
-  const { t } = useTranslation("login");
+  const { t } = useTranslation("signup");
 
   return (
     <PageComponent

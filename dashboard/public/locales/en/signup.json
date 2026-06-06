@@ -1,0 +1,16 @@
+{
+  "document": {
+    "title": "Sign up",
+    "description": "Create your account to access personalized features, save your preferences, and enjoy a secure experience."
+  },
+  "title": "Hi, register here",
+  "subtitle": "Enter the requested details and be part of the community",
+  "email": "Email",
+  "username": "Username",
+  "password": "Password",
+  "confirm_password": "Confirm password",
+  "terms": "I agree to the terms and conditions",
+  "signup_button": "Sign up",
+  "signup_google_button": "Signup with google",
+  "login": "You already have an account? Login"
+}

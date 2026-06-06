@@ -1,0 +1,16 @@
+{
+  "document": {
+    "title": "Registrati",
+    "description": "Crea il tuo account per accedere a funzionalità personalizzate, salvare le tue preferenze e godere di un’esperienza sicura."
+  },
+  "title": "Ciao, registrati qui",
+  "subtitle": "Inserisci i dati richiesti ed entra a far parte della community",
+  "email": "Email",
+  "username": "Nome utente",
+  "password": "Password",
+  "confirm_password": "Conferma password",
+  "terms": "Accetto i termini e le condizioni",
+  "signup_button": "Registrati",
+  "signup_google_button": "Registrati con google",
+  "login": "Hai già un account? Accedi"
+}
