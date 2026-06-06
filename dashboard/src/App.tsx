@@ -4,7 +4,7 @@ import "@mantine/core/styles.css";
 import "@mantine/tiptap/styles.css";
 import { Route, Routes } from "react-router";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
-import EmailVerification from "./pages/EmailVerification/EmailVerification";
+import EmailVerificationPage from "./pages/EmailVerification/EmailVerificationPage";
 import { ForgottenPassword } from "./pages/ForgottenPassword/ForgottenPassword";
 import LoginPage from "./pages/Login/LoginPage";
 import SignupPage from "./pages/Signup/SignupPage";
@@ -24,7 +24,7 @@ function App() {
       <Route path="auth">
         <Route path="signup" element={<SignupPage />} />
         <Route path="login" element={<LoginPage />} />
-        <Route path="email_verification" element={<EmailVerification />} />
+        <Route path="email_verification" element={<EmailVerificationPage />} />
         <Route path="forgotten_password" element={<ForgottenPassword />} />
       </Route>
       <Route element={<PageTemplate />}>
