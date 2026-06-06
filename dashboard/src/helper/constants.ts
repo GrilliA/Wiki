@@ -33,3 +33,5 @@ export const imageCompressionOptions = {
   maxWidthOrHeight: 1920,
   useWebWorker: true,
 };
+
+export const RESEND_EMAIL_DELAY = 2;

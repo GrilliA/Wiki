@@ -1,39 +1,40 @@
 # To do
 
-- [ ] Remove auth template
+- [ ] Add language dropdown to the navigation always
+  - Branch: "dashboard/language"
+  - Message: "[dashboard][feature] add language to all the navigation"
 
 ## Sign up
 
-- [x] Add Header and Footer for the signup page
-  - Branch: "dashboard/signup_layout"
-  - Message: "[dashboard][feature] Add layout for the signup page"
-
-- [ ] Add translations for signup page, it and eng
-  - Branch: "dashboard/signup_translations_page"
-  - Message: "[dashboard][feature] add translations to the signup page"
-
-- [ ] Add types for all the signup related functions
-  - Branch: "dashboard/signup_types"
-  - Message: "[dashboard][feature] add types to all the functions related to the signup feature"
-
-- [ ] Add meta data to the signup page
-  - Branch: "dashboard/signup_metadata"
-  - Message: "[dashboard][feature] add metadata to signup page: title, description and etch"
-  - Steps:
-    - [ ] Understand all the metadata needed for the website
-    - [ ] add the description text and the others if needed
-    - [ ] Structure page component like the other components
-    - [ ] Add the Page component props to all the auth template and the page template
-
-- [ ] Add tests for all the functions involved with the signup page
-  - Branch: "dashboard/signup_test"
-  - Message: "[dashboard][feature] add tests for all functions related to the signup page"
-
-- [ ] Add mock for the signup
-  - Branch: "dashboard/mock_signup"
-  - Message: "[dashboard][feature] add mock data for the signup page"
-
 ## Email Verification
+
+- [ ] Add Header and Footer for the verification page
+  - Branch: "dashboard/verification_layout"
+  - Message: "[dashboard][feature] Add layout for the verification page"
+
+- [ ] Add translations for verification page, it and eng
+  - Branch: "dashboard/verification_translations_page"
+  - Message: "[dashboard][feature] add translations to the verification page"
+
+- [ ] Add types for all the verification related functions
+  - Branch: "dashboard/verification_types"
+  - Message: "[dashboard][feature] add types to all the functions related to the verification feature"
+
+- [ ] Add meta data to the verification page
+  - Branch: "dashboard/verification_metadata"
+  - Message: "[dashboard][feature] add metadata to verification page: title, description and etch"
+
+- [ ] Add tests for all the functions involved with the verification page
+  - Branch: "dashboard/verification_test"
+  - Message: "[dashboard][feature] add tests for all functions related to the verification page"
+
+- [ ] Add mock for the verification
+  - Branch: "dashboard/mock_verification"
+  - Message: "[dashboard][feature] add mock data for the verification page"
+
+- [ ] Add timer for the resend button
+  - Branch: "dashboard/resend_verification"
+  - Message: "[ dashboard ][feature] add timer for the resend feature"
 
 ## ForgottenPassword
 
