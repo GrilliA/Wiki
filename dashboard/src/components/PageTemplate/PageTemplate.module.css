@@ -1,7 +1,6 @@
 .template {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   height: 100dvh;
   row-gap: var(--mantine-spacing-md);
   padding: var(--mantine-spacing-md) 0;
@@ -19,8 +18,13 @@
 }
 .card {
   overflow: hidden;
-  height: calc(100dvh - calc(var(--mantine-spacing-md) * 4) - 55px - 56px);
+  height: calc(
+    100dvh - calc(var(--mantine-spacing-md) * 4) - var(--wiki-nav-height) -
+      var(--wiki-footer-height)
+  );
   @media (min-width: $mantine-breakpoint-md) {
-    height: calc(100dvh - calc(var(--mantine-spacing-md) * 3) - 55px);
+    height: calc(
+      100dvh - calc(var(--mantine-spacing-md) * 3) - var(--wiki-nav-height)
+    );
   }
 }

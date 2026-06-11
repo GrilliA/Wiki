@@ -1,3 +1,8 @@
+:root {
+  --wiki-nav-height: 56px;
+  --wiki-footer-height: 56px;
+}
+
 html,
 body {
   width: 100%;
