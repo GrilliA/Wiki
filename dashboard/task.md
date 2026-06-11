@@ -26,6 +26,9 @@
 - [ ] Add Header and Footer for the profile page
   - Branch: "dashboard/profile_layout"
   - Message: "[dashboard][feature] Add layout for the profile page"
+- [ ] Add mock data as json, instead of msw
+  - Branch: "dashboard/remove_msw"
+  - Message: "[dashboard][feature] add mock data as json, instead of msw"
 
 - [ ] Add translations for profile page, it and eng
   - Branch: "dashboard/profile_translations_page"
