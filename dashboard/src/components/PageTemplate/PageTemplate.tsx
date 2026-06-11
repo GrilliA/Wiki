@@ -14,7 +14,7 @@ export const PageTemplate = () => {
           <section className={styles.container}>
             <WikiSidebar />
             <div className={styles.wrapper}>
-              <Card shadow="xs" className={styles.card}>
+              <Card className={styles.card}>
                 <Outlet />
               </Card>
             </div>

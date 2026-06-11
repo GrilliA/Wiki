@@ -1,14 +1,14 @@
 import styles from "./BottomNavigation.module.css";
 import { WikiLink } from "../Link";
 import { WikiIcon } from "../Icon";
-import { Box } from "@mantine/core";
+import { Box, Card } from "@mantine/core";
 import { navigationData } from "../../helper/navigationData";
 import { useRouter } from "../../hooks/useRouter";
 
 const BottomNavigation = () => {
   const pathname = useRouter().pathname;
   return (
-    <nav className={styles.nav}>
+    <Card className={styles.nav}>
       <div className={styles.wrapper}>
         {navigationData.map((d) => {
           const isActive = pathname === d.href;
@@ -27,7 +27,7 @@ const BottomNavigation = () => {
           );
         })}
       </div>
-    </nav>
+    </Card>
   );
 };
 

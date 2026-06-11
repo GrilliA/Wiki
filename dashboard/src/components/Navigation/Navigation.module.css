@@ -1,39 +1,10 @@
 .nav {
-  box-shadow: var(--mantine-shadow-xs);
-  background-color: var(--mantine-color-dark-6);
   width: 100%;
-  border-radius: var(--mantine-radius-md);
-  padding: var(--mantine-spacing-sm);
+  padding: 0 var(--mantine-spacing-sm);
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.nav-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--mantine-primary-color-5);
-  padding: 0 var(--mantine-spacing-xs);
-}
-.nav-start {
-  display: flex;
-  align-items: center;
-}
-
-.nav-end {
-  display: flex;
-  align-items: center;
-}
-.action {
-  cursor: pointer;
-}
-
-.divider {
-  margin: var(--mantine-spacing-xs) 0;
-}
-
-.nav-deselect {
-  line-height: 1;
-  height: 100% !important;
+  height: 56px;
 }
 
 .simple {

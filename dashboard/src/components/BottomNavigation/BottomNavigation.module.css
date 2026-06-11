@@ -1,6 +1,5 @@
 .nav {
-  box-shadow: var(--mantine-shadow-xs);
-  border-radius: var(--mantine-radius-md);
+  padding: 0;
 }
 
 .wrapper {

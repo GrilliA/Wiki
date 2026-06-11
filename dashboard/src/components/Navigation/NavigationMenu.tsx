@@ -16,33 +16,39 @@ const NavigationMenu = () => {
     push("/auth/login");
   };
 
+  const handlePassRoute = () => {
+    return;
+  };
+  const handleSettingsRoute = () => {
+    return;
+  };
+
   return (
-    <Menu width={300} withArrow>
+    <Menu width={300}>
       <Menu.Target>
-        <Button
-          variant={"subtle"}
-          color="gray.5"
-          c={"gray.6"}
-          size="compact-xs"
-          classNames={{ root: styles["nav-deselect"] }}
-          radius={0}
-        >
+        <Button variant={"subtle"} size="compact-xs" radius={0}>
           <Icon name="menu" />
         </Button>
       </Menu.Target>
       <Menu.Dropdown>
-        {/* <Menu.Item leftSection={<Icon name="shield" />}> */}
-        {/*   {"Area riservata"} */}
-        {/* </Menu.Item> */}
-        {/* <Menu.Item leftSection={<Icon name="edit" />} onClick={handlePassRoute}> */}
-        {/*   {"Cambia password"} */}
-        {/* </Menu.Item> */}
-        {/* <Menu.Item leftSection={<Icon name="settings" />} onClick={handleSettingsRoute}> */}
-        {/*   {"Impostazioni"} */}
-        {/* </Menu.Item> */}
+        <Menu.Item leftSection={<Icon name="shield" size={14} />}>
+          {"Area riservata"}
+        </Menu.Item>
+        <Menu.Item
+          leftSection={<Icon name="edit" size={14} />}
+          onClick={handlePassRoute}
+        >
+          {"Cambia password"}
+        </Menu.Item>
+        <Menu.Item
+          leftSection={<Icon name="settings" size={14} />}
+          onClick={handleSettingsRoute}
+        >
+          {"Impostazioni"}
+        </Menu.Item>
         <Menu.Item
           color="red"
-          leftSection={<Icon name="logout" />}
+          leftSection={<Icon name="logout" size={14} />}
           onClick={handleLogout}
         >
           Logout
