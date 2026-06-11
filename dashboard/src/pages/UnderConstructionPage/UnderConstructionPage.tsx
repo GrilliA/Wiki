@@ -1,5 +1,4 @@
-import { navigationData } from "@/helper/navigationData";
-import { Anchor, Container, Group, Stack, Text, Title } from "@mantine/core";
+import { Anchor, Container, Stack, Title } from "@mantine/core";
 
 export const UnderConstructionPage = () => {
   return (

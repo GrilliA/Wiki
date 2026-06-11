@@ -22,31 +22,29 @@ export const SearchPage = () => {
   };
 
   return (
-    <WikiFull noNav>
-      <PageComponent>
-        <Title mb={"md"}>Search the community</Title>
-        <SearchComponent onChange={handleChange} />
-        <Divider label="Results" my={"md"} />
-        <GemmaList isHoverable>
-          {filteredPages?.map((page) => {
-            const handleClick = () => {
-              push(`/page/${page?.documentId}`);
-            };
-            return (
-              <GemmaListItem key={page?.id} handleClick={handleClick}>
-                <Stack gap={4}>
-                  <Text size="md" c={"violet.5"} fw={"bolder"}>
-                    {page?.name}
-                  </Text>
-                  <Text size="md" c={"violet.5"} fw={"bolder"}>
-                    {page?.description}
-                  </Text>
-                </Stack>
-              </GemmaListItem>
-            );
-          })}
-        </GemmaList>
-      </PageComponent>
-    </WikiFull>
+    <>
+      <Title mb={"md"}>Search the community</Title>
+      <SearchComponent onChange={handleChange} />
+      <Divider label="Results" my={"md"} />
+      <GemmaList isHoverable>
+        {filteredPages?.map((page) => {
+          const handleClick = () => {
+            push(`/page/${page?.documentId}`);
+          };
+          return (
+            <GemmaListItem key={page?.id} handleClick={handleClick}>
+              <Stack gap={4}>
+                <Text size="md" c={"violet.5"} fw={"bolder"}>
+                  {page?.name}
+                </Text>
+                <Text size="md" c={"violet.5"} fw={"bolder"}>
+                  {page?.description}
+                </Text>
+              </Stack>
+            </GemmaListItem>
+          );
+        })}
+      </GemmaList>
+    </>
   );
 };

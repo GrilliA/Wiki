@@ -13,14 +13,12 @@ import { WikiIcon } from "../../components/Icon";
 import styles from "./Profile.module.css";
 import { useRouter } from "../../hooks/useRouter";
 import { useUser } from "@/hooks/useUser";
+import { useTranslation } from "react-i18next";
 
 export const Profile = () => {
   const { push } = useRouter();
   const { data: user } = useUser();
-
-  if (!user) {
-    return null;
-  }
+  const { t } = useTranslation();
 
   const profession = user?.profession ? user?.profession?.split(",") : [];
   const genres = user?.genre ? user?.genre?.split(",") : [];

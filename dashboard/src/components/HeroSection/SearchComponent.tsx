@@ -26,6 +26,7 @@ export const SearchComponent = (props: TextInputProps) => {
           <Icon name="arrow_circle_right" size={18} />
         </ActionIcon>
       }
+      autoFocus
       {...props}
     />
   );

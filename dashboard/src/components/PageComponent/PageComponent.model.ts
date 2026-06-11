@@ -7,4 +7,5 @@ export type TPageComponentProps = {
   description?: string;
   header?: ReactNode;
   footer?: ReactNode;
+  variant?: "simple" | "dashboard";
 };

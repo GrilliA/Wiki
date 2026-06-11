@@ -12,7 +12,7 @@ export const PageComponent = (props: TPageComponentProps) => {
       <title>{`${appName} - ${props.title}`}</title>
       <meta name="description" content={props.description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <WikiNavigation />
+      <WikiNavigation variant={props.variant} />
       <section className={classes}>
         <Container h={"100%"}>{props.children}</Container>
       </section>
