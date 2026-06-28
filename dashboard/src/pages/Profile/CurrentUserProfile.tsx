@@ -1,12 +1,10 @@
 import { Group, Button } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
-import type { TCurrentUserProfileProps } from "./Profile.model";
 import { WikiIcon } from "@/components/Icon";
 import styles from "./Profile.module.css";
 
-export const CurrentUserProfile = (props: TCurrentUserProfileProps) => {
-  const {} = props;
+export const CurrentUserProfile = () => {
   const { t } = useTranslation();
   const push = useNavigate();
   const handleEditProfileRoute = () => push("/profile/edit");

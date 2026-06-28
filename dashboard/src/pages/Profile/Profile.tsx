@@ -8,17 +8,16 @@ import {
   Text,
   Typography,
 } from "@mantine/core";
-import styles from "./Profile.module.css";
-import { useRouter } from "../../hooks/useRouter";
 import { useUser } from "@/hooks/useUser";
 import { useTranslation } from "react-i18next";
-import { CurrentUserProfile } from "./CurrentUserProfile";
-import { WikiLink } from "@/components/Link";
 import { OtherUserProfile } from "./OtherUserProfile";
+import { useParams } from "react-router";
+import { CurrentUserProfile } from "./CurrentUserProfile";
 
 export const Profile = () => {
-  const { push } = useRouter();
+  const { id } = useParams();
   const user = useUser();
+  const isCurrentUser = !id || id === user?.id;
   const { t } = useTranslation();
   const bio = user?.bio;
   const fansCount = 12;
@@ -72,9 +71,7 @@ export const Profile = () => {
             }}
           />
         </Spoiler>
-
-        {/* <CurrentUserProfile userId="111" /> */}
-        <OtherUserProfile />
+        {isCurrentUser ? <CurrentUserProfile /> : <OtherUserProfile />}
       </Stack>
       <Divider />
       <Text c="dimmed" size="sm">

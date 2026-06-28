@@ -31,6 +31,7 @@ function App() {
         <Route index path="home" element={<HomePage />} />
         <Route path="profile/edit" element={<ProfileForm />} />
         <Route path="profile" element={<ProfilePage />} />
+        <Route path="user/:id" element={<ProfilePage />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="page/:id" element={<EventPage />} />
       </Route>

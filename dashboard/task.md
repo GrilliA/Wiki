@@ -39,7 +39,7 @@
   - Branch: "dashboard/profile_test"
   - Message: "[dashboard][feature] add tests for all functions related to the profile page"
 
-- [ ] Remove the profession and genre, from the profile (the bio is where people specify there interest)
+- [x] Remove the profession and genre, from the profile (the bio is where people specify there interest)
   - Branch: "dashboard/profile_remove_profession"
   - Message: "[dashboard][profile] Remove the profession and genre, from the profile (the bio is where people specify there interest)"
 
