@@ -1,8 +1,6 @@
-import { WikiFull } from "@/components/Full";
 import { SearchComponent } from "@/components/HeroSection/SearchComponent";
 import GemmaList from "@/components/List/List";
 import GemmaListItem from "@/components/List/ListItem";
-import { PageComponent } from "@/components/PageComponent/PageComponent";
 import { usePage } from "@/hooks/usePage";
 import { Divider, Stack, Text, Title } from "@mantine/core";
 import { useState } from "react";

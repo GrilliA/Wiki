@@ -44,8 +44,7 @@ const EmailVerificationPage = () => {
     secondsLeft !== 0 ? resendFormatTime(secondsLeft) : t("resend_button");
 
   return (
-    <PageComponent
-      withPadding
+    <PageComponent.Site
       title={t("document.title")}
       description={t("document.description")}
     >
@@ -61,7 +60,7 @@ const EmailVerificationPage = () => {
           {buttonLabel}
         </Button>
       </Stack>
-    </PageComponent>
+    </PageComponent.Site>
   );
 };
 

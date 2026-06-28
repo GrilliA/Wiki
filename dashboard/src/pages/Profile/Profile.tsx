@@ -1,7 +1,6 @@
 import {
   Avatar,
   Badge,
-  Button,
   Divider,
   Group,
   Spoiler,
@@ -9,26 +8,29 @@ import {
   Text,
   Typography,
 } from "@mantine/core";
-import { WikiIcon } from "../../components/Icon";
 import styles from "./Profile.module.css";
 import { useRouter } from "../../hooks/useRouter";
 import { useUser } from "@/hooks/useUser";
 import { useTranslation } from "react-i18next";
+import { CurrentUserProfile } from "./CurrentUserProfile";
 
 export const Profile = () => {
   const { push } = useRouter();
-  const { data: user } = useUser();
+  const user = useUser();
   const { t } = useTranslation();
-
-  const profession = user?.profession ? user?.profession?.split(",") : [];
-  const genres = user?.genre ? user?.genre?.split(",") : [];
+  const profession = user?.professions;
+  const genres = user?.genres;
   const bio = user?.bio;
+
   return (
     <Stack gap={"xl"}>
       <Stack gap={"md"}>
         <Group gap={"sm"}>
-          <Avatar src={user?.avatar?.url} size={"xl"} className={styles.logo} />
+          <Avatar src={user?.avatar} size={"xl"} className={styles.logo} />
           <Stack gap={0}>
+            <Text component="div" fw={"bold"} tt={"capitalize"}>
+              {user?.nickname}
+            </Text>
             <Group>
               {profession?.map((item) => (
                 <Badge key={item} variant="outline" size="xs">
@@ -36,9 +38,6 @@ export const Profile = () => {
                 </Badge>
               ))}
             </Group>
-            <Text component="div" fw={"bold"} tt={"capitalize"}>
-              {user?.nickName}
-            </Text>
             <Group gap={0}>
               {genres.map((item) => (
                 <Badge p={4} key={item} variant="transparent" size="xs">
@@ -69,20 +68,7 @@ export const Profile = () => {
           />
         </Spoiler>
 
-        <Group>
-          <Button
-            size="sm"
-            variant="filled"
-            className={styles["profile-button"]}
-            disabled
-            onClick={() => {
-              push("/profile/edit");
-            }}
-            leftSection={<WikiIcon name="edit" />}
-          >
-            Edit profile
-          </Button>
-        </Group>
+        <CurrentUserProfile userId="111" />
       </Stack>
       <Divider />
       <Text c="dimmed" size="sm">

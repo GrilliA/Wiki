@@ -8,8 +8,7 @@ export const ForgottenPassword = () => {
   const { handleSubmit, getInputProps } = useForgottenPassword();
 
   return (
-    <PageComponent
-      withPadding
+    <PageComponent.Site
       title={t("document.title")}
       description={t("document.description")}
     >
@@ -30,6 +29,6 @@ export const ForgottenPassword = () => {
           </Stack>
         </form>
       </Stack>
-    </PageComponent>
+    </PageComponent.Site>
   );
 };

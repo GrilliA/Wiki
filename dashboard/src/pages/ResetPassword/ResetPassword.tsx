@@ -1,4 +1,3 @@
-import { AuthPageTemplate } from "@/components/AuthPageTemplate/AuthPageTemplate";
 import { Stack, Title, Button, Text, PasswordInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { yupResolver } from "mantine-form-yup-resolver";
@@ -14,7 +13,7 @@ export const ResetPassword = () => {
   });
 
   return (
-    <AuthPageTemplate>
+    <>
       <Stack align="center">
         <Title order={2} ta={"center"}>
           Reset Password
@@ -46,6 +45,6 @@ export const ResetPassword = () => {
           </Stack>
         </form>
       </Stack>
-    </AuthPageTemplate>
+    </>
   );
 };

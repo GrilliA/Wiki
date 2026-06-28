@@ -9,3 +9,20 @@ export type TPageComponentProps = {
   footer?: ReactNode;
   variant?: "simple" | "dashboard";
 };
+
+export type TPageComponentDashboardProps = {
+  title?: string;
+  description?: string;
+  children: ReactNode;
+};
+
+export type TPageComponentSiteProps = {
+  title?: string;
+  description?: string;
+  children: ReactNode;
+};
+
+export type TPageComponentMetaDataProps = {
+  title: string;
+  description: string;
+};

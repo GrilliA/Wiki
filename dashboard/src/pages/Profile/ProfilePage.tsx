@@ -1,17 +1,15 @@
-import { Login } from "./Login";
 import { PageComponent } from "@/components/PageComponent/PageComponent";
 import { useTranslation } from "react-i18next";
+import { Profile } from "./Profile";
 
-const LoginPage = () => {
-  const { t } = useTranslation("login");
+export const ProfilePage = () => {
+  const { t } = useTranslation("profile");
   return (
-    <PageComponent.Site
+    <PageComponent.Dashboard
       title={t("document.title")}
       description={t("document.description")}
     >
-      <Login />
-    </PageComponent.Site>
+      <Profile />
+    </PageComponent.Dashboard>
   );
 };
-
-export default LoginPage;

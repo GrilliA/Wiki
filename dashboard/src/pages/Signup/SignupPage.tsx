@@ -6,13 +6,12 @@ const SignupPage = () => {
   const { t } = useTranslation("signup");
 
   return (
-    <PageComponent
-      withPadding
+    <PageComponent.Site
       title={t("document.title")}
       description={t("document.description")}
     >
       <Signup />
-    </PageComponent>
+    </PageComponent.Site>
   );
 };
 
