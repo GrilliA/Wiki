@@ -1,7 +1,4 @@
 import { yupResolver } from "mantine-form-yup-resolver";
-import { useEditor } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import { RichTextEditor } from "@mantine/tiptap";
 import styles from "./UserForm.module.css";
 import { useForm } from "@mantine/form";
 import { IMAGE_MIME_TYPE } from "@mantine/dropzone";
@@ -13,7 +10,6 @@ import {
   Avatar,
   Button,
   FileButton,
-  InputLabel,
   MultiSelect,
   Stack,
   TextInput,
@@ -23,28 +19,26 @@ import { useRouter } from "../../hooks/useRouter";
 import { useUpdateUserMutation } from "@/services/auth/auth";
 import { useUploadMutation } from "@/services/file";
 import { useUser } from "@/hooks/useUser";
+import { WikiTextarea } from "../WikiTextarea";
 
-export const UserForm = (_) => {
+export const UserForm = () => {
   const [logo, setLogo] = useState("");
-  const [content, setContent] = useState("");
-  const { setValues, getInputProps, onSubmit, errors, values } = useForm({
+  const { setValues, getInputProps, onSubmit, values } = useForm({
     initialValues: userFormInitialValues,
     validate: yupResolver(userFormValidationSchema),
   });
-  const { data: user, isSuccess: isUserSuccess } = useUser();
+  const user = useUser();
   useEffect(() => {
-    if (user?.id && isUserSuccess) {
+    if (user?.id) {
       setValues({
         firstName: user?.firstName || "",
         lastName: user?.lastName || "",
-        nickName: user?.nickName || "",
-        profession: user?.profession ? user?.profession.split(",") : [],
-        genre: user?.genre ? user?.genre.split(",") : [],
+        nickName: user?.nickname || "",
         avatar: null,
+        bio: user?.bio,
       });
-      setContent(user?.bio || "");
     }
-  }, [user?.id, isUserSuccess]);
+  }, [user?.id]);
   const { push } = useRouter();
 
   useEffect(() => {
@@ -58,7 +52,7 @@ export const UserForm = (_) => {
   }, [(values.avatar as File)?.lastModified]);
 
   const logoSrc = logo;
-  const [updateUser, { isSuccess }] = useUpdateUserMutation();
+  const [updateUser] = useUpdateUserMutation();
   const userId = user?.id;
   const [uploadFile] = useUploadMutation();
   const handleSubmit = onSubmit(async (data: any) => {
@@ -67,9 +61,6 @@ export const UserForm = (_) => {
         userId,
         data: {
           ...data,
-          profession: data?.profession?.join(","),
-          genre: data?.genre?.join(","),
-          bio: content,
           isOnboarded: true,
         },
       });
@@ -91,43 +82,9 @@ export const UserForm = (_) => {
     }
   });
 
-  const editor = useEditor({
-    extensions: [StarterKit],
-    content,
-    onUpdate: ({ editor }) => {
-      setContent(editor.getHTML());
-    },
-  });
-
   return (
     <form onSubmit={handleSubmit} id="onboarding-form">
-      <Stack>
-        <FileButton
-          {...getInputProps("avatar")}
-          accept={IMAGE_MIME_TYPE.join(",")}
-        >
-          {(props) => (
-            <>
-              <Stack align="flex-start">
-                <Avatar
-                  className={styles.avatar}
-                  size={"xl"}
-                  src={logoSrc}
-                  {...props}
-                />
-                <Button
-                  type="button"
-                  p={0}
-                  variant="transparent"
-                  size="md"
-                  {...props}
-                >
-                  Upload avatar
-                </Button>
-              </Stack>
-            </>
-          )}
-        </FileButton>
+      <Stack gap={"xl"}>
         <TextInput
           {...getInputProps("firstName")}
           label={"What is your first name?"}
@@ -143,38 +100,13 @@ export const UserForm = (_) => {
           label={"What is your artist name?"}
           size="md"
         />
-        <MultiSelect
-          data={["dj", "dancer", "choreographer", "teacher"]}
-          label={"What is your profession on the dance community?"}
-          {...getInputProps("profession")}
+        <WikiTextarea
+          label="Tell us about yourself"
+          maxLength={500}
+          rows={5}
           size="md"
+          {...getInputProps("bio")}
         />
-        <MultiSelect
-          data={["hip hop", "breaking", "popping", "locking", "house"]}
-          label={"What is your prefered genre?"}
-          {...getInputProps("genre")}
-          size="md"
-        />
-        <div className={styles.editor}>
-          <InputLabel size="md">Tell us about your self</InputLabel>
-          <RichTextEditor editor={editor} variant="subtle">
-            <RichTextEditor.Toolbar
-              sticky
-              stickyOffset="var(--docs-header-height)"
-            >
-              <RichTextEditor.ControlsGroup>
-                <RichTextEditor.Bold />
-                <RichTextEditor.Italic />
-                <RichTextEditor.Underline />
-                <RichTextEditor.Strikethrough />
-                <RichTextEditor.ClearFormatting />
-                <RichTextEditor.Code />
-              </RichTextEditor.ControlsGroup>
-            </RichTextEditor.Toolbar>
-
-            <RichTextEditor.Content />
-          </RichTextEditor>
-        </div>
       </Stack>
     </form>
   );

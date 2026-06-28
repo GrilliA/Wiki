@@ -1,4 +1,4 @@
-import { Button, Text } from "@mantine/core";
+import { Button, Container, Text } from "@mantine/core";
 import styles from "./Full.module.css";
 import { WikiModal } from "../Modal";
 import Icon from "../Icon/Icon";
@@ -73,20 +73,24 @@ const Full = forwardRef((props: TFull, ref: RefObject<HTMLDivElement>) => {
       >
         Are you sure you want to leave without saving changes?
       </WikiModal>
-      <section className={styles.wrapper}>
-        {noNav ? null : (
-          <div className={styles.nav}>
-            {left}
-            <Text fw="bold" size="md">
-              {props.title}
-            </Text>
-            {right}
-          </div>
-        )}
-        <div className={styles.full} ref={ref} id={props.id}>
-          {props.children}
-        </div>
-      </section>
+      <div>
+        <Container>
+          <section className={styles.wrapper}>
+            {noNav ? null : (
+              <div className={styles.nav}>
+                {left}
+                <Text fw="bold" size="md">
+                  {props.title}
+                </Text>
+                {right}
+              </div>
+            )}
+            <div className={styles.full} ref={ref} id={props.id}>
+              {props.children}
+            </div>
+          </section>
+        </Container>
+      </div>
     </>
   );
 });

@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 import { OtherUserProfile } from "./OtherUserProfile";
 import { useParams } from "react-router";
 import { CurrentUserProfile } from "./CurrentUserProfile";
+import getFormattedText from "@/helper/getFormattedText";
 
 export const Profile = () => {
   const { id } = useParams();
@@ -65,10 +66,11 @@ export const Profile = () => {
             </Text>
           }
         >
-          <Typography
-            dangerouslySetInnerHTML={{
-              __html: bio,
-            }}
+          <Text
+            lh={1.2}
+            fw={"normal"}
+            size="sm"
+            dangerouslySetInnerHTML={{ __html: getFormattedText(bio) }}
           />
         </Spoiler>
         {isCurrentUser ? <CurrentUserProfile /> : <OtherUserProfile />}
