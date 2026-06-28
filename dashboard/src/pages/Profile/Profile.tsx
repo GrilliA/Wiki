@@ -1,6 +1,6 @@
 import {
   Avatar,
-  Badge,
+  Button,
   Divider,
   Group,
   Spoiler,
@@ -13,43 +13,48 @@ import { useRouter } from "../../hooks/useRouter";
 import { useUser } from "@/hooks/useUser";
 import { useTranslation } from "react-i18next";
 import { CurrentUserProfile } from "./CurrentUserProfile";
+import { WikiLink } from "@/components/Link";
+import { OtherUserProfile } from "./OtherUserProfile";
 
 export const Profile = () => {
   const { push } = useRouter();
   const user = useUser();
   const { t } = useTranslation();
-  const profession = user?.professions;
-  const genres = user?.genres;
   const bio = user?.bio;
+  const fansCount = 12;
+  const fanOfCount = 130;
 
   return (
     <Stack gap={"xl"}>
       <Stack gap={"md"}>
-        <Group gap={"sm"}>
-          <Avatar src={user?.avatar} size={"xl"} className={styles.logo} />
-          <Stack gap={0}>
-            <Text component="div" fw={"bold"} tt={"capitalize"}>
+        <Group gap={"lg"}>
+          <Avatar src={user?.avatar} size={"lg"} />
+          <Stack gap={"sm"}>
+            <Text component="div" fw={"bolder"} tt={"capitalize"} lh={1}>
               {user?.nickname}
             </Text>
-            <Group>
-              {profession?.map((item) => (
-                <Badge key={item} variant="outline" size="xs">
-                  {item}
-                </Badge>
-              ))}
-            </Group>
-            <Group gap={0}>
-              {genres.map((item) => (
-                <Badge p={4} key={item} variant="transparent" size="xs">
-                  {item}
-                </Badge>
-              ))}
+            <Group gap={"md"}>
+              <Stack gap={"xs"} align="start">
+                <Text size="xs" fw={"bold"} tt={"capitalize"} lh={1}>
+                  {t("fans")}
+                </Text>
+                <Button variant="transparent" size="sm" radius={"sm"} lh={1}>
+                  {fansCount}
+                </Button>
+              </Stack>
+              <Stack gap={"xs"} align="start">
+                <Text size="xs" fw={"bold"} tt={"capitalize"} lh={1}>
+                  {t("fan of")}
+                </Text>
+                <Button variant="transparent" size="sm" radius={"sm"} lh={1}>
+                  {fanOfCount}
+                </Button>
+              </Stack>
             </Group>
           </Stack>
         </Group>
 
         <Spoiler
-          maxHeight={60}
           hideLabel={
             <Text fw={"bold"} size="xs">
               hide
@@ -68,7 +73,8 @@ export const Profile = () => {
           />
         </Spoiler>
 
-        <CurrentUserProfile userId="111" />
+        {/* <CurrentUserProfile userId="111" /> */}
+        <OtherUserProfile />
       </Stack>
       <Divider />
       <Text c="dimmed" size="sm">

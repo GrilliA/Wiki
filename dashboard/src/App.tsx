@@ -1,7 +1,7 @@
-import "@/styles/globals.css";
 import "material-symbols";
 import "@mantine/core/styles.css";
 import "@mantine/tiptap/styles.css";
+import "@/styles/globals.css";
 import { Route, Routes } from "react-router";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import EmailVerificationPage from "./pages/EmailVerification/EmailVerificationPage";
