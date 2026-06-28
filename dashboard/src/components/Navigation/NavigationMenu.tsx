@@ -1,6 +1,5 @@
 import { Button, Menu } from "@mantine/core";
 import Icon from "../Icon/Icon";
-import styles from "./Navigation.module.css";
 import { tokenKey } from "@/helper/constants";
 import { useRouter } from "@/hooks/useRouter";
 import { removeToken } from "@/state/uiSlice/uiSlice";
@@ -31,24 +30,24 @@ const NavigationMenu = () => {
         </Button>
       </Menu.Target>
       <Menu.Dropdown>
-        <Menu.Item leftSection={<Icon name="shield" size={14} />}>
+        <Menu.Item leftSection={<Icon name="shield" size={"sm"} />}>
           {"Area riservata"}
         </Menu.Item>
         <Menu.Item
-          leftSection={<Icon name="edit" size={14} />}
+          leftSection={<Icon name="edit" size={"sm"} />}
           onClick={handlePassRoute}
         >
           {"Cambia password"}
         </Menu.Item>
         <Menu.Item
-          leftSection={<Icon name="settings" size={14} />}
+          leftSection={<Icon name="settings" size={"sm"} />}
           onClick={handleSettingsRoute}
         >
           {"Impostazioni"}
         </Menu.Item>
         <Menu.Item
           color="red"
-          leftSection={<Icon name="logout" size={14} />}
+          leftSection={<Icon name="logout" size={"sm"} />}
           onClick={handleLogout}
         >
           Logout

@@ -38,7 +38,12 @@
 - [ ] Add types for all the profile related functions
   - Branch: "dashboard/profile_types"
   - Message: "[dashboard][feature] add types to all the functions related to the profile feature"
-
+- [x] Add share functionality
+  - Branch: "dashboard/share_button"
+  - Message: "[dashboard] add the share functionality"
+- [x] Add sizes to the icon component
+  - Branch: "dashboard/icon_size"
+  - Message: "[dashboard] add size xs-sm-md-lg to the WikiIcon component"
 - [ ] Add meta data to the profile page
   - Branch: "dashboard/profile_metadata"
   - Message: "[dashboard][feature] add metadata to profile page: title, description and etch"

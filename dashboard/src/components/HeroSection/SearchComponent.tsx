@@ -15,7 +15,7 @@ export const SearchComponent = (props: TextInputProps) => {
       size="md"
       placeholder="Search for wikis"
       rightSectionWidth={42}
-      leftSection={<Icon name="search" size={18} />}
+      leftSection={<Icon name="search" size={"md"} />}
       rightSection={
         <ActionIcon
           size={32}
@@ -23,7 +23,7 @@ export const SearchComponent = (props: TextInputProps) => {
           color={theme.primaryColor}
           variant="filled"
         >
-          <Icon name="arrow_circle_right" size={18} />
+          <Icon name="arrow_circle_right" size={"md"} />
         </ActionIcon>
       }
       autoFocus

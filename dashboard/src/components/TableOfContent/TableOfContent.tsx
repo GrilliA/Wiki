@@ -35,7 +35,7 @@ export function TableOfContents({ links }) {
   return (
     <div>
       <Group mb="md">
-        <Icon name="list" size={18} />
+        <Icon name="list" size={"md"} />
         <Text>Table of contents</Text>
       </Group>
       {items}
