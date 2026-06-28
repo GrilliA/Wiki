@@ -23,10 +23,11 @@
 
 ## Profile
 
-- [ ] Add Header and Footer for the profile page
+- [x] Add Header and Footer for the profile page
   - Branch: "dashboard/profile_layout"
   - Message: "[dashboard][feature] Add layout for the profile page"
-- [ ] Add mock data as json, instead of msw
+
+- [x] Add mock data as json, instead of msw
   - Branch: "dashboard/remove_msw"
   - Message: "[dashboard][feature] add mock data as json, instead of msw"
 
@@ -46,7 +47,7 @@
   - Branch: "dashboard/profile_test"
   - Message: "[dashboard][feature] add tests for all functions related to the profile page"
 
-- [ ] Add mock for the profile
+- [x] Add mock for the profile
   - Branch: "dashboard/mock_profile"
   - Message: "[dashboard][feature] add mock data for the profile page"
 

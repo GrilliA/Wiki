@@ -1,11 +1,6 @@
-import { useCurrentUserQuery } from "@/services/auth/auth";
-import type { TRootState } from "@/state/store";
-import { useSelector } from "react-redux";
+import userJsonData from "../mocks/user.json";
 
 export const useUser = () => {
-  const token = useSelector((state: TRootState) => state.ui.token);
-  const response = useCurrentUserQuery(undefined, {
-    skip: !token,
-  });
-  return response;
+  const userData = userJsonData;
+  return userData;
 };
