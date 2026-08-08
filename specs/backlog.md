@@ -1,10 +1,30 @@
 # Backlog
 
-- As as less tables as possible in the backend, the structure should be dictated by the backend code
-- Make it possible for user to change language (with i8n)
-- Make The view page first always
+- [ ] Add authentication to the server with the help of postman
+  - Branch: "feature/auth"
+  - Message: "Add authentication to the server with the help of postman"
 
-## General tasks
+- [ ] Add authorization for the client
+  - Branch: "feature/authorization"
+  - Message: "Add authorization for the client"
+
+- [ ] Add profile implementation
+  - Branch: "feature/profile"
+  - Message: "Add profile implementation"
+
+- [ ] Add wiki for entity
+  - Branch: "feature/wiki_person"
+  - Message: "Add wiki for person entity"
+  - Steps:
+    - [ ] person
+    - [ ] event
+    - [ ] history
+
+## Server
+
+## Client
+
+### General tasks
 
 - [ ] Add language dropdown to the navigation always
   - Branch: "dashboard/language"
@@ -21,7 +41,7 @@
   - [ ] user default settings
   - [ ] System options in general
 
-## Profile
+### Profile
 
 - [ ] Add translations for profile page, it and eng
   - Branch: "dashboard/profile_translations_page"
@@ -63,9 +83,9 @@
   - Branch: "dashboard/profile/avatar"
   - Message: "[dashboard][profile] Add the avatar editor"
 
-## Change password profile
+### Change password profile
 
-## Settings profile
+### Settings profile
 
 ## Website
 
