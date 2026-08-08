@@ -1,0 +1,9 @@
+{
+  "name": "wiki",
+  "workspaces": [
+    "dashboard",
+    "api",
+    "site"
+  ],
+  "packageManager": "yarn@4.18.0"
+}
