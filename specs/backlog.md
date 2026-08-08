@@ -1,4 +1,4 @@
-# To do
+# Backlog
 
 - As as less tables as possible in the backend, the structure should be dictated by the backend code
 - Make it possible for user to change language (with i8n)
@@ -39,10 +39,6 @@
   - Branch: "dashboard/profile_test"
   - Message: "[dashboard][feature] add tests for all functions related to the profile page"
 
-- [x] Remove the profession and genre, from the profile (the bio is where people specify there interest)
-  - Branch: "dashboard/profile_remove_profession"
-  - Message: "[dashboard][profile] Remove the profession and genre, from the profile (the bio is where people specify there interest)"
-
 - [ ] Add skeleton to each part of the app loading
   - Branch: "dashboard/profile/loader"
   - Message: "[dashboard][profile] Add skeleton to each part of the app loading"
@@ -55,14 +51,6 @@
   - Branch: "dashboard/profile/links"
   - Message: "[dashboard][profile] Remvoe the share button, and add the possibility to see links of a user"
 
-- [ ] Create a text area only for things like bio and description
-  - Branch: "dashboard/profile/richtextarea"
-  - Message: "[dashboard][profile] Create a text area only for things like bio and description "
-
-- [ ] Add the bio section to the profile section
-  - Branch: "dashboard/profile/bio"
-  - Message: "[dashboard][profile] Add the bio section to the profile section"
-
 - [ ] Add the logic for which the profile of the current user is different from the other users profile view
   - Branch: "dashboard/profile/user_view"
   - Message: "[dashboard][profile] Add the logic for which the profile of the current user is different from the other users profile view"
@@ -71,6 +59,22 @@
   - Branch: "dashboard/profile/component_size"
   - Message: "[dashboard][profile] Use the right sizes, so all the components are omogeneous"
 
+- [ ] Add the avatar editor
+  - Branch: "dashboard/profile/avatar"
+  - Message: "[dashboard][profile] Add the avatar editor"
+
 ## Change password profile
 
 ## Settings profile
+
+## Website
+
+- [ ] Make the logo for Dance Diction
+- [ ] Create a landing page for Dance Diction
+  - [ ] Create the homepage
+  - [ ] Create the "work with us" page
+  - [ ] Create the "Our mission" page
+  - [ ] Create the "person wiki" page
+    - [ ] Create the "person wiki history contributions" page
+    - [ ] Create the "person wiki history detail" page
+    - [ ] Create the "person wiki history detail diff" page

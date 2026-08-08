@@ -13,8 +13,8 @@ export const CurrentUserProfile = () => {
   return (
     <Group>
       <Button
-        size="sm"
-        variant="filled"
+        size="compact-sm"
+        variant="subtle"
         className={styles["profile-button"]}
         onClick={handleEditProfileRoute}
         leftSection={<WikiIcon name="edit" size={"sm"} />}
@@ -23,9 +23,9 @@ export const CurrentUserProfile = () => {
       </Button>
       <Group className={styles.wrapper}>
         <Button
-          size="sm"
+          size="compact-sm"
           className={styles["profile-button"]}
-          variant="outline"
+          variant="transparent"
           onClick={handleLinkRoute}
           leftSection={<WikiIcon name="link" size={"sm"} />}
         >

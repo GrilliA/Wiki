@@ -1,4 +1,4 @@
-import { Container, Card } from "@mantine/core";
+import { Container, Card, Paper } from "@mantine/core";
 import { WikiBottomNavigation } from "../BottomNavigation";
 import { WikiNavigation } from "../Navigation";
 import { WikiSidebar } from "../Sidebar";
@@ -19,7 +19,9 @@ export const PageComponentDashboard = (props: TPageComponentDashboardProps) => {
           <section className={styles.container}>
             <WikiSidebar />
             <div className={styles.wrapper}>
-              <Card className={styles.card}>{props.children}</Card>
+              <Paper p={"md"} className={styles.card}>
+                {props.children}
+              </Paper>
             </div>
           </section>
           <WikiBottomNavigation />

@@ -14,6 +14,7 @@ import { OtherUserProfile } from "./OtherUserProfile";
 import { useParams } from "react-router";
 import { CurrentUserProfile } from "./CurrentUserProfile";
 import getFormattedText from "@/helper/getFormattedText";
+import { ContributionSection } from "./ContributionSection";
 
 export const Profile = () => {
   const { id } = useParams();
@@ -76,9 +77,7 @@ export const Profile = () => {
         {isCurrentUser ? <CurrentUserProfile /> : <OtherUserProfile />}
       </Stack>
       <Divider />
-      <Text c="dimmed" size="sm">
-        No contributions yet{" "}
-      </Text>
+      <ContributionSection />
     </Stack>
   );
 };

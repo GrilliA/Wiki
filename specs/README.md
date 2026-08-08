@@ -35,3 +35,17 @@ moderating the content and providing new content.
 - Wiki Dance shall be have a portal where anyone can contribute and discuss
 - Wiki Dance shall be a community based platform
 - Wiki Dance shall be a platform where the community is the one moderating the content
+
+## Contributo
+
+Title
+
+Status
+
+Description -- ellipsis
+
+Genre
+
+Comments
+
+Data
