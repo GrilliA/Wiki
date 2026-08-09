@@ -1,4 +1,3 @@
-import { Option, Prisma, User } from "@prisma/client";
 import { TUserResponseData } from "./user.model";
 
 export const getUserResponseMapper = (user: any): TUserResponseData => {
@@ -16,7 +15,7 @@ export const getUserResponseMapper = (user: any): TUserResponseData => {
   };
 };
 
-export const getUserRequestMapper = (user: TUserResponseData): Prisma.UserCreateInput => {
+export const getUserRequestMapper = (user: TUserResponseData) => {
   return {
     id: user.id,
     surname: user.surname,
@@ -27,6 +26,8 @@ export const getUserRequestMapper = (user: TUserResponseData): Prisma.UserCreate
     phoneNumber: user.phoneNumber ? user.phoneNumber.toString() : null,
     password: user.password,
     permissions: user.permissions?.join(","),
-    facility: user.facilityId ? { connect: { id: Number(user.facilityId) } } : undefined,
+    facility: user.facilityId
+      ? { connect: { id: Number(user.facilityId) } }
+      : undefined,
   };
 };

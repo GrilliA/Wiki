@@ -1,5 +1,5 @@
 import { compare, hash } from "bcryptjs";
-import { createUser, getUserByEmail, updateUser } from "../user/user.service";
+import { createUser, getUserByEmail } from "../user/user.service";
 import {
   USER_STATUS,
   USER_ROLE,
@@ -11,8 +11,7 @@ import logger from "../../helper/logger";
 import authEvent, { AUTH_EVENT_ACTION_TYPE } from "./auth.event";
 import { AUTH_TOKEN_TYPE } from "./auth.helper";
 import { getUserResponseMapper } from "../user/user.mapper";
-import { getCurrentUserContext, seedDatabase } from "./auth.service";
-import { Prisma } from "@prisma/client";
+import { seedDatabase } from "./auth.service";
 
 export const initAppController = async (req: Request, res: Response) => {
   const { password, ...data } = req.body;
@@ -24,7 +23,7 @@ export const initAppController = async (req: Request, res: Response) => {
   }
   await seedDatabase();
   const hashedPassword = await hash(password, PASSWORD_SALT);
-  const userToSave: Prisma.UserCreateInput = {
+  const userToSave = {
     email: data.email,
     status: USER_STATUS.VERIFIED,
     role: USER_ROLE.SUPER_ADMIN,
@@ -97,9 +96,9 @@ export const retrieveCurrentUserContextController = async (
   req: Request,
   res: Response,
 ) => {
-  const { clientId, id: userId } = req.session.user;
-  const data = await getCurrentUserContext(userId, clientId);
-  res.status(200).json({ data, message: "fetch current user successfully" });
+  res
+    .status(200)
+    .json({ data: {}, message: "fetch current user successfully" });
 };
 
 export const triggerForgottenPasswordController = async (
@@ -161,7 +160,7 @@ export const resendForgottenPasswordEmailController = async (
   req: Request,
   res: Response,
 ) => {
-  const user = await getUserByEmail(req.params.email);
+  const user = await getUserByEmail(req.params.email as string);
   const forgottenPasswordTokens = user.tokens.filter(
     (token) => token.type === AUTH_TOKEN_TYPE.FORGOTTEN_PASSWORD,
   );

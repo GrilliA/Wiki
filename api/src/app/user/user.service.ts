@@ -1,12 +1,9 @@
-import { render } from "@react-email/components";
 import { USER_ROLE } from "../../helper/constants";
 import logger from "../../helper/logger";
-import prisma from "../../helper/prisma";
-import { sendEmail } from "../../helper/sendEmail";
-import { User } from "@prisma/client";
+import db from "../../helper/db";
 
 export const createUser = async (data: any) => {
-  const user = await prisma.user.create({
+  const user = await db.user.create({
     data: {
       ...data,
     },
@@ -19,7 +16,7 @@ export const createUser = async (data: any) => {
 };
 
 export const getUserById = async (id: string) => {
-  const user = await prisma.user.findUnique({
+  const user = await db.user.findUnique({
     where: { id },
     include: {
       facility: true,
@@ -29,7 +26,7 @@ export const getUserById = async (id: string) => {
 };
 
 export const getUserByCode = async (code: string) => {
-  const user = await prisma.user.findFirst({
+  const user = await db.user.findFirst({
     where: {
       tokens: {
         some: {
@@ -48,7 +45,7 @@ export const getUserByCode = async (code: string) => {
 };
 
 export const getUserByEmail = async (email: string) => {
-  const user = await prisma.user.findFirst({
+  const user = await db.user.findFirst({
     where: {
       email,
       deletedAt: null,
@@ -65,7 +62,7 @@ export const getUserByEmail = async (email: string) => {
 };
 
 export const updateUser = async (id: string, data: Record<string, any>) => {
-  const user = await prisma.user.update({
+  const user = await db.user.update({
     where: { id },
     data,
     include: {
@@ -76,7 +73,7 @@ export const updateUser = async (id: string, data: Record<string, any>) => {
 };
 
 export const getAllUsers = async () => {
-  const user = await prisma.user.findMany({
+  const user = await db.user.findMany({
     where: {
       deletedAt: null,
     },
@@ -88,7 +85,7 @@ export const getAllUsers = async () => {
 };
 
 export const getAllUsersByType = async (userRole: USER_ROLE) => {
-  const users = await prisma.user.findMany({
+  const users = await db.user.findMany({
     where: {
       role: userRole,
     },
@@ -99,14 +96,9 @@ export const getAllUsersByType = async (userRole: USER_ROLE) => {
   return users;
 };
 
-export const sendCredentialsEmail = async (user: User) => {
+export const sendCredentialsEmail = async () => {
   try {
-    // const email = await CredentialsEmail({ user });
-    await sendEmail({
-      subject: "Benvenuto su Gemma",
-      to: user?.email,
-      html: render(""),
-    });
+    console.error("to be implemented");
   } catch (error) {
     logger.error(error);
   }

@@ -1,4 +1,5 @@
 import { USER_STATUS, USER_ROLE } from "../../helper/constants";
+
 export type TUserResponseData = {
   id: string;
   email: string;

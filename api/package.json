@@ -5,9 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "email:dev": "email dev --dir=./src/emails --port=3005",
-    "db:migrate": "prisma migrate dev",
-    "db:deploy": "prisma migrate deploy",
+    "db:migrate": "echo 'db:migrage'",
+    "db:deploy": "echo 'db:deploy'",
     "build": "npm ci && tsc -p ./tsconfig.json",
     "serve": "node ./dist/server.js"
   },
@@ -25,13 +24,11 @@
     "@types/nodemailer": "^6.4.14",
     "dotenv": "^16.0.3",
     "nodemon": "^3.0.2",
-    "prisma": "^6.0.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@prisma/client": "^6.0.0",
     "bcryptjs": "^2.4.3",
     "connect-redis": "^7.1.1",
     "cookie-parser": "^1.4.6",
