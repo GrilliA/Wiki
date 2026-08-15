@@ -1,5 +1,5 @@
 import logger from "../../helper/logger";
-import db from "../../helper/db";
+import db from "../../database";
 
 export const sendForgottenPasswordEmail = async () => {
   try {

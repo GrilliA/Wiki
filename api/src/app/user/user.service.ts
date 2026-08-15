@@ -1,6 +1,6 @@
 import { USER_ROLE } from "../../helper/constants";
 import logger from "../../helper/logger";
-import db from "../../helper/db";
+import db from "../../database";
 
 export const createUser = async (data: any) => {
   const user = await db.user.create({
