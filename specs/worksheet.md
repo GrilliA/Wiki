@@ -1,18 +1,24 @@
 # WorkSheet
 
-- [ ] Add node-pg as the db api
-  - Branch: "feature/api/db_init"
-  - Message: "[api]::[feature] Add node-pg as the db api"
+## Create specs one page specs for every section of the app
 
-- [ ] Add the login endpoint
-  - Branch: "feature/api/login_endpoint"
-  - Message: "[api]::[feature] Add the login endpoint"
+- Branch: "feature/specs_with_todo"
+- Message: "[specs]::[feature] Create specs with todo"
 
-- [ ] Add the signup endpoint
-  - Branch: "feature/api/signup_endpoint"
-  - Message: "[api]::[feature] Add the signup endpoint"
+### Steps
 
-## Add authentication to the app
-
-- Branch: "feature/authentication"
-- Message: "Add authentication to the app"
+- [ ] Create specs for content/user management
+  - Branch: "feature/specs_for_content_user_management"
+  - Message: "[specs]::[feature] Create specs for content management"
+- [ ] Create specs for Authentication
+  - Branch: "feature/specs_for_Auth"
+  - Message: "[specs]::[feature] Create specs for Authentication"
+- [ ] Create specs for Dashboard
+  - Branch: "feature/specs_for_Dashboard"
+  - Message: "[specs]::[feature] Create specs for Dashboard"
+- [ ] Create specs for Wiki pages
+  - Branch: "feature/specs_for_wiki"
+  - Message: "[specs]::[feature] Create specs for Wiki pages"
+- [ ] Create specs for landing page for the web app
+  - Branch: "feature/specs_website"
+  - Message: "[specs]::[feature] Create specs for landing page for the web app"

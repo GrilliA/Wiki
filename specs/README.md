@@ -9,6 +9,16 @@ The goal is to make it a community based management.
 Where the community is the one providing a safe environment,
 moderating the content and providing new content.
 
+## Rules
+
+- No changing of stacks
+- No changing of the specs, when approved
+
+## Stack
+
+- Frontend - React
+- Api - Laravel
+
 ## Features
 
 - Registration
