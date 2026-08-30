@@ -52,7 +52,6 @@ export const Signup = (_) => {
             {...getInputProps("terms", { type: "checkbox" })}
             label={t("terms")}
             id="terms"
-            size="md"
           />
         </Stack>
       </form>

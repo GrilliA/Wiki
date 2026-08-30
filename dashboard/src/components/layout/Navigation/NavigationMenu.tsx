@@ -3,6 +3,7 @@ import { WikiIcon } from "@/components/primitive";
 import { tokenKey } from "@/helper/constants";
 import { useRouter } from "@/hooks/useRouter";
 import { removeToken } from "@/state/uiSlice/uiSlice";
+import { semanticColor } from "@/theme";
 import { useDispatch } from "react-redux";
 
 const NavigationMenu = () => {
@@ -33,7 +34,7 @@ const NavigationMenu = () => {
           Impostazioni
         </Menu.Item>
         <Menu.Item
-          color="red"
+          color={semanticColor.danger}
           leftSection={<WikiIcon name="logout" size="sm" />}
           onClick={handleLogout}
         >
