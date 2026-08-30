@@ -12,7 +12,7 @@
             <td align="center" style="padding:24px 16px;">
                 <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;width:100%;background-color:#ffffff;border-radius:8px;overflow:hidden;">
                     <tr>
-                        <td align="left" style="padding:24px 32px;border-bottom:3px solid #6741d9;font-family:'IBM Plex Sans', Arial, sans-serif;font-size:20px;font-weight:700;color:#6741d9;">
+                        <td align="left" style="padding:24px 32px;border-bottom:3px solid #7c3aed;font-family:'IBM Plex Sans', Arial, sans-serif;font-size:20px;font-weight:700;color:#7c3aed;">
                             Wiki Dance
                         </td>
                     </tr>
@@ -24,7 +24,7 @@
                     <tr>
                         <td align="left" style="padding:20px 32px;border-top:1px solid #e4e4e7;background-color:#fafafa;font-family:'IBM Plex Sans', Arial, sans-serif;font-size:12px;line-height:1.5;color:#71717a;">
                             {{ config('app.name') }}<br>
-                            <a href="mailto:{{ config('mail.from.address') }}" style="color:#6741d9;text-decoration:none;">{{ config('mail.from.address') }}</a>
+                            <a href="mailto:{{ config('mail.from.address') }}" style="color:#7c3aed;text-decoration:none;">{{ config('mail.from.address') }}</a>
                         </td>
                     </tr>
                 </table>
