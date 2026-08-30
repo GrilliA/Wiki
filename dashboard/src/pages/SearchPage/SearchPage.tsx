@@ -3,6 +3,7 @@ import { PageComponent } from "@/components/layout";
 import { WikiList, WikiListItem } from "@/components/primitive";
 import { usePage } from "@/hooks/usePage";
 import { useRouter } from "@/hooks/useRouter";
+import { primaryShade } from "@/theme";
 import { Divider, Stack, Text, Title } from "@mantine/core";
 import { useState, type ChangeEvent } from "react";
 
@@ -31,10 +32,10 @@ export const SearchPage = () => {
           return (
             <WikiListItem key={page?.id} onClick={handleClick}>
               <Stack gap={4}>
-                <Text size="md" c="violet.5" fw="bolder">
+                <Text size="md" c={primaryShade(5)} fw="bolder">
                   {page?.name}
                 </Text>
-                <Text size="md" c="violet.5" fw="bolder">
+                <Text size="md" c={primaryShade(5)} fw="bolder">
                   {page?.description}
                 </Text>
               </Stack>

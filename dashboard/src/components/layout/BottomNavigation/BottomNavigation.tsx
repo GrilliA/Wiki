@@ -2,6 +2,7 @@ import { Flex, Paper } from "@mantine/core";
 import { WikiLink, WikiIcon } from "@/components/primitive";
 import { navigationData } from "@/helper/navigationData";
 import { useRouter } from "@/hooks/useRouter";
+import { PRIMARY_COLOR } from "@/theme";
 
 const BottomNavigation = () => {
   const pathname = useRouter().pathname;
@@ -11,14 +12,14 @@ const BottomNavigation = () => {
         {navigationData.map((d) => {
           const isActive = pathname === d.href;
           const color = isActive
-            ? "violet"
+            ? PRIMARY_COLOR
             : "var(--mantine-color-default-foreground)";
           const icon = (
             <WikiIcon
               isOutlined={!isActive}
               size={d.size}
               name={d.icon}
-              color={isActive ? "violet" : undefined}
+              color={isActive ? PRIMARY_COLOR : undefined}
             />
           );
           if (d.href) {

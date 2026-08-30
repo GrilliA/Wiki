@@ -1,20 +1,21 @@
 import { Box, Flex } from "@mantine/core";
 import { WikiLink, WikiIcon } from "@/components/primitive";
 import { useRouter } from "@/hooks/useRouter";
+import { PRIMARY_COLOR } from "@/theme";
 import type { TSidebarItemProps } from "./Sidebar.model";
 
 const SidebarItem = (props: TSidebarItemProps) => {
   const { href, handleClick, isDisabled } = props;
   const pathname = useRouter().pathname;
   const isActive = pathname === props.href;
-  const color = isActive ? "violet" : "inherit";
+  const color = isActive ? PRIMARY_COLOR : "inherit";
 
   const icon = (
     <WikiIcon
       isOutlined={!isActive}
       name={props.icon}
       size={props.size}
-      color={isActive ? "violet" : undefined}
+      color={isActive ? PRIMARY_COLOR : undefined}
     />
   );
 

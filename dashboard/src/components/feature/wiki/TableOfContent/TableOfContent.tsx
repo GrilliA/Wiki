@@ -30,7 +30,6 @@ export const TableOfContents = ({ links }: TTableOfContentsProps) => {
           active={active === item.link}
           pl={item.order}
           variant="subtle"
-          color="violet"
         />
       ))}
     </Stack>

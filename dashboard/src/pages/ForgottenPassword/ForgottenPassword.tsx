@@ -21,7 +21,6 @@ export const ForgottenPassword = () => {
               {...getInputProps("email")}
               label={"Email"}
               type="email"
-              size="md"
               w={"100%"}
               autoComplete="email"
             />

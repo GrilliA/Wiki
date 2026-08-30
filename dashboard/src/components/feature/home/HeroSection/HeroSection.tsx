@@ -2,6 +2,7 @@ import { Image, Stack, Text, Title } from "@mantine/core";
 import { SearchField } from "@/components/input";
 import { appName } from "@/helper/constants";
 import { useRouter } from "@/hooks/useRouter";
+import { primaryShade } from "@/theme";
 
 export const HeroSection = () => {
   const { push } = useRouter();
@@ -12,7 +13,7 @@ export const HeroSection = () => {
     <Stack gap="md" py="xl">
       <Title order={1}>
         Welcome to{" "}
-        <Text component="span" inherit c="violet.2" fw={800}>
+        <Text component="span" inherit c={primaryShade(2)} fw={800}>
           {appName}
         </Text>
       </Title>
