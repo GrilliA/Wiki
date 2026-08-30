@@ -80,7 +80,7 @@ const Full = forwardRef((props: TFull, ref: RefObject<HTMLDivElement>) => {
       >
         Are you sure you want to leave without saving changes?
       </WikiModal>
-      <Container>
+      <Container w="100%" h="100%">
         <Stack gap="md" h="100%">
           {noNav ? null : (
             <>
